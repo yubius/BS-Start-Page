@@ -1,6 +1,6 @@
 ## 雨轩的个人主页
 
-You can use the [editor on GitHub](https://github.com/weitteam/cn/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+你可以 [在Bilibili发现我](https://space.bilibili.com/18853927) 更好的发现我.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
