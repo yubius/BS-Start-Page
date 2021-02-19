@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## WeIT团队
 
 You can use the [editor on GitHub](https://github.com/weitteam/cn/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
