@@ -5,7 +5,9 @@
 
 
 ### 联系我
-你可以[通过哔哩哔哩](https://space.bilibili.com/18853927)与我联系
+通过[哔哩哔哩](https://space.bilibili.com/18853927)
+通过[QQ交流群（Win10系统Office安装激活）]（https://jq.qq.com/?_wv=1027&k=oCwEL3Wk）
+
 
 
 ### 就这？
