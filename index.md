@@ -1,4 +1,6 @@
 ### 余雨轩的个人主页 
+我是一个中学生，在互联网上处于懵懂地位。
+我梦想着改变世界，为互联网世界做出一份贡献。
 
 You can use the [editor on GitHub](https://github.com/yubius/yubius.github.io/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
