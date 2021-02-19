@@ -1,6 +1,6 @@
 title: 余雨轩的个人主页
 description: > # this means to ignore newlines until "baseurl:"
-  我是一个中学生，在互联网界是个懵懂的存在。这个网站是我第一个通过代码写的，我希望它能陪我度过2021.
+  我是一个中学生，在互联网界是个懵懂的存在。这是我第一个通过代码写的网站，我希望它能陪我度过2021.
 permalink: ':title/'
 #baseurl: "/adam-blog" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
