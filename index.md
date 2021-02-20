@@ -1,5 +1,19 @@
-(https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN)  
-# 余雨轩的个人主页  
+let format = 'js'
+let idx = '0'
+let n = '1'
+let mkt = 'zh-CN'
+let = options ={
+  //...
+}
+ 
+let imgUrl = '/proxy/' + 'HPImageArchive.aspx?' + `format=${format}&idx=${idx}&n=${n}&mkt=${mkt}`
+//这里proxy就是Nginx匹配规则，可自定义
+ 
+fetch(imgUrl,options).then(
+  //...
+)
+
+##### 余雨轩的个人主页  
 ### 我是谁？
 我是一名中学生，来自江西南昌，在互联网上处于懵懂地位。  
 我梦想着改变世界，为互联网世界做出一份贡献。  
