@@ -1,11 +1,15 @@
-<script>
-window.callbackstaticdata = function(res){
-    console.log(res);
-    //数据输出，
-    console.log(JSON.stringify(res));
-}
+public static void main(String[] args) {
+    String url = "https://cdn.mdeer.com/data/yqstaticdata.js";
+    //创建一个请求
+    Http http = Http.create(url)
+            .get()
+            .timeout(3)
+            .send();
  
-////t 为时间戳，防止缓存
-$.getScript("https://cdn.mdeer.com/data/yqstaticdata.js?callback=callbackstaticdata&t="+(+new Date));
-//数据有几百KB，您用我们的格式化工具格式化下就可以看到。全世界各国，中国各个省份的详细数据都有。
-</script>
+    //返回请求结果
+    String result = http.getResponse().getResult();
+ 
+    //截取返回的callback
+    result = result.substring(19,result.length() - 1);
+    System.out.println(result);
+}
