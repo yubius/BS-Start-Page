@@ -10,76 +10,89 @@
     <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="static/main.css">
 </head>
-<body>
+<body style="top:0;transition:all .5s">
 <header>
-    <div class="action-btn updated" ks-tag="bottom" ks-text="更新啦">
+    <div class="action-btn updated" ks-tag="bottom" ks-text="技巧">
         <i class="fa fa-bullhorn"></i>
     </div>
     <div class="action-btn about" ks-tag="bottom" ks-text="关于">
         <i class="fa fa-info-circle"></i>
     </div>
-    <div class="action-btn setting" ks-tag="bottom" ks-text="设置">
+    <div class="action-btn setting" ks-tag="bottom" ks-text="设定">
         <i class="fa fa-cog"></i>
     </div>
 </header>
 <main>
-    <section class="navi-search" style="height: calc(100vh - 100px);margin-top: 100px;">
-        <form class="input-box" style="backdrop-filter: blur(5px);background: rgba(255,255,255,0.5);">
-            <div class="search-select" title="切换搜索引擎">
+    <h1 id="time" onclick="scroll2page()" style="font-family:'Microsoft Yahei Light','Microsoft Yahei',PingFangSC-Regular,Helvetica,sans-serif,'等线';color:white;font-size:2.5em;font-weight:normal;text-shadow:0 0 5px grey;text-align:center;margin:0;margin-bottom:20px;margin-top:100px"></h1>
+    <section class="navi-search" style="height:100vh;text-align:center">
+        <form class="input-box" style="backdrop-filter: blur(5px);background: rgba(0,0,0,0.5);">
+            <div class="search-select" title="切换搜索引擎" style="display:none">
                 <div class="iconfont icon-baidu"></div>
             </div>
             <div class="search-selector"></div>
-            <input type="text" placeholder="搜索..."/>
-            <button class="btn" title="搜索" style="background: transparent;"><i class="fa fa-search"></i></button>
+            <input type="text" placeholder="搜索..." onfocus="searchstart()" onblur="searchstop()"/>
         </form>
+		<div align="center">
+			<h1 id="yiyan" style="backdrop-filter:blur(5px);display:inline-block;font-family:微软雅黑;color:white;font-size:0.9em;font-weight:lighter;text-shadow:0 0 5px grey;text-align:center;margin:0;margin-top:300px">正在加载一言......</h1>
+		</div>
     </section>
-    <section class="navi-items" style="height:calc(100vh - 100px)"></section>
-    <section class="navi-background"></section>
+	<div style="height:calc(100vh - 300px);overflow-y:scroll;padding-bottom:30px">
+		<h1 id="time2" onclick="scroll1page()" style="font-family:'Microsoft Yahei Light','Microsoft Yahei',PingFangSC-Regular,Helvetica,sans-serif,'等线';color:white;font-size:2.5em;font-weight:normal;text-shadow:0 0 5px grey;text-align:center;margin:0;margin-bottom:20px"></h1>
+    	<section class="navi-items"></section>
+	</div>
+    <section class="navi-background" style="transition:all .2s;"></section>
 </main>
-<footer>
-    <p>© 2021 <a href="https://space.bilibili.com/18853927" target="_blank">是鱼布斯啊</a>  <a href="https://jq.qq.com/?_wv=1027&k=rU9gu8El" target="_blank">加入QQ群</a></p>
+<div id="he-plugin-simple"></div>
+<style>#he-plugin-simple{backdrop-filter:blur(5px);z-index:100;right:0!important;width:150px;text-shadow:0 0 5px black!important;position:absolute!important;top:calc(100vh - 50px)!important}</style>
+<script>WIDGET = {  "CONFIG": {    "modules": "01234",    "background": "5",    "tmpColor": "FFFFFF",    "tmpSize": "16",    "cityColor": "FFFFFF",    "citySize": "16","aqiColor": "FFFFFF",    "aqiSize": "16",    "weatherIconSize": "24",    "alertIconSize": "18",    "padding": "10px 10px 10px 10px",    "shadow": "0","language": "auto",    "fixed": "false",    "vertical": "top",    "horizontal": "left",    "key": "079764eefd5740d9b9efd86ffefabd78"  }}</script>
+<script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script>
+<footer id="footer" style="text-align:center">
+    <p style="display:inline-block;backdrop-filter:blur(5px)">© 2021 <a href="https://space.bilibili.com/18853927" target="_blank">是鱼布斯啊</a>&<a href="https://simsoft.top/" target="_blank">YanJi</a>丨<a href="https://jq.qq.com/?_wv=1027&k=rU9gu8El" target="_blank">加入QQ群</a></p>
 </footer>
 <window>
     <section class="the-window updated">
         <div class="window-head">
             <button>×</button>
-            <h3>厚积薄发，焕然一新</h3>
+            <h3>技巧与指导</h3>
         </div>
         <div class="window-body">
             <article>
-                <p>感谢你的使用和支持！在这个版本中，我们适配了不同尺寸的设备，哈哈！</p>
-                <blockquote>PS：只有首次打开最新版本才会出现这样的提示哦！</blockquote>
-                <h3>本次更新：</h3>
+                <p>开始了解个性化服务与技巧</p>
+                <blockquote>此界面迄让用户了解使用布斯的方法与技巧</blockquote>
+                <h3>设定致美壁纸</h3>
+                <p>你的壁纸是否为空白？了解设置精致，美妙的动态壁纸</p>
                 <ul>
-                    <li>手机访问自动跳转到移动版！</li>
-                    <li>支持必应每日壁纸！</li>
-                    <li>所有链接均以新标签的方式打开！</li>
-                    <li>增加了如你所看到的更新提示！</li>
+                    <li>打开“设定”</li>
+                    <li>在“致美壁纸”中选择“必应每日壁纸”</li>
+                    <li>然后刷新网站</li>
                 </ul>
-                <h3>更新预告：</h3>
+                <p><img src="static/wallpaper.jpg" alt="设定致美壁纸"></p>
+                <h3>访问捷径</h3>
                 <ul>
-                    <li>电脑版即将默认访问此界面</li>
-                    <li>天气查看小组件</li>
-                    <li>与电脑版相同的欲言</li>
+                    <li>单击“time”组件以访问捷径</li>
+                    <li>在捷径中单击“time”组件以退出捷径</li>
+                    <li>您可以前往“设定”中编辑捷径</li>
                 </ul>
+                <p><img src="static/jiejing.jpg" alt="访问捷径"></p>
             </article>
         </div>
     </section>
     <section class="the-window about">
         <div class="window-head">
             <button>×</button>
-            <h3>关于本项目</h3>
+            <h3>关于</h3>
         </div>
         <div class="window-body">
             <article>
-                <p><img src="static/about.jpg" alt="关于奇趣起始页"></p>
+                <p><img src="static/about.jpg" alt="关于布斯起始页"></p>
+                <blockquote>当前版本：2144（发布日期2021/4/4）</blockquote>
                 <p>欢迎使用布斯起始页！本项目建设于 2020/2/21，是一个基于开源项目维护的网站。</p>
+                <p>开发者：Yuxuan（yubius） and Yanji(SimSoft)</p>
                 <p>您可以请求我们添加您的个人首页，或公共站点 <a href="https://jq.qq.com/?_wv=1027&k=rU9gu8El" target="_blank">本项目的QQ群</a> 上提交联系群主提交</p>
                 <p>介于采用 GitHub 托管的形式，本站属于“无后端”项目，一些可以提升用户体验的功能需要借助后端才能完成，我暂时没有去实现它。</p>
                 <h3>类似项目：</h3>
                 <ul>
-                    <li><a href="https://www.chainwon.com" target="_blank" rel="nofollow">轻婉起始页</a></li>
-                    <li><a href="https://a.maorx.cn" target="_blank" rel="nofollow">青柠起始页</a></li>
+                    <blockquote>SimTab由SimSoft开发，功能强大，同样好用</blockquote>
                     <li><a href="https://h.simsoft.top" target="_blank" rel="nofollow">SimTab</a></li>
                 </ul>
                 <h3>使用了：</h3>
@@ -87,7 +100,7 @@
                     <li><a href="https://www.iconfont.cn" target="_blank" rel="nofollow">IconFont</a></li>
                     <li><a href="https://github.com/Dreamer-Paul/Kico-Style" target="_blank" rel="nofollow">Kico Style</a></li>
                     <li><a href="https://fontawesome.com" target="_blank" rel="nofollow">FontAwesome</a></li>
-                    <li><a href="https://github.com/Dreamer-Paul/KStart" target="_blank" rel="nofollow">奇趣保罗的开源项目</a></li>
+                    <li><a href="https://github.com/Dreamer-Paul/KStart" target="_blank" rel="nofollow">paul开源项目</a></li>
                 </ul>
             </article>
         </div>
@@ -95,20 +108,23 @@
     <section class="the-window setting">
         <div class="window-head">
             <button>×</button>
-            <h3>设置</h3>
+            <h3>设定</h3>
         </div>
         <div class="window-body">
             <fieldset>
                 <label>
-                    <span>默认搜索引擎：</span>
+                    <span>搜索偏好</span>
+                    <blockquote>建议设定为易用的“必应搜索”</blockquote>
                     <select name="search" data-key="search_method"></select>
                 </label>
                 <label>
-                    <span>自定义背景：</span>
+                    <span>致美壁纸</span>
+                    <blockquote>建议设定为“必应每日壁纸”</blockquote>
                     <select name="background" data-key="back_method"></select>
                 </label>
                 <label>
-                    <span>可选的预设导航项</span>
+                    <span>编辑捷径</span>
+                    <blockquote>PC设备可能需要按住“Ctrl”键，然后选择</blockquote>
                     <select multiple name="sites" data-key="sites" style="height: 15em"></select>
                 </label>
                 <p>
@@ -121,9 +137,52 @@
 </window>
 
 <script src="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Kico-Style/kico.js"></script>
-<script src="static/main.js"></script>
-
+<script src="https://h.simsoft.top/js/jq.js"></script>
+<script src="static/main.js?https://simsoft.top/"></script>
+	<script>
+	function showtime() { 
+		var today = new Date() 
+		var h = today.getHours() 
+		var m = today.getMinutes() 
+		h=checkTime(h) 
+		m=checkTime(m) 
+		document.getElementById('time').innerHTML=h+":"+m 
+		document.getElementById('time2').innerHTML=h+":"+m 
+		t=setTimeout('showtime()',1000) }  
+	function checkTime(i) { if (i<10) { i="0" + i } return i }
+	function getyiyan(){$.get("https://v1.hitokoto.cn/?c=i&max_length=20",function(data,status){$('#yiyan').text(data.hitokoto);});}
+	function scroll2page(){$("body").attr("style","top:calc(-100vh - 100px);transition:all .5s")}
+	function scroll1page(){$("body").attr("style","top:0;transition:all .5s")}
+	function sayhello(){
+		now = new Date(),hour = now.getHours()
+		if(hour < 6){var word="凌晨好"}
+		else if (hour < 9){var word="早上好"}
+		else if (hour < 12){var word="上午好"}
+		else if (hour < 14){var word="中午好"}
+		else if (hour < 17){var word="下午好"}
+		else if (hour < 19){var word="傍晚好"}
+		else if (hour < 22){var word="晚上好"}
+		else {var word="夜里好"}
+		ks.notice(word+"！",{time:2000,color:"green"})
+	}
+	function searchstart(){$("#backgroundstyle").html(".navi-background{filter:blur(10px);transform:scale(1.1)}");$(".input-box").attr("style","backdrop-filter: blur(5px);background: rgba(0,0,0,1);transition:all .2s")}
+	function searchstop(){$("#backgroundstyle").html(".navi-background{}");$(".input-box").attr("style","backdrop-filter:blur(5px);background: rgba(0,0,0,0.5);transition:all .2s")}
+	window.onload=showtime();getyiyan();sayhello()
+	</script>
+	<style id="backgroundstyle"></style>
+	<style>
+		*{user-select:none}
+		#time,#time2{transition:all .2s}
+		#time:active,#time2:active{transform:scale(0.9)}
+		.search-select{width:fit-content;height:40px}
+		.input-box{padding:3px;padding-left:10px;width:30%;min-width:300px;transition:all .2s;display:inline-flex;height:40px;max-width:700px;color:white}
+		.input-box input{padding:0;text-align:center}
+		.input-box:hover{width:100%}
+		.input-box:focus-within{width:100%}
+		header .updated{display:block!important}
+		body{position: fixed;width: 100%;}
+	</style>
 </body>
 </html>
-<!-- 部分代码优化：By SimSoft
-    https://simsoft.top -->
+<!-- 代码优化：By SimSoft
+    https://simsoft.top/ -->
