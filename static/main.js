@@ -46,44 +46,82 @@ var data = {
     window: 0,
     back_method: [
         {
-            "name": "无背景"
+            "name": "必应壁纸",
+            "url": "https://api.simsoft.top/bing/api.php?f=img",
+            "set": "center/cover no-repeat"
         },
-        {
-            "name": "随机动漫壁纸",
-            "url": "https://api.paugram.com/wallpaper?source=gh",
-            "set": "bottom right/60% no-repeat"
+		{
+            "name": "创意丙烯",
+            "url": "/wallpaper/创意丙烯.jpg",
+            "set": "center/cover no-repeat"
         },
-        {
-            "name": "必应每日壁纸",
-            "url": "https://api.paugram.com/bing",
+		{
+            "name": "羚羊峡谷",
+            "url": "/wallpaper/羚羊峡谷.jpg",
+            "set": "center/cover no-repeat"
+        },
+		{
+            "name": "菲而德山脉",
+            "url": "/wallpaper/菲而德山脉.jpg",
+            "set": "center/cover no-repeat"
+        },
+		{
+            "name": "高山白云",
+            "url": "/wallpaper/高山白云.jpg",
+            "set": "center/cover no-repeat"
+        },
+		{
+            "name": "大象",
+            "url": "/wallpaper/大象.jpg",
+            "set": "center/cover no-repeat"
+        },
+		{
+            "name": "小鸟",
+            "url": "/wallpaper/小鸟.jpg",
+            "set": "center/cover no-repeat"
+        },
+		{
+            "name": "浪花",
+            "url": "/wallpaper/浪花.jpg",
+            "set": "center/cover no-repeat"
+        },
+		{
+            "name": "铂金砂岩",
+            "url": "/wallpaper/铂金砂岩.jpg",
             "set": "center/cover no-repeat"
         }
     ],
     search_method: [
         {
-            "name": "百度",
-            "icon": "baidu",
-            "url": "https://www.baidu.com/s?wd=%s"
-        },
-        {
             "name": "必应",
             "icon": "bing",
-            "url": "https://cn.bing.com/search?q=%s"
+            "url": "https://cn.bing.com/search?q="
         },
+		{
+            "name": "百度",
+            "icon": "baidu",
+            "url": "https://www.baidu.com/s?wd="
+        },
+
         {
             "name": "谷歌",
             "icon": "google",
-            "url": "https://www.google.com/search?q=%s"
+            "url": "https://www.google.com/search?q="
         },
         {
             "name": "360",
             "icon": "360so",
-            "url": "https://www.so.com/s?q=%s"
+            "url": "https://www.so.com/s?q="
         },
         {
             "name": "DuckDuckGo",
             "icon": "duckduckgo",
-            "url": "https://duckduckgo.com/?q=%s"
+            "url": "https://duckduckgo.com/?q="
+        },
+		{
+            "name": "夸克搜索",
+            "icon": "quark",
+            "url": "https://quark.sm.cn/s?q="
         }
     ],
     user: {
@@ -112,15 +150,16 @@ var methods = {
         }
 
         localStorage.setItem("paul-navi", JSON.stringify(data.user));
-
-        ks.notice("设置已保存至本地！", {color: "green", time: 3000});
+		changewall()
+        ks.notice("设置已保存", {color: "green", time: 3000});
     },
     clear: function () {
         localStorage.clear("paul-navi");
-        ks.notice("本地设置已清除，刷新页面后将读取默认配置！", {color: "green", time: 5000});
+        ks.notice("本地设置已清除，刷新生效", {color: "green", time: 5000});
     },
     output: function () {
-        ks.notice("本功能制作中，敬请期待~", {color: "yellow", time: 3000});
+        ks.notice("<CENTER>请复制以下内容：</CENTER><textarea style='width:300px;background:transparent;border:0;resize:none' onfocus='this.select()' id='output-text'>"+localStorage.getItem("paul-navi")+"</textarea>", {color: "green"});
+		$("#output-text").select()
     },
     getUser: function () {
         var name = location.search.split("u=");
@@ -318,14 +357,13 @@ fetch("site.json").then(res => res.json()).then((res) => {
     }).then(() => {
         methods.changeSearch(data.user.search);
 
-        if(data.user.background){
             var img = new Image();
             img.crossOrigin = "Anonymous";
             img.src = data.back_method[data.user.background].url;
             
             img.onload = function (ev) {
                 obj.main.bg.style.background = "url(" + img.src + ") " + data.back_method[data.user.background].set;
-                obj.main.bg.classList.add("active");
+                $(".navi-background").attr("class","navi-background active")
 
                 var one = document.createElement("canvas");
 
@@ -338,7 +376,6 @@ fetch("site.json").then(res => res.json()).then((res) => {
                     document.body.classList.add("dark");
                 }
             }
-        }
 
         methods.setSetting();
     })
