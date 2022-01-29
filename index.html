@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://at.alicdn.com/t/font_1809713_rg58vy6eb7.css">
     <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="static/main.css">
+    
 </head>
 <body style="top:0;transition:all .5s">
 <header>
@@ -54,12 +55,21 @@
 <window>
     <section class="the-window updated">
         <div class="window-head">
+            <img src="static/icon.png" style="height:30px;float:left">
             <button>×</button>
             <h3>技巧</h3>
         </div>
         <div class="window-body">
             <article>
-                <blockquote>此界面迄让用户了解使用布斯的技巧</blockquote>
+                <h2>别致技巧</h2>
+                <h3>账号云同步</h3> 
+                <p>是否希望自动同步不同设备的起始页数据？</p>
+                <ul>
+                    <li>在“选项”中，登录“账户”</li>
+                    <li>前往设置开启“自动同步”（默认开启）</li>
+                    <li>下次打开会自动同步数据</li>
+                </ul>
+                <h2>基础技巧</h2> 
                 <h3>设定致美壁纸</h3>
                 <p>是否希望设置壁纸？了解设置精致，美妙的动态壁纸</p>
                 <ul>
@@ -71,17 +81,15 @@
                 <h3>访问捷径</h3>
                 <ul>
                     <li>单击“time”组件以访问/退出捷径</li>
-                    <li>PC支持滚动鼠轮以访问/退出捷径</li>
                     <li>您可以前往“设定”中编辑捷径</li>
                 </ul>
                 <p><img src="static/jiejing.jpg" alt="访问捷径"></p>
             </article>
-            <blockquote>开发者预览版本几乎每天都在更新，有时甚至每分钟都在更新。拥有最新的功能。但有时可能存在不稳定。</blockquote>
-            <li><a href="https://yubius.ml" target="_blank" rel="nofollow">布斯起始页开发者版本</a></li>
         </div>
     </section>
     <section class="the-window about">
         <div class="window-head">
+            <img src="static/icon.png" style="height:30px;float:left">
             <button>×</button>
             <h3>关于</h3>
         </div>
@@ -121,29 +129,62 @@
     </section>
     <section class="the-window setting">
         <div class="window-head">
+            <img src="static/icon.png" style="height:30px;float:left">
             <button>×</button>
             <h3>设定</h3>
         </div>
         <div class="window-body">
             <fieldset>
                 <label>
-                    <span>搜索偏好</span>
+                    <span>搜索引擎偏好</span>
                     <select name="search" data-key="search_method"></select>
-                    <span style="font-size:0.7em;color:grey">布斯建议使用“必应”搜索</span>
+                </label>
+                <label>
+                    <span>搜索框样式偏好</span>
+                    <select id="search-style" onchange="savestyle()">
+						<option value="black">深色</option>
+						<option value="white">浅色</option>
+						<option value="auto-time">根据时间切换</option>
+						<option value="auto-sys">跟随系统切换</option>
+                    </select>
+                </label>
+                <label>
+                    <span>亚克力特效</span>
+                    <img src="static/help.svg" style="float:right;margin-top: 5px;" onclick="ks.notice('使用亚克力特效会带来更好看的界面，但在大屏设备上会带来严重掉帧卡顿。如果您在使用过程中发现不流畅，建议关闭此选项。',{color:'green',time:5000})" height="15px">
+                    <select id="blur-set" onchange="saveblur()">
+						<option value="on">允许使用亚克力特效</option>
+						<option value="off">关闭亚克力特效</option>
+                    </select>
                 </label>
                 <label>
                     <span>致美壁纸</span>
+                    <img src="static/help.svg" style="float:right;margin-top: 5px;" onclick="ks.notice('选择“必应壁纸”可以每日自动更新壁纸。',{color:'green',time:2000})" height="15px">
                     <select name="background" data-key="back_method" id="backselect"></select>
-                    <span style="font-size:0.7em;color:grey">“必应壁纸”每日自动更新</span>
+                </label>
+				<label id="setdiy-area">
+                    <textarea style='width:100%;border-radius:2px;background:transparent;border:1px solid #cccccc;resize:none;height:1em' onchange='savebackground()' id='backurl-input' placeholder="在此处输入自定义壁纸的网址"></textarea>
+                </label>
+				<label>
+                    <span>编辑捷径</span>
+                    <img src="static/help.svg" style="float:right;margin-top: 5px;" onclick="ks.notice('Windows用户请按住Ctrl键多选<br>Mac用户请按住Command键多选',{color:'green',time:2000})" height="15px">
+                    <select multiple name="sites" data-key="sites" style="height: 15em" id="set-site"></select>
+                </label>
+                <label class="sync-option">
+                    <span>云端同步</span>
+                    <select id="sync-set" onchange="savesync()">
+						<option value="on">使用自动同步</option>
+						<option value="off">关闭自动同步</option>
+                    </select>
                 </label>
                 <label>
-                    <span>编辑捷径</span>
-                    <select multiple name="sites" data-key="sites" style="height: 15em"></select>
-                    <span style="font-size:0.7em;color:grey">PC设备可能需要按住“Ctrl”键，然后选择</span>
+                    <span>版本切换</span>
+                    <img src="static/help.svg" style="float:right;margin-top: 5px;" onclick="ks.notice('提示：暂停止访问开发版',{color:'green',time:2000})" height="15px">
+                    <br>
+                  	您正在使用正式版<a href="https://dev.bius.top" target="_blank" rel="nofollow">尝鲜开发版</a></blockquote>
                 </label>
-                <blockquote>开发者预览版本几乎每天都在更新，有时甚至每分钟都在更新。拥有最新的功能。但有时可能存在不稳定。</blockquote>
-                <li><a href="https://yubius.ml" target="_blank" rel="nofollow">布斯起始页开发者版本</a></li>
-                <p align="center">
+
+          
+                <p align="center" style="display:none">
                     <button class="btn small blue" name="reset">恢复默认</button>
                     <button class="btn small blue" name="output">导出</button>
                     <button class="btn small blue" name="input" onclick="loadnewsetting()">导入</button>
@@ -152,6 +193,7 @@
         </div>
     </section>
 </window>
+
 
 <script src="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Kico-Style/kico.js"></script>
 <script src="https://h.simsoft.top/js/jq.js"></script>
