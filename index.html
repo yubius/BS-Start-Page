@@ -27,14 +27,14 @@
     </div>
 </header>
 <main>
-    <h1 id="time" onclick="scroll2page()" style="font-family:'Microsoft Yahei Light','Microsoft Yahei',PingFangSC-Regular,Helvetica,sans-serif,'等线';color:white;font-size:2.5em;font-weight:normal;text-shadow:0 0 35px grey;text-align:center;margin:0;margin-bottom:20px;margin-top:80px"></h1>
+    <h1 id="time" onclick="scroll2page()" style="font-family:'Microsoft Yahei Light','Microsoft Yahei',PingFangSC-Regular,Helvetica,sans-serif,'等线';color:white;font-size:2.5em;font-weight:normal;text-shadow:0 0 35px grey;text-align:center;margin:0;margin-bottom:20px;margin-top:80px">新年好！</h1>
     <section class="navi-search" style="height:100vh;text-align:center">
-        <span class="input-box" style="backdrop-filter: blur(35px);background: rgba(0,0,0,0.3);">
+        <span class="input-box" style="backdrop-filter: blur(35px);background: rgba(255, 18, 18, 0.74);">
             <div class="search-select" title="切换搜索引擎" style="display:none">
                 <div class="iconfont icon-baidu"></div>
             </div>
             <div class="search-selector"></div>
-            <input type="text" placeholder="Search" onfocus="searchstart()" onblur="searchstop()" onkeydown="entersearch(event)"/>
+            <input type="text" placeholder="新年好!" onfocus="searchstart()" onblur="searchstop()" onkeydown="entersearch(event)"/>
         </span>
 		<div align="center">
 			<h1 onclick="copyyiyan()" id="yiyan" style="border-radius:10px;backdrop-filter:blur(5px);display:inline-block;font-family:微软雅黑;color:white;font-size:0.9em;font-weight:lighter;text-shadow:0 0 5px grey;text-align:center;margin:0;margin-top:20vh">正在加载一言......</h1>
@@ -70,6 +70,7 @@
                 <a href="https://space.bilibili.com/18853927" target="_blank">此次开发者:YuXuan(Yubius)</a>
 
                 <h3>此次更新内容</h3> 
+                    <li>新年好！搜索框改为红色</li>
                     <li>“技巧”更改为“更新日志”，标志着布斯的每一次更新都将被记录</li>
                     <li>“关于”界面全面使用BiusUI，更富有创造力</li>
                     <li>“搜索框”从亚克力变为云朵效果，更优雅</li>
@@ -205,8 +206,8 @@
 		else {var word="夜里好"}
 		ks.notice(word+"！",{time:2000,color:"green"})
 	}
-	function searchstart(){$("#backgroundstyle").html(".navi-background{transform:scale(1.1)}");$(".input-box").attr("style","backdrop-filter: blur(5px);background: rgba(0,0,0,1);transition:all .2s");$(".navi-background-mask").css("opacity","1")}
-	function searchstop(){$("#backgroundstyle").html(".navi-background{}");$(".input-box").attr("style","backdrop-filter:blur(35px);background: rgba(0,0,0,0.3);transition:all .2s");$(".navi-background-mask").css("opacity","0")}
+	function searchstart(){$("#backgroundstyle").html(".navi-background{transform:scale(1.1)}");$(".input-box").attr("style","backdrop-filter: blur(5px);background: rgba(255, 18, 18, 0.74);transition:all .2s");$(".navi-background-mask").css("opacity","1")}
+	function searchstop(){$("#backgroundstyle").html(".navi-background{}");$(".input-box").attr("style","backdrop-filter:blur(35px);background: rgba(255, 18, 18, 0.74);transition:all .2s");$(".navi-background-mask").css("opacity","0")}
 	window.onload=showtime();getyiyan();sayhello();loadupdate()
 	function changewall(){
 	    var img = new Image();
