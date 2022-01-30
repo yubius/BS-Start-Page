@@ -4,6 +4,7 @@
     <meta name="baidu-site-verification" content="code-tBgKvePhx0" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>布斯起始页</title>
     <link rel="icon" href="static/icon.png" sizes="192x192"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Kico-Style/kico.css">
@@ -14,7 +15,7 @@
 </head>
 <body style="top:0;transition:all .5s">
 <header>
-    <div class="action-btn updated" ks-tag="bottom" ks-text="技巧">
+    <div class="action-btn updated" ks-tag="bottom" ks-text="更新日志">
         <i class="fa fa-bullhorn"></i>
     </div>
     <div class="action-btn about" ks-tag="bottom" ks-text="关于">
@@ -25,9 +26,9 @@
     </div>
 </header>
 <main>
-    <h1 id="time" onclick="scroll2page()" style="font-family:'Microsoft Yahei Light','Microsoft Yahei',PingFangSC-Regular,Helvetica,sans-serif,'等线';color:white;font-size:2.5em;font-weight:normal;text-shadow:0 0 5px grey;text-align:center;margin:0;margin-bottom:20px;margin-top:80px">你好</h1>
+    <h1 id="time" onclick="scroll2page()" style="font-family:'Microsoft Yahei Light','Microsoft Yahei',PingFangSC-Regular,Helvetica,sans-serif,'等线';color:white;font-size:2.5em;font-weight:normal;text-shadow:0 0 35px grey;text-align:center;margin:0;margin-bottom:20px;margin-top:80px"></h1>
     <section class="navi-search" style="height:100vh;text-align:center">
-        <span class="input-box search-backg">
+        <span class="input-box" style="backdrop-filter: blur(5px);background: rgba(0,0,0,0.3);">
             <div class="search-select" title="切换搜索引擎" style="display:none">
                 <div class="iconfont icon-baidu"></div>
             </div>
@@ -49,11 +50,9 @@
 	</section>
 </main>
 <div id="he-plugin-simple"></div>
-<style>.wv-lt-refresh{display:none!important}.s-sticker-cond.module img{max-width:30px!important;width:30px!important;height:30px!important}.s-sticker-cond.module{padding:0!important}.s-sticker-city.module,.s-sticker-tmp.module,.s-sticker-qlty.module{display:none!important}</style>
-<div class="weather">
-  <script>WIDGET = {"CONFIG":{"modules": "01234","background": "5","tmpColor":"FFFFFF","tmpSize":"16","cityColor":"FFFFFF","citySize":"16","aqiColor":"FFFFFF","aqiSize": "16","weatherIconSize":"24",    "alertIconSize": "18",    "padding": "10px 10px 10px 10px",    "shadow": "0","language": "auto",    "fixed": "false",    "vertical": "top",    "horizontal": "left",    "key": "079764eefd5740d9b9efd86ffefabd78"  }}</script>
-  <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script>
-</div>
+<style>#he-plugin-simple{border-radius:10px;backdrop-filter:blur(5px);right:0!important;width:150px;text-shadow:0 0 5px black!important;position:fixed!important;bottom:0}</style>
+<script>WIDGET = {"CONFIG":{"modules": "01234","background": "5","tmpColor":"FFFFFF","tmpSize":"16","cityColor":"FFFFFF","citySize":"16","aqiColor":"FFFFFF","aqiSize": "16","weatherIconSize":"24",    "alertIconSize": "18",    "padding": "10px 10px 10px 10px",    "shadow": "0","language": "auto",    "fixed": "false",    "vertical": "top",    "horizontal": "left",    "key": "079764eefd5740d9b9efd86ffefabd78"  }}</script>
+<script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script>
 <footer id="footer" style="text-align:center">
     <p style="font-family:'Microsoft Yahei Light','Microsoft Yahei',PingFangSC-Regular,Helvetica,sans-serif,'等线';display:inline-block;border-radius:10px;backdrop-filter:blur(5px)">© 2022 <a href="https://space.bilibili.com/18853927" target="_blank">是鱼布斯啊</a>&<a href="https://simsoft.top/" target="_blank">YanJi</a> | <a href="http://beian.miit.gov.cn/" target="_blank">赣ICP备2022000685号</a></p>
 </footer>
@@ -62,33 +61,24 @@
         <div class="window-head">
             <img src="static/icon.png" style="height:30px;float:left">
             <button>×</button>
-            <h3>技巧</h3>
+            <h3>更新日志</h3>
         </div>
         <div class="window-body">
             <article>
-                <h2>别致技巧</h2>
-                <h3>账号云同步</h3> 
-                <p>是否希望自动同步不同设备的起始页数据？</p>
-                <ul>
-                    <li>在“选项”中，登录“账户”</li>
-                    <li>前往设置开启“自动同步”（默认开启）</li>
-                    <li>下次打开会自动同步数据</li>
+                <h2>更新日期:2022/1/30</h2>
+                <a href="https://space.bilibili.com/18853927" target="_blank">此次开发者:YuXuan(Yubius)</a>
+
+                <h3>此次更新内容</h3> 
+                    <li>“技巧”更改为“更新日志”，标志着布斯的每一次更新都将被记录</li>
+                    <li>“关于”界面全面使用BiusUI，更富有创造力</li>
+                    <li>“搜索框”从亚克力变为云朵效果，更优雅</li>
+                    <li>“搜索框”“一言”“设定”等处若干bug得到修复</li>
                 </ul>
-                <h2>基础技巧</h2> 
-                <h3>设定致美壁纸</h3>
-                <p>是否希望设置壁纸？了解设置精致，美妙的动态壁纸</p>
-                <ul>
-                    <li>打开“设定”</li>
-                    <li>在“致美壁纸”中选择“必应每日壁纸”</li>
-                    <li>然后刷新网站</li>
-                </ul>
-                <p><img src="static/wallpaper.jpg" alt="设定致美壁纸"></p>
-                <h3>访问捷径</h3>
-                <ul>
-                    <li>单击“time”组件以访问/退出捷径</li>
-                    <li>您可以前往“设定”中编辑捷径</li>
-                </ul>
-                <p><img src="static/jiejing.jpg" alt="访问捷径"></p>
+                <a href="https://wj.qq.com/s2/9444065/a16d/"> 
+                    <p style="text-align: center;">                    
+                    <img src="https://imgcdn.simsoft.top/upload/22-01-29-16-24-50-fk.png" width="380%" height="280%" />
+                    </p>
+                    </a>
             </article>
         </div>
     </section>
@@ -100,33 +90,36 @@
         </div>
         <div class="window-body">
             <article>
-                <p><img src="https://imgcdn.simsoft.top/upload/22-01-29-17-16-04-about.jpg" alt="关于布斯起始页"></p>
+                <a href="https://yubius.com"><img src="https://imgcdn.simsoft.top/upload/22-01-29-17-16-04-about.jpg" alt="关于布斯起始页"></a>
+
+                <h2>    </h2>
+                <h2>你好！欢迎访问布斯起始页</h2>
+                <h2>更新日期：2022/1/30</h2>
+                <h2>Based on BiusUI</h2>
+
+                <h2>本项目建设于2021/2/22</h2>
+                <h3>开发者：</h3>
+                <a href="https://space.bilibili.com/18853927" target="_blank">YuXuan(Yubius)</a> | <a href="https://simsoft.top/" target="_blank">YanJi(SimSoft)</a>
+                <h3>联系我们：</h3>
                 <a href="https://space.bilibili.com/18853927"> 
                     <p style="text-align: center;">                    
                     <img src="https://imgcdn.simsoft.top/upload/22-01-29-16-29-29-哔哩.jpg" width="380%" height="280%" />
                     </p>
                  </a>
-                <h2>    </h2>
-                <h2>更新日期：2022/1/29</h2>
-                <h2>Based on BiusUI</h2>
+                 <h3> </h3>
 
-                <p>欢迎使用布斯起始页！本项目建设于 2020/2/21，是一个基于开源项目维护的网站。</p>
-                <p>开发者：Yuxuan(Yubius) & YanJi(SimSoft)</p>
-                <p>一起交流？<a href="https://jq.qq.com/?_wv=1027&k=rU9gu8El" target="_blank">QQ交流群</a>参与布斯的反馈，获取支持</p>
-                <p>进一步了解？<a href="https://space.bilibili.com/18853927" target="_blank">bilibili</a>了解有关布斯的最新动态</p>
+                 <a href="https://jq.qq.com/?_wv=1027&k=rU9gu8El"> 
+                    <p style="text-align: center;">                    
+                    <img src="https://imgcdn.simsoft.top/upload/22-01-30-21-14-33-QQ.jpg" width="380%" height="280%" />
+                    </p>
+                 </a>
+                 
                 <h3>类似项目：</h3>
-                <ul>
-                    <li><a href="https://utab.rth1.me/" target="_blank" rel="nofollow">无限起始页</a></li>
-                    <li><a href="https://limestart.cn" target="_blank" rel="nofollow">青柠起始页</a></li>
-                    <li><a href="https://h.simsoft.top" target="_blank" rel="nofollow">SimTab</a></li>
-                </ul>
-                <h3>使用了：</h3>
-                <ul>
-                    <li><a href="https://www.iconfont.cn" target="_blank" rel="nofollow">IconFont</a></li>
-                    <li><a href="https://github.com/Dreamer-Paul/Kico-Style" target="_blank" rel="nofollow">Kico Style</a></li>
-                    <li><a href="https://fontawesome.com" target="_blank" rel="nofollow">FontAwesome</a></li>
-                    <li><a href="https://github.com/Dreamer-Paul/KStart" target="_blank" rel="nofollow">Paul开源项目</a></li>
-                </ul>
+                <a href="https://utab.rth1.me/"> 
+                    <p style="text-align: center;">                    
+                    <img src="https://imgcdn.simsoft.top/upload/22-01-30-21-06-43-wx.jpg" width="380%" height="280%" />
+                    </p>
+                    </a>
                 <h3>意见反馈：</h3>
                 <a href="https://wj.qq.com/s2/9444065/a16d/"> 
                     <p style="text-align: center;">                    
@@ -146,15 +139,6 @@
                 <label>
                     <span>搜索引擎偏好</span>
                     <select name="search" data-key="search_method"></select>
-                </label>
-                <label>
-                    <span>搜索框样式偏好</span>
-                    <select id="search-style" onchange="savestyle()">
-						<option value="black">深色</option>
-						<option value="white">浅色</option>
-						<option value="auto-time">根据时间切换</option>
-						<option value="auto-sys">跟随系统切换</option>
-                    </select>
                 </label>
                 <label>
                     <span>亚克力特效</span>
@@ -221,7 +205,7 @@
 		ks.notice(word+"！",{time:2000,color:"green"})
 	}
 	function searchstart(){$("#backgroundstyle").html(".navi-background{transform:scale(1.1)}");$(".input-box").attr("style","backdrop-filter: blur(5px);background: rgba(0,0,0,1);transition:all .2s");$(".navi-background-mask").css("opacity","1")}
-	function searchstop(){$("#backgroundstyle").html(".navi-background{}");$(".input-box").attr("style","backdrop-filter:blur(5px);background: rgba(0,0,0,0.5);transition:all .2s");$(".navi-background-mask").css("opacity","0")}
+	function searchstop(){$("#backgroundstyle").html(".navi-background{}");$(".input-box").attr("style","backdrop-filter:blur(35px);background: rgba(0,0,0,0.3);transition:all .2s");$(".navi-background-mask").css("opacity","0")}
 	window.onload=showtime();getyiyan();sayhello();loadupdate()
 	function changewall(){
 	    var img = new Image();
