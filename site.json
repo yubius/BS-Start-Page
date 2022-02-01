@@ -1,11 +1,5 @@
 [
     {
-        "name": "春晚直播",
-        "url": "https://www.douyin.com/newyear",
-        "color": "d22222",
-        "icon": "https://imgcdn.simsoft.top/upload/22-01-31-18-43-13-2022.png"
-    },
-    {
         "name": "翻译",
         "url": "https://fanyi.baidu.com",
         "icon": "fa fa-language",

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-cmn-hans" class="font-auto">
 <head>
@@ -28,14 +27,14 @@
     </div>
 </header>
 <main>
-    <h1 id="time" onclick="scroll2page()" style="font-family:'Microsoft Yahei Light','Microsoft Yahei',PingFangSC-Regular,Helvetica,sans-serif,'等线';color:white;font-size:2.5em;font-weight:normal;text-shadow:0 0 35px grey;text-align:center;margin:0;margin-bottom:20px;margin-top:80px">新年好</h1>
+    <h1 id="time" onclick="scroll2page()" style="font-family:'Microsoft Yahei Light','Microsoft Yahei',PingFangSC-Regular,Helvetica,sans-serif,'等线';color:white;font-size:2.5em;font-weight:normal;text-shadow:0 0 35px grey;text-align:center;margin:0;margin-bottom:20px;margin-top:80px"></h1>
     <section class="navi-search" style="height:100vh;text-align:center">
-        <span class="input-box" style="backdrop-filter: blur(35px);background: rgba(255, 18, 18, 0.5);">
+        <span class="input-box" style="backdrop-filter: blur(35px);background: rgba(0,0,0,0.3);">
             <div class="search-select" title="切换搜索引擎" style="display:none">
                 <div class="iconfont icon-baidu"></div>
             </div>
             <div class="search-selector"></div>
-            <input type="text" placeholder="新年好" onfocus="searchstart()" onblur="searchstop()" onkeydown="entersearch(event)"/>
+            <input type="text" placeholder="Search" onfocus="searchstart()" onblur="searchstop()" onkeydown="entersearch(event)"/>
         </span>
 		<div align="center">
 			<h1 onclick="copyyiyan()" id="yiyan" style="border-radius:10px;backdrop-filter:blur(5px);display:inline-block;font-family:微软雅黑;color:white;font-size:0.9em;font-weight:lighter;text-shadow:0 0 5px grey;text-align:center;margin:0;margin-top:20vh">正在加载一言......</h1>
@@ -56,7 +55,7 @@
 <script>WIDGET = {"CONFIG":{"modules": "01234","background": "5","tmpColor":"FFFFFF","tmpSize":"16","cityColor":"FFFFFF","citySize":"16","aqiColor":"FFFFFF","aqiSize": "16","weatherIconSize":"24",    "alertIconSize": "18",    "padding": "10px 10px 10px 10px",    "shadow": "0","language": "auto",    "fixed": "false",    "vertical": "top",    "horizontal": "left",    "key": "079764eefd5740d9b9efd86ffefabd78"  }}</script>
 <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script>
 <footer id="footer" style="text-align:center">
-    <p style="font-family:'Microsoft Yahei Light','Microsoft Yahei',PingFangSC-Regular,Helvetica,sans-serif,'等线';display:inline-block;border-radius:10px;backdrop-filter:blur(5px)">© 2022 <a href="https://space.bilibili.com/18853927" target="_blank">是鱼布斯啊</a>&<a href="https://simsoft.top/" target="_blank">YanJi</a> | <a href="http://beian.miit.gov.cn/" target="_blank">赣ICP备2022000685号</a> | <a href="https://www.douyin.com/newyear" target="_blank">春晚直播</a></p>
+    <p style="font-family:'Microsoft Yahei Light','Microsoft Yahei',PingFangSC-Regular,Helvetica,sans-serif,'等线';display:inline-block;border-radius:10px;backdrop-filter:blur(5px)">© 2022 <a href="https://space.bilibili.com/18853927" target="_blank">是鱼布斯啊</a>&<a href="https://simsoft.top/" target="_blank">YanJi</a> | <a href="http://beian.miit.gov.cn/" target="_blank">赣ICP备2022000685号</a></p>
 </footer>
 <window>
     <section class="the-window updated">
@@ -67,12 +66,10 @@
         </div>
         <div class="window-body">
             <article>
-                <h2>更新日期:2022/1/31</h2>
+                <h2>更新日期:2022/1/30</h2>
                 <a href="https://space.bilibili.com/18853927" target="_blank">此次开发者:YuXuan(Yubius)</a>
 
                 <h3>此次更新内容</h3> 
-		    <li>新年好！增加春晚直播快捷捷径</li>
-                    <li>新年好！搜索框改为红色</li>
                     <li>“技巧”更改为“更新日志”，标志着布斯的每一次更新都将被记录</li>
                     <li>“关于”界面全面使用BiusUI，更富有创造力</li>
                     <li>“搜索框”从亚克力变为云朵效果，更优雅</li>
@@ -198,18 +195,18 @@
 	function scroll1page(){$("body").attr("style","top:0;transition:all .5s");$(".navi-background-mask").css("opacity","0");$("#backgroundstyle").html(".navi-background{}");}
 	function sayhello(){
 		now = new Date(),hour = now.getHours()
-		if(hour < 6){var word="新年好！可以点击“时间”，进入“捷径”界面，并选择“春晚直播”"}
-		else if (hour < 9){var word="新年好！可以点击“时间”，进入“捷径”界面，并选择“春晚直播”"}
-		else if (hour < 12){var word="新年好！可以点击“时间”，进入“捷径”界面，并选择“春晚直播”"}
-		else if (hour < 14){var word="新年好！可以点击“时间”，进入“捷径”界面，并选择“春晚直播”"}
-		else if (hour < 17){var word="新年好！可以点击“时间”，进入“捷径”界面，并选择“春晚直播”"}
-		else if (hour < 19){var word="新年好！可以点击“时间”，进入“捷径”界面，并选择“春晚直播”"}
-		else if (hour < 22){var word="新年好！可以点击“时间”，进入“捷径”界面，并选择“春晚直播”"}
+		if(hour < 6){var word="凌晨好"}
+		else if (hour < 9){var word="早上好"}
+		else if (hour < 12){var word="上午好"}
+		else if (hour < 14){var word="中午好"}
+		else if (hour < 17){var word="下午好"}
+		else if (hour < 19){var word="傍晚好"}
+		else if (hour < 22){var word="晚上好"}
 		else {var word="夜里好"}
 		ks.notice(word+"！",{time:2000,color:"green"})
 	}
-	function searchstart(){$("#backgroundstyle").html(".navi-background{transform:scale(1.1)}");$(".input-box").attr("style","backdrop-filter: blur(5px);background: rgba(255, 18, 18, 0.74);transition:all .2s");$(".navi-background-mask").css("opacity","1")}
-	function searchstop(){$("#backgroundstyle").html(".navi-background{}");$(".input-box").attr("style","backdrop-filter:blur(35px);background: rgba(255, 18, 18, 0.5);transition:all .2s");$(".navi-background-mask").css("opacity","0")}
+	function searchstart(){$("#backgroundstyle").html(".navi-background{transform:scale(1.1)}");$(".input-box").attr("style","backdrop-filter: blur(5px);background: rgba(0,0,0,1);transition:all .2s");$(".navi-background-mask").css("opacity","1")}
+	function searchstop(){$("#backgroundstyle").html(".navi-background{}");$(".input-box").attr("style","backdrop-filter:blur(35px);background: rgba(0,0,0,0.3);transition:all .2s");$(".navi-background-mask").css("opacity","0")}
 	window.onload=showtime();getyiyan();sayhello();loadupdate()
 	function changewall(){
 	    var img = new Image();
