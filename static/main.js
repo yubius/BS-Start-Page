@@ -41,7 +41,7 @@ var data = {
     back_method: [
         {
             "name": "冬奥",
-            "url": "/wallpaper/冬奥.png",
+            "url": "/wallpaper/冬奥.jpg",
             "set": "center/cover no-repeat"
         },
         {
