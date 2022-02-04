@@ -41,7 +41,7 @@ var data = {
     back_method: [
         {
             "name": "冬奥",
-            "url": "https://imgcdn.simsoft.top/upload/22-02-04-18-45-55-冬奥.jpg",
+            "url": "/wallpaper/冬奥.png",
             "set": "center/cover no-repeat"
         },
         {
@@ -51,12 +51,12 @@ var data = {
         },
         {
             "name": "未来",
-            "url": "https://imgcdn.simsoft.top/upload/22-02-04-18-39-51-未来.png",
+            "url": "/wallpaper/未来.png",
             "set": "center/cover no-repeat"
         },
         {
             "name": "历史",
-            "url": "https://imgcdn.simsoft.top/upload/22-02-04-18-40-24-历史.png",
+            "url": "/wallpaper/历史.png",
             "set": "center/cover no-repeat"
         },
 		{
