@@ -1,12 +1,6 @@
 /* ----
 
-# KStart
-# By: Dreamer-Paul
-# Last Update: 2020.6.6
-
-一个简洁不失细节的起始页
-
-本代码为奇趣保罗原创，并遵守 MIT 开源协议。欢迎访问我的博客：https://paugram.com
+感谢您使用布斯起始页
 
 ---- */
 
@@ -46,8 +40,23 @@ var data = {
     window: 0,
     back_method: [
         {
+            "name": "冬奥",
+            "url": "https://imgcdn.simsoft.top/upload/22-02-04-18-45-55-冬奥.jpg",
+            "set": "center/cover no-repeat"
+        },
+        {
             "name": "必应壁纸",
             "url": "https://api.simsoft.top/bing/api.php?f=img",
+            "set": "center/cover no-repeat"
+        },
+        {
+            "name": "未来",
+            "url": "https://imgcdn.simsoft.top/upload/22-02-04-18-39-51-未来.png",
+            "set": "center/cover no-repeat"
+        },
+        {
+            "name": "历史",
+            "url": "https://imgcdn.simsoft.top/upload/22-02-04-18-40-24-历史.png",
             "set": "center/cover no-repeat"
         },
 		{
