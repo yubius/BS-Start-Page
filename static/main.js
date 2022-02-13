@@ -40,11 +40,6 @@ var data = {
     window: 0,
     back_method: [
         {
-            "name": "冬奥",
-            "url": "/wallpaper/冬奥.jpg",
-            "set": "center/cover no-repeat"
-        },
-        {
             "name": "必应壁纸",
             "url": "https://api.simsoft.top/bing/api.php?f=img",
             "set": "center/cover no-repeat"
@@ -57,6 +52,11 @@ var data = {
         {
             "name": "历史",
             "url": "/wallpaper/历史.png",
+            "set": "center/cover no-repeat"
+        },
+        {
+            "name": "冬奥",
+            "url": "/wallpaper/冬奥.jpg",
             "set": "center/cover no-repeat"
         },
 		{
