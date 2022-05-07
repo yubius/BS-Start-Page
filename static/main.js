@@ -41,17 +41,17 @@ var data = {
     back_method: [
         {
             "name": "未来",
-            "url": "/wallpaper/未来.png",
+            "url": "https://imgcdn.simsoft.top/1651927514-未来.png",
             "set": "center/cover no-repeat"
         },
         {
             "name": "历史",
-            "url": "/wallpaper/历史.png",
+            "url": "https://imgcdn.simsoft.top/1651927429-历史.png",
             "set": "center/cover no-repeat"
         },
         {
             "name": "必应壁纸",
-            "url": "https://www.yangshangzhen.com/bing/wallpaper",
+            "url": "https://api.paugram.com/bing",
             "set": "center/cover no-repeat"
         },
         {
