@@ -41,12 +41,12 @@ var data = {
     back_method: [
         {
             "name": "未来",
-            "url": "https://imgcdn.simsoft.top/1651927514-未来.png",
+            "url": "https://imgcdn.simsoft.top/1651928161-future.png",
             "set": "center/cover no-repeat"
         },
         {
             "name": "历史",
-            "url": "https://imgcdn.simsoft.top/1651927429-历史.png",
+            "url": "https://imgcdn.simsoft.top/1651928263-history.png",
             "set": "center/cover no-repeat"
         },
         {
@@ -56,7 +56,7 @@ var data = {
         },
         {
             "name": "风景轮换",
-            "url": "https://api.ixiaowai.cn/gqapi/gqapi.php",
+            "url": "https://tu.ltyuanfang.cn/api/fengjing.php",
             "set": "center/cover no-repeat"
         },
         {
