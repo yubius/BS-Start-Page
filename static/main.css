@@ -314,7 +314,7 @@ window.active{
     cursor: pointer;
     font-size: 1.17em;
     border-radius: 1em;
-    background: rgba(255, 255, 255, 0);
+    background: rgb(255, 86, 86);
 }
 
 .the-window .window-body{
