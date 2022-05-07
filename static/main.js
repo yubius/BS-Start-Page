@@ -41,7 +41,12 @@ var data = {
     back_method: [
         {
             "name": "必应壁纸",
-            "url": "https://api.simsoft.top/bing/api.php?f=img",
+            "url": "https://www.yangshangzhen.com/bing/wallpaper",
+            "set": "center/cover no-repeat"
+        },
+        {
+            "name": "风景轮换",
+            "url": "https://api.ixiaowai.cn/gqapi/gqapi.php",
             "set": "center/cover no-repeat"
         },
         {
