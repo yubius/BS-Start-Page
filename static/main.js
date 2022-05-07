@@ -55,7 +55,7 @@ var data = {
             "set": "center/cover no-repeat"
         },
         {
-            "name": "风景轮换",
+            "name": "远方风景",
             "url": "https://tu.ltyuanfang.cn/api/fengjing.php",
             "set": "center/cover no-repeat"
         },
