@@ -40,22 +40,22 @@ var data = {
     window: 0,
     back_method: [
         {
-            "name": "未来",
-            "url": "https://imgcdn.simsoft.top/1651928161-future.png",
-            "set": "center/cover no-repeat"
-        },
-        {
-            "name": "历史",
-            "url": "https://imgcdn.simsoft.top/1651928263-history.png",
-            "set": "center/cover no-repeat"
-        },
-        {
             "name": "必应壁纸",
             "url": "https://api.paugram.com/bing",
             "set": "center/cover no-repeat"
         },
         {
-            "name": "远方风景",
+            "name": "未来",
+            "url": "/wallpaper/future.png",
+            "set": "center/cover no-repeat"
+        },
+        {
+            "name": "历史",
+            "url": "/wallpaper/history.png",
+            "set": "center/cover no-repeat"
+        },
+        {
+            "name": "风景轮换Beta",
             "url": "https://tu.ltyuanfang.cn/api/fengjing.php",
             "set": "center/cover no-repeat"
         },
