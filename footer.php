@@ -1,0 +1,3 @@
+<footer id="footer" style="text-align:center">
+    <p style="font-family:'Microsoft Yahei Light','Microsoft Yahei',PingFangSC-Regular,Helvetica,sans-serif,'等线';display:inline-block;border-radius:10px;backdrop-filter:blur(5px)">© 2022 <a href="https://space.bilibili.com/18853927" target="_blank">是鱼布斯啊</a>&<a href="https://simsoft.top" target="_blank">YanJi</a> | <a href="https://github.com/yubius/yubius.github.com/discussions" target="_blank">帮助反馈</a> | <a href="https://github.com/yubius/yubius.github.com/discussions/categories/%E7%BD%91%E5%9D%80%E6%8F%90%E4%BA%A4" target="_blank">提交网址</a> | <a href="https://jq.qq.com/?_wv=1027&k=wtADllTR" target="_blank">加官方群</a></p>
+</footer>
