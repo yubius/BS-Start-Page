@@ -41,17 +41,22 @@ var data = {
     back_method: [
         {
             "name": "必应壁纸",
-            "url": "https://api.simsoft.top/bing/api.php?f=img",
+            "url": "https://api.paugram.com/bing",
             "set": "center/cover no-repeat"
         },
         {
             "name": "未来",
-            "url": "/wallpaper/未来.png",
+            "url": "/wallpaper/future.png",
             "set": "center/cover no-repeat"
         },
         {
             "name": "历史",
-            "url": "/wallpaper/历史.png",
+            "url": "/wallpaper/history.png",
+            "set": "center/cover no-repeat"
+        },
+        {
+            "name": "风景轮换Beta",
+            "url": "https://tu.ltyuanfang.cn/api/fengjing.php",
             "set": "center/cover no-repeat"
         },
         {
