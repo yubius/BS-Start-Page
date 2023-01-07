@@ -41,7 +41,7 @@ var data = {
     back_method: [
         {
             "name": "必应壁纸",
-            "url": "https://api.simsoft.top/bing/api.php?f=img",
+            "url": "https://api.paugram.com/bing",
             "set": "center/cover no-repeat"
         },
         {
