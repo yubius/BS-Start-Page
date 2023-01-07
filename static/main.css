@@ -11,21 +11,11 @@
 ---- */
 
 :root{
-  color: #555;
-
-  --green: #158e23;
-  --primary: var(--green);
-
   --shadow: 0 0 5em rgba(0, 0, 0, .1);
   --shadow-thin: 0 0 1em rgba(0, 0, 0, .3);
   --shadow-thick: 0 0 5em rgba(0, 0, 0, .2);
 
-  --input-bg: #fff;
-  --search-bg: #fff;
-  --secondly-input-bg: rgba(0, 0, 0, .05);
-
-  /* 和背景主体反过来的字体颜色 */
-  --font-color: #333;
+  --font-color: #666;
   --font-shadow: 0 0 5px #fff, 0 2px 5px #fff;
 }
 
