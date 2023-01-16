@@ -1,3 +1,25 @@
-# yubius START
+<p align="center">
+<img src="https://yubius.com/static/icon.png"/>
+</p>
 
-一个简洁不失细节的起始页
+<div align="center">
+
+# 布斯起始页
+
+
+`布斯起始页`是一款精美的浏览器新建标签页
+
+</div>
+
+<div align="center">
+  
+**@是鱼布斯啊**
+  
+
+## 官方QQ交流群`372561925`
+
+<https://jq.qq.com/?_wv=1027&k=oWFkNZWD>
+
+## 哔哩哔哩`@是鱼布斯啊`
+
+<https://space.bilibili.com/18853927>
