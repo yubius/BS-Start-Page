@@ -4,8 +4,7 @@
 
 ---- */
 if(!localStorage.firstUse){
-    localStorage.firstUse=0;
-    必应
+    localStorage.firstUse=0;必应
 }
 
 var obj = {
