@@ -5,7 +5,7 @@
 ---- */
 if(!localStorage.firstUse){
     localStorage.firstUse=0;
-	必应
+    必应
 }
 
 var obj = {
@@ -143,10 +143,10 @@ var data = {
         },
     ],
     user: {
-        search: 0,
-        background: 0,
-        sites: [],
-        custom: []
+        search: 1,
+        background: 1,
+        sites: [1],
+        custom: [1]
     }
 }
 
