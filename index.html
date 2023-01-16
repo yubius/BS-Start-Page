@@ -27,9 +27,9 @@
         </div>
     </header>
 <main>
-    <h1 id="time" onclick="scroll2page()" style="font-family:'Microsoft Yahei Light','Microsoft Yahei',PingFangSC-Regular,Helvetica,sans-serif,'等线';color:white;font-size:2.5em;font-weight:normal;text-shadow:0 0 35px grey;text-align:center;margin:0;margin-bottom:20px;margin-top:80px"></h1>
+    <h1 id="time" onclick="scroll2page()" style="font-family:'Microsoft Yahei Light','Microsoft Yahei',PingFangSC-Regular,Helvetica,sans-serif,'等线';color:rgb(255, 255, 255);font-size:2.5em;font-weight:normal;text-shadow:0 0 35px grey;text-align:center;margin:0;margin-bottom:20px;margin-top:80px"></h1>
     <section class="navi-search" style="height:100vh;text-align:center">
-        <span class="input-box" style="backdrop-filter: blur(35px);background: rgba(0,0,0,0.3);">
+        <span class="input-box" style="backdrop-filter: blur(35px);background: rgba(255, 255, 255, 0.3);">
             <div class="search-select" title="切换搜索引擎" style="display:none">
                 <div class="iconfont icon-baidu"></div>
             </div>
@@ -212,7 +212,7 @@
 		else {var word="夜里好"}
 		ks.notice(word+"！",{time:2000,color:"green"})
 	}
-	function searchstart(){$("#backgroundstyle").html(".navi-background{transform:scale(1.1)}");$(".input-box").attr("style","backdrop-filter: blur(5px);background: rgba(0,0,0,1);transition:all .2s");$(".navi-background-mask").css("opacity","1")}
+	function searchstart(){$("#backgroundstyle").html(".navi-background{transform:scale(1.1)}");$(".input-box").attr("style","backdrop-filter: blur(5px);background: rgba(225,225,225,0.85);transition:all .2s");$(".navi-background-mask").css("opacity","1")}
 	function searchstop(){$("#backgroundstyle").html(".navi-background{}");$(".input-box").attr("style","backdrop-filter:blur(35px);background: rgba(0,0,0,0.3);transition:all .2s");$(".navi-background-mask").css("opacity","0")}
 	window.onload=showtime();getyiyan();sayhello();loadupdate()
 	function changewall(){
