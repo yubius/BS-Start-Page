@@ -3,6 +3,10 @@
 感谢您使用布斯起始页
 
 ---- */
+if(!localStorage.firstUse){
+    localStorage.firstUse=0;
+    //这里设置一个默认的搜索引擎
+}
 
 var obj = {
     header: {
@@ -145,7 +149,6 @@ var data = {
         custom: []
     }
 }
-
 
 var methods = {
     get: function (webData) {
