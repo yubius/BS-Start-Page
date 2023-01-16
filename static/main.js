@@ -4,9 +4,9 @@
 
 ---- */
 if(!localStorage.firstUse){
-    localStorage.firstUse=0;
-    search: 0;
-    必应
+    localStorage.firstUse=1;
+    search:1;
+    百度
 }
 
 var obj = {
@@ -144,7 +144,7 @@ var data = {
         },
     ],
     user: {
-        search: 0,
+        search:1,
         background: 0,
         sites: [],
         custom: []
