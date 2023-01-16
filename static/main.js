@@ -117,7 +117,7 @@ var data = {
             "url": "https://www.baidu.com/s?wd="
         },
         {
-            "name": "无追-支持多搜索引擎切换            ",
+            "name": "无追",
             "icon": "360so",
             "url": "https://www.wuzhuiso.com/s?ie=utf-8&fr=none&src=360sou_newhome&q="
         },
