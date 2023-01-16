@@ -5,7 +5,7 @@
 ---- */
 if(!localStorage.firstUse){
     localStorage.firstUse=0;
-    //这里设置一个默认的搜索引擎
+    "url":"https://cn.bing.com/search?q="
 }
 
 var obj = {
