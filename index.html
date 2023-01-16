@@ -68,8 +68,16 @@
             <article>
                 <a href="yubius.com"><img src="https://imgcdn.simsoft.top/1673011080-自定义模板 (1).jpg" alt="布斯起始页"></a>
                 <h3>    </h3>
-                <h2>更新日期:2023/1/16</h2>
-                <li>新年快乐！解决长期困扰的搜索框无响应问题，支持无追搜索引擎，搭载全新Mica设计风格，更灵动更时尚。</li>
+                <blockquote>
+                        <h2>上一次更新2023/1/16</h2>
+                  </blockquote>
+                    <li>新年快乐！</li>
+                <ol>
+                    <li>解决长期困扰的搜索框无响应问题</li>
+                    <li>支持无追搜索引擎[无追融合了多引擎内容]</li>
+                    <li>搭载全新Mica设计风格更灵动更时尚</li>
+                </ol>
+               
                 <h2>布斯驭骏引擎为你而驱动</h2>
                 <li>稳定快速的服务器、简而易用的操作界面、美轮美奂的个性化体验...无不得益于布斯驭骏引擎的强劲驱动</li>
                 <h2>布斯尊重且保障你的权利</h2>
@@ -137,11 +145,13 @@
             <fieldset>
                 <label>
                     <span>搜索引擎偏好</span>
+                    <img src="https://imgcdn.simsoft.top/upload/22-01-29-17-26-12-help.png" style="float:right;margin-top: 5px;" onclick="ks.notice('布斯推荐使用必应或无追搜索引擎 ',{color:'green',time:5000})" height="15px">
+
                     <select name="search" data-key="search_method"></select>
                 </label>
                 <label>
                     <span>亚克力特效</span>
-                    <img src="https://imgcdn.simsoft.top/upload/22-01-29-17-26-12-help.png" style="float:right;margin-top: 5px;" onclick="ks.notice('使用亚克力特效会带来更好看的界面，但在大屏设备上会带来严重掉帧卡顿。如果您在使用过程中发现不流畅，建议关闭此选项。',{color:'green',time:5000})" height="15px">
+                    <img src="https://imgcdn.simsoft.top/upload/22-01-29-17-26-12-help.png" style="float:right;margin-top: 5px;" onclick="ks.notice('使用亚克力特效会带来更好看的界面，但在大屏设备上会带来严重掉帧卡顿。如果您在使用过程中发现不流畅，可以关闭此选项。',{color:'green',time:5000})" height="15px">
                     <select id="blur-set" onchange="saveblur()">
 						<option value="on">允许使用亚克力特效</option>
 						<option value="off">关闭亚克力特效</option>
