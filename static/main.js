@@ -58,11 +58,7 @@ var data = {
             "url": "/wallpaper/history.png",
             "set": "center/cover no-repeat"
         },
-        {
-            "name": "风景轮换Beta",
-            "url": "https://tu.ltyuanfang.cn/api/fengjing.php",
-            "set": "center/cover no-repeat"
-        },
+
         {
             "name": "冬奥",
             "url": "/wallpaper/冬奥.jpg",
@@ -113,14 +109,18 @@ var data = {
         {
             "name": "必应",
             "icon": "bing",
-            "url": "https://cn.bing.com/search?q="
+            "url": "https://bing.com/search?q="
         },
 		{
             "name": "百度",
             "icon": "baidu",
             "url": "https://www.baidu.com/s?wd="
         },
-
+        {
+            "name": "无追",
+            "icon": "360so",
+            "url": "https://www.wuzhuiso.com/s?ie=utf-8&fr=none&src=360sou_newhome&q="
+        },
         {
             "name": "谷歌",
             "icon": "google",
@@ -131,16 +131,16 @@ var data = {
             "icon": "360so",
             "url": "https://www.so.com/s?q="
         },
+		{
+            "name": "夸克",
+            "icon": "quark",
+            "url": "https://quark.sm.cn/s?q="
+        },
         {
             "name": "DuckDuckGo",
             "icon": "duckduckgo",
             "url": "https://duckduckgo.com/?q="
         },
-		{
-            "name": "夸克搜索",
-            "icon": "quark",
-            "url": "https://quark.sm.cn/s?q="
-        }
     ],
     user: {
         search: 0,
