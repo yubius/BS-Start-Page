@@ -143,10 +143,10 @@ var data = {
         },
     ],
     user: {
-        search: 1,
-        background: 1,
-        sites: [1],
-        custom: [1]
+        search: 0,
+        background: 0,
+        sites: [],
+        custom: []
     }
 }
 
