@@ -308,7 +308,7 @@ window.active{
     position: absolute;
 
     border: none;
-    color: #fff;
+    color: rgb(255, 0, 0);
     padding: 0;
     width: 1.5em;
     cursor: pointer;
