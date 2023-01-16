@@ -5,7 +5,7 @@
 ---- */
 if(!localStorage.firstUse){
     localStorage.firstUse=0;
-    "url":"https://cn.bing.com/search?q="
+    必应
 }
 
 var obj = {
