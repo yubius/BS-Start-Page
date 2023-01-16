@@ -5,6 +5,7 @@
 ---- */
 if(!localStorage.firstUse){
     localStorage.firstUse=0;
+    search: 0;
     必应
 }
 
