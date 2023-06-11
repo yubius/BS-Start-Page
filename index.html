@@ -3,209 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="SimSoft,YSH,YanShuHao,盐鸡,个人网站,起始页,新标签页,Yubius,是鱼布斯啊,鱼布斯,布斯,Bius,布斯起始页,浏览器,美化,上网主页,网址导航,纯净,无广告">
-    <meta name="description" content="简洁·便捷·时尚！这里是由SimSoft与鱼布斯合作开发的布斯起始页~">
-    <title>布斯起始页</title>
-    <link rel="icon" href="static/icon.png" sizes="192x192"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Kico-Style/kico.css">
-    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1809713_rg58vy6eb7.css">
-    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-	<style>.navi-loading-mask{display:none!important;transition:all .5s!important;z-index:10;background:rgba(255,255,255,0.9);position:fixed;top:0;bottom:0;left:0;right:0;opacity:1}</style>
-    <link rel="stylesheet" href="static/main.css?3.141592">
-
+    <title>奇趣起始页</title>
+    <link rel="icon" href="static/icon.png" sizes="192x192" />
+    <link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/Dreamer-Paul/Kico-Style@master/kico.css" />
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1809713_7obvxtx02f.css" />
+    <link href="https://fastly.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="static/main.css" />
+    <script src="https://fastly.jsdelivr.net/gh/Dreamer-Paul/Kico-Style/kico.js" defer></script>
+    <script src="static/main.js" defer></script>
 </head>
-<body style="top:0;transition:all .5s" class="dark" onload="loadstyle()">
-    <main>
-        <h1 id="time" onclick="scroll2page()" style="font-family:'Microsoft Yahei Light','Microsoft Yahei',PingFangSC-Regular,Helvetica,sans-serif,'等线';color:white;font-size:2.5em;font-weight:normal;text-shadow:0 0 5px grey;text-align:center;margin:0;margin-bottom:20px;margin-top:80px">你好</h1>
-        <section class="navi-search" style="height:100vh;text-align:center">
-            <span class="input-box search-backg">
-                <div class="search-select" title="切换搜索引擎" style="display:none">
-                    <div class="iconfont icon-baidu"></div>
-                </div>
-                <div class="search-selector"></div>
-                <input type="text" placeholder="Search" onfocus="searchstart()" onblur="searchstop()" onkeydown="entersearch(event)"/>
-            </span>
-            <div align="center">
-                <h1 onclick="copyyiyan()" id="yiyan" style="border-radius:10px;backdrop-filter:blur(5px);display:inline-block;font-family:微软雅黑;color:white;font-size:0.9em;font-weight:lighter;text-shadow:0 0 5px grey;text-align:center;margin:0;margin-top:20vh">正在加载一言......</h1>
-            </div>
-        </section>
-        <div style="height:calc(100vh - 300px);overflow-y:scroll;padding-bottom:30px;margin-top:30px" id="navisites-section">
-            <h1 id="time2" onclick="scroll1page()" style="font-family:'Microsoft Yahei Light','Microsoft Yahei',PingFangSC-Regular,Helvetica,sans-serif,'等线';color:white;font-size:2.5em;font-weight:normal;text-shadow:0 0 5px grey;text-align:center;margin:0;margin-bottom:20px"></h1>
-            <section class="navi-items"></section>
-        </div>
-        <section class="navi-background" style="transition:all .2s;"></section>
-        <section class="navi-background-mask" style="transition:all .2s;"></section>
-        <section class="navi-loading-mask" style="transition:all .2s;" align="center">
-            <img src="/static/icon.png" height="200px" width="200px" style="margin-top:calc(50vh - 100px)">
-        </section>
-    </main>
-    <div id="he-plugin-simple"></div>
-    <style>.wv-lt-refresh{display:none!important}.s-sticker-cond.module img{max-width:30px!important;width:30px!important;height:30px!important}.s-sticker-cond.module{padding:0!important}.s-sticker-city.module,.s-sticker-tmp.module,.s-sticker-qlty.module{display:none!important}</style>
-    <div class="weather">
-      <script>WIDGET = {"CONFIG":{"modules": "01234","background": "5","tmpColor":"FFFFFF","tmpSize":"16","cityColor":"FFFFFF","citySize":"16","aqiColor":"FFFFFF","aqiSize": "16","weatherIconSize":"24",    "alertIconSize": "18",    "padding": "10px 10px 10px 10px",    "shadow": "0","language": "auto",    "fixed": "false",    "vertical": "top",    "horizontal": "left",    "key": "079764eefd5740d9b9efd86ffefabd78"  }}</script>
-      <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script>
+<body>
+<header>
+    <div class="action-btn edit" ks-tag="bottom" ks-text="管理导航项">
+        <i class="fa fa-edit"></i>
     </div>
-<footer id="footer" style="text-align:center">
-    <p style="font-family:'Microsoft Yahei Light','Microsoft Yahei',PingFangSC-Regular,Helvetica,sans-serif,'等线';display:inline-block;border-radius:10px;backdrop-filter:blur(5px)">© 2022 <a href="https://simsoft.top/" target="_blank">SimSoft</a> | <a href="http://beian.miit.gov.cn/" target="_blank">赣ICP备2022000685号</a></p>
+    <div class="action-btn updated" ks-tag="bottom" ks-text="更新日志">
+        <i class="fa fa-bullhorn"></i>
+    </div>
+    <div class="action-btn about" ks-tag="bottom" ks-text="关于">
+        <i class="fa fa-info-circle"></i>
+    </div>
+    <div class="action-btn setting" ks-tag="bottom" ks-text="设置">
+        <i class="fa fa-cog"></i>
+    </div>
+</header>
+<main>
+    <section class="navi-search">
+        <form class="input-box">
+            <div class="search-select" title="切换搜索引擎">
+                <div class="iconfont icon-baidu"></div>
+            </div>
+            <div class="search-selector"></div>
+            <input type="text" placeholder="搜索..."/>
+            <button class="btn transparent" title="搜索"><i class="fa fa-search"></i></button>
+        </form>
+    </section>
+    <section class="navi-items"></section>
+    <section class="navi-background"></section>
+</main>
+<footer>
+    <p>© <script>document.write(new Date().getFullYear())</script> <a href="https://paul.ren" target="_blank">奇趣保罗</a> | <a href="https://github.com/Dreamer-Paul/KStart" target="_blank">参与维护</a></p>
 </footer>
 <window>
     <section class="the-window updated">
         <div class="window-head">
-            <img src="static/icon.png" style="height:30px;float:left">
-            <button>-</button>
-            <h3>技巧</h3>
+            <button data-type="close">×</button>
+            <h3>更新日志</h3>
         </div>
         <div class="window-body">
             <article>
-                <h2>别致技巧</h2>
-                <h3>账号云同步</h3> 
-                <p>是否希望自动同步不同设备的起始页数据？</p>
+                <blockquote>时隔两年，这个老项目又给我成功拿出来挖坟了，还是因为群里有人在用，顿时有了想法，哈哈！</blockquote>
+                <h3>本次更新：</h3>
                 <ul>
-                    <li>在“选项”中，登录“账户”</li>
-                    <li>前往设置开启“自动同步”（默认开启）</li>
-                    <li>下次打开会自动同步数据</li>
+                    <li>增加个人设置导入导出功能，数据丢失是不存在的啦！</li>
+                    <li>增加夜间模式风格，只要你的电脑开启了就自动应用啦！</li>
+                    <li>自定义背景设置项，增加 Unsplash 随机图片源</li>
+                    <li>增加导航项拖拽排序功能</li>
+                    <li>增加导航项管理抽屉，可自由添加和删除你想要的导航项</li>
+                    <li>增加运行模式判断，用户模式下（地址栏输入 <code>?u=paul</code>）仅可读，无法使用任意编辑功能</li>
+                    <li>CSS 样式和细节优化，JS 代码逻辑优化</li>
+                    <li>优化关闭弹窗和抽屉的动画和速度</li>
+                    <li>解决使用抽屉添加导航项导致无法拖拽的问题</li>
+                    <li>打开起始页时，可自动聚焦到搜索框</li>
+                    <li>修复了搜索下拉框不会收回去的问题</li>
                 </ul>
-                <h2>基础技巧</h2> 
-                <h3>设定致美壁纸</h3>
-                <p>是否希望设置壁纸？了解设置精致，美妙的动态壁纸</p>
-                <ul>
-                    <li>打开“设定”</li>
-                    <li>在“致美壁纸”中选择“必应每日壁纸”</li>
-                    <li>然后刷新网站</li>
-                </ul>
-                <p><img src="static/wallpaper.jpg" alt="设定致美壁纸"></p>
-                <h3>访问捷径</h3>
-                <ul>
-                    <li>单击“time”组件以访问/退出捷径</li>
-                    <li>您可以前往“设定”中编辑捷径</li>
-                </ul>
-                <p><img src="static/jiejing.jpg" alt="访问捷径"></p>
+
+                <details>
+                    <summary>上次更新：</summary>
+                    <ul>
+                        <li>优化代码命名和逻辑，增加可读性，更新为现代 JavaScript 写法，鼓励你和我一起参与本项目的 <a href="https://github.com/Dreamer-Paul/KStart" target="_blank">维护</a>！</li>
+                        <li>窗口关闭按钮改为事件委托，修复用户模式下的 Bug（无法进行设置）</li>
+                        <li>增加了搜狗搜索</li>
+                        <li>替换了新的橙色 Logo</li>
+                        <li>调整导航项 DOM 结构，修改版权展示时间</li>
+                        <li>解决了在用户模式下（地址栏输入 <code>?u=paul</code>）配置会被本地覆盖的 Bug</li>
+                        <li>在用户模式下，禁止使用设置功能</li>
+                        <li>页脚版权的时间自动生成，过期（气）是不存在的啦！</li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>更新预告：</summary>
+                    <ul>
+                        <li>更舒适的自定义站点列表体验</li>
+                        <li>可供设定你自己的壁纸（本地或外链）</li>
+                        <li>更易操作的设置面板（可能会在本项目的 2.0 版本实现）</li>
+                    </ul>
+                </details>
             </article>
         </div>
     </section>
     <section class="the-window about">
         <div class="window-head">
-            <img src="static/icon.png" style="height:30px;float:left">
-            <button>-</button>
-            <h3>关于</h3>
+            <button data-type="close">×</button>
+            <h3>关于本项目</h3>
         </div>
         <div class="window-body">
             <article>
-                <p><iframe src="" id="intro-vid" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width:100%;height:50vh">您的设备不支持显示该视频。</iframe></p>
-                <a href="https://space.bilibili.com/18853927"> 
-                    <p style="text-align: center;">                    
-                    <img src="static/哔哩.jpg" width="380%" height="280%" />
-                    </p>
-                 </a>
-                <h2>    </h2>
-                <h2 id="update-date">正在获取...</h2>
-                <p>欢迎使用布斯起始页！本项目建设于 2020/2/21，是一个基于开源项目维护的网站。</p>
-                <p>开发者：Yuxuan(Yubius) & YanJi(SimSoft)</p>
-                <p>一起交流？<a href="https://jq.qq.com/?_wv=1027&k=rU9gu8El" target="_blank">QQ交流群</a>参与布斯的反馈，获取支持</p>
-                <p>进一步了解？<a href="https://space.bilibili.com/18853927" target="_blank">bilibili</a>了解有关布斯的最新动态</p>
+                <p><img src="static/about.jpg" alt="关于奇趣起始页"></p>
+                <p>欢迎使用奇趣起始页！本项目建设于 2020/5/9，是一个主打社区形式维护的开源项目。几乎采用原生（JS/CSS）技术实现，性能扛扛的！</p>
+                <p>它的使用方式很简单，只需要在 <a href="https://github.com/Dreamer-Paul/KStart-Sites" target="_blank">本项目的仓库</a> 上提交 PR，即可创造一个属于自己的导航页面。访问它只需要一个 <a href="https://s.paul.ren/?u=paul" target="_blank">URL 后缀</a> 即可直达，无需注册和登录，非常方便易用。</p>
+                <p>现有的类似站点已经很多了，为什么我仍然选择编写了这个项目？这是因为它们都是「<b>闭源的私人项目</b>」，只有作者本人才可以进行维护。</p>
+                <p>与此同时，这些站点的导航项大多已经预设。想要修改它们，要么需要注册后修改，要么就干脆不给改，个人觉得略显鸡肋。如果你更换了电脑，不就需要重新登录了吗？</p>
+                <p>本项目与众不同的地方则是采用了 GitHub 托管的形式，属于“无后端”项目，于是一些看似可以提升用户体验的功能，我暂时没有考虑去实现它。如果你有些好的建议，不妨在项目的 <a href="https://github.com/Dreamer-Paul/KStart/issues" target="_blank">Issues</a> 区进行留言？</p>
                 <h3>类似项目：</h3>
                 <ul>
+                    <li><a href="https://xiaoshu.app" target="_blank" rel="nofollow">小舒同学</a></li>
                     <li><a href="https://limestart.cn" target="_blank" rel="nofollow">青柠起始页</a></li>
-                    <li><a href="https://h.simsoft.top" target="_blank" rel="nofollow">SimTab</a></li>
+                    <li><a href="https://yubius.com" target="_blank" rel="nofollow">布斯起始页（本项目的二改）</a></li>
                 </ul>
-                <h3>使用了：</h3>
+                <h3>使用了开源项目：</h3>
                 <ul>
-                    <li><a href="https://www.iconfont.cn" target="_blank" rel="nofollow">IconFont</a></li>
                     <li><a href="https://github.com/Dreamer-Paul/Kico-Style" target="_blank" rel="nofollow">Kico Style</a></li>
                     <li><a href="https://fontawesome.com" target="_blank" rel="nofollow">FontAwesome</a></li>
-                    <li><a href="https://github.com/Dreamer-Paul/KStart" target="_blank" rel="nofollow">Paul开源项目</a></li>
                 </ul>
-                <h3>意见反馈：</h3>
-                <a href="https://wj.qq.com/s2/9444065/a16d/"> 
-                    <p style="text-align: center;">                    
-                    <img src="static/fk.png" width="380%" height="280%" />
-                    </p>
-                    </a>
+                <h3>使用了第三方服务：</h3>
+                <ul>
+                    <li><a href="https://www.iconfont.cn" target="_blank" rel="nofollow">IconFont</a></li>
+                    <li><a href="https://api.paugram.com" target="_blank">保罗 API</a>（随机动漫壁纸、必应壁纸解析）</li>
+                </ul>
+            </article>
         </div>
     </section>
     <section class="the-window setting">
         <div class="window-head">
-            <img src="static/icon.png" style="height:30px;float:left">
-            <button>-</button>
-            <h3>设定</h3>
+            <button data-type="close">×</button>
+            <h3>设置</h3>
         </div>
         <div class="window-body">
             <fieldset>
                 <label>
-                    <span>搜索引擎偏好</span>
+                    <span>默认搜索引擎：</span>
                     <select name="search" data-key="search_method"></select>
                 </label>
                 <label>
-                    <span>搜索框样式偏好</span>
-                    <select id="search-style" onchange="savestyle()">
-						<option value="black">深色</option>
-						<option value="white">浅色</option>
-						<option value="auto-time">根据时间切换</option>
-						<option value="auto-sys">跟随系统切换</option>
-                    </select>
+                    <span>自定义背景：</span>
+                    <select name="background" data-key="background_type"></select>
                 </label>
                 <label>
-                    <span>亚克力特效</span>
-                    <img src="static/help.svg" style="float:right;margin-top: 5px;" onclick="ks.notice('使用亚克力特效会带来更好看的界面，但在大屏设备上会带来严重掉帧卡顿。如果您在使用过程中发现不流畅，建议关闭此选项。',{color:'green',time:5000})" height="15px">
-                    <select id="blur-set" onchange="saveblur()">
-						<option value="on">允许使用亚克力特效</option>
-						<option value="off">关闭亚克力特效</option>
-                    </select>
+                    <span>减淡动画和视觉效果：</span>
+                    <select name="low_animate" data-key="motion_reduced_enum"></select>
                 </label>
                 <label>
-                    <span>致美壁纸</span>
-                    <img src="static/help.svg" style="float:right;margin-top: 5px;" onclick="ks.notice('选择“必应壁纸”可以每日自动更新壁纸。',{color:'green',time:2000})" height="15px">
-                    <select name="background" data-key="back_method" id="backselect"></select>
+                    <span>自动聚焦到搜索框：</span>
+                    <input name="auto_focus" type="checkbox" class="switch" />
                 </label>
-				<label id="setdiy-area">
-                    <textarea style='width:100%;border-radius:2px;background:transparent;border:1px solid #cccccc;resize:none;height:1em' onchange='savebackground()' id='backurl-input' placeholder="在此处输入自定义壁纸的网址"></textarea>
-                </label>
-				<label>
-                    <span>编辑捷径</span>
-                    <img src="static/help.svg" style="float:right;margin-top: 5px;" onclick="ks.notice('Windows用户请按住Ctrl键多选<br>Mac用户请按住Command键多选',{color:'green',time:2000})" height="15px">
-                    <select multiple name="sites" data-key="sites" style="height: 15em" id="set-site"></select>
-                </label>
-                <label class="sync-option">
-                    <span>云端同步</span>
-                    <select id="sync-set" onchange="savesync()">
-						<option value="on">使用自动同步</option>
-						<option value="off">关闭自动同步</option>
-                    </select>
-                </label>
-                <label>
-                    <span>版本切换</span>
-                    <img src="static/help.svg" style="float:right;margin-top: 5px;" onclick="ks.notice('提示：暂停止访问开发版',{color:'green',time:2000})" height="15px">
-                    <br>
-                  	您正在使用正式版<a href="https://dev.bius.top" target="_blank" rel="nofollow">尝鲜开发版</a></blockquote>
-                </label>
-
-          
-                <p align="center" style="display:none">
-                    <button class="btn small blue" name="reset">恢复默认</button>
-                    <button class="btn small blue" name="output">导出</button>
-                    <button class="btn small blue" name="input" onclick="loadnewsetting()">导入</button>
+                
+                <p class="btn-group">
+                    <button class="btn small primary" id="set-reset" title="重置个人设置为默认值">重置为默认</button>
+                    <button class="btn small transparent" id="set-input" title="导入个人设置">导入</button>
+                    <button class="btn small transparent" id="set-output" title="导出个人设置">导出</button>
+                    <input type="file" id="set-file" hidden />
                 </p>
             </fieldset>
         </div>
     </section>
+    <section class="the-drawer sites">
+        <div class="drawer-head">
+            <button data-type="close">×</button>
+            <h3>管理导航项</h3>
+        </div>
+        <div class="drawer-body">
+            <div class="sites"></div>
+            <p class="add-sites">若想扩展添加更多导航项，欢迎在本项目 Issues 区 <a href="https://github.com/Dreamer-Paul/KStart/issues/1" target="_blank">公共导航列表添加建议区</a> 留言讨论！</p>
+        </div>
+    </section>
 </window>
-<div class="menu-btm" onmouseover="$(this).attr('class','menu-btm-active')" onmouseout="$(this).attr('class','menu-btm')">
-    <img src="https://imgcdn.simsoft.top/upload/21-08-02-08-55-22-菜单.png" width="25px" height="25px"><span style="vertical-align:middle;font-size:1.2em;font-weight:bold;padding-left:20px;white-space:nowrap">选项</span>
-    <br><br>
-    <div class="user" onclick="window.open('//my.bius.top')"><img src="https://imgcdn.simsoft.top/upload/21-08-02-09-01-34-账户.png" width="20px" height="20px"><span style="vertical-align:middle;font-size:1.1em;padding-left:10px;white-space:nowrap;display:inline-block;line-height: 1em;"><span>账户</span><br><span id="uid" style="color:#2f88ff;font-size:0.8em;overflow: hidden;width: 110px;display: inline-block;">获取中...</span></span></div>
-    <div class="action-btn updated"><img src="https://imgcdn.simsoft.top/upload/21-08-02-09-01-06-%E6%8A%80%E5%B7%A7.png" width="20px" height="20px"><span style="vertical-align:middle;font-size:1.1em;padding-left:10px;white-space:nowrap">技巧</span></div>
-    <div class="action-btn about"><img src="https://imgcdn.simsoft.top/upload/21-08-02-09-00-40-%E5%85%B3%E4%BA%8E.png" width="20px" height="20px"><span style="vertical-align:middle;font-size:1.1em;padding-left:10px;white-space:nowrap">关于</span></div>
-    <div class="action-btn setting"><img src="https://imgcdn.simsoft.top/upload/21-08-02-09-01-21-设定.png" width="20px" height="20px"><span style="vertical-align:middle;font-size:1.1em;padding-left:10px;white-space:nowrap">设定</span></div>
-</div>
-<textarea id="yiyaninput" style="position:fixed;top:0;width:0;height:0;opacity:0"></textarea>
-
-<script src="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Kico-Style/kico.js"></script>
-<script src="https://my.bius.top/static/"></script>
-<script src="static/jq.js"></script>
-<script src="https://code.simsoft.top/getCode.php?app=biuso"></script>
-<script src="https://code.simsoft.top/getCode.php?app=bius-o"></script>
-<style id="backgroundstyle"></style><style id="blurstyle"></style>
 </body>
 </html>
-<!-- 代码优化：By SimSoft
-    https://simsoft.top/ -->
