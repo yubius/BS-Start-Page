@@ -62,17 +62,17 @@ function KStart() {
     sites: [],
     background_type: [
       {
+        name: "必应每日壁纸",
+        url: "https://api.paugram.com/bing",
+        set: "center/cover no-repeat",
+      },
+      {
         name: "无背景",
       },
       {
         name: "随机动漫壁纸",
         url: "https://api.paugram.com/wallpaper?source=gh",
         set: "bottom right/60% no-repeat",
-      },
-      {
-        name: "必应每日壁纸",
-        url: "https://api.paugram.com/bing",
-        set: "center/cover no-repeat",
       },
       {
         name: "Unsplash 随机图片",
@@ -82,14 +82,14 @@ function KStart() {
     ],
     search_method: [
       {
-        name: "百度",
-        icon: "baidu",
-        url: "https://www.baidu.com/s?wd=%s",
-      },
-      {
         name: "必应",
         icon: "bing",
         url: "https://cn.bing.com/search?q=%s",
+      },
+      {
+        name: "百度",
+        icon: "baidu",
+        url: "https://www.baidu.com/s?wd=%s",
       },
       {
         name: "谷歌",
