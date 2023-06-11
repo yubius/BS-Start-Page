@@ -62,12 +62,12 @@ function KStart() {
     sites: [],
     background_type: [
       {
+        name: "无背景",
+      },
+      {
         name: "必应每日壁纸",
         url: "https://api.paugram.com/bing",
         set: "center/cover no-repeat",
-      },
-      {
-        name: "无背景",
       },
       {
         name: "随机动漫壁纸",
