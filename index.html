@@ -1,317 +1,211 @@
-<!--
-			·---===[ 布斯起始页Version4 ]===---·
+<!DOCTYPE html>
+<html lang="zh-cmn-hans" class="font-auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="SimSoft,YSH,YanShuHao,盐鸡,个人网站,起始页,新标签页,Yubius,是鱼布斯啊,鱼布斯,布斯,Bius,布斯起始页,浏览器,美化,上网主页,网址导航,纯净,无广告">
+    <meta name="description" content="简洁·便捷·时尚！这里是由SimSoft与鱼布斯合作开发的布斯起始页~">
+    <title>布斯起始页</title>
+    <link rel="icon" href="static/icon.png" sizes="192x192"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Kico-Style/kico.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1809713_rg58vy6eb7.css">
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+	<style>.navi-loading-mask{display:none!important;transition:all .5s!important;z-index:10;background:rgba(255,255,255,0.9);position:fixed;top:0;bottom:0;left:0;right:0;opacity:1}</style>
+    <link rel="stylesheet" href="static/main.css?3.141592">
 
-					★★★★站长★★★★
--> 设计&策划：Yubius（https://space.bilibili.com/18853927）
--> 设计&开发：YanJi_SimSoft（https://simsoft.top）
-
-					★★★★鸣谢★★★★
--> [杨尚臻][https://www.yangshangzhen.com/]热铁盒retiehe.com站长，为本站开发提供许多帮助。
--> [毛若昕][https://maorx.cn/]青柠起始页limestart.cn的开发者，为本站设计提供了许多启发。
--> [交流群的各位群员]为本站细节设计提了很多有价值的建议。
-
-					★★★★声明★★★★
-本站V4全部代码为两位站长开发，并保留对源码的一切版权。
-©布斯起始页 保留所有权利
--->
-<!DOCTYPE HTML>
-<html>
-	<head>
-	  <meta charset="utf-8"/>
-	  <title>布斯起始页</title>
-      <meta name="viewport" content="width=device-width"/>
-	  <link rel="stylesheet" href="static/css/light.css"/>
-	  <link rel="icon" href="static/picture/icon.png"/>
-      <link rel="manifest" href="manifest.json">
-      <meta name="renderer" content="webkit">
-      <meta name="keywords" content="SimSoft,YSH,YanShuHao,盐鸡,个人网站,起始页,新标签页,Yubius,鱼布斯,布斯,Bius,布斯起始页,浏览器,美化,上网主页,网址导航,纯净,无广告">
-      <meta name="description" content="您的效率起点！这里是由SimSoft与鱼布斯合作开发的布斯起始页~">
-      <meta name="referrer" content="no-referrer-when-downgrade">
-	  <script src="static/js/jquery.js"></script>
-
-	</head>
-
-	<body style="overflow:hidden">
-      <h1 class="seo" style="height:0;width:0;overflow:hidden">布斯起始页-官方网站</h1>
-      <style id="maincolor">body{--maincolor:#34a8ff}</style><style id="blurstyle">body{--blur:blur(0px)}</style>
-      <div class="notice" style="" onclick="this.style=''"></div>
-      <div class="publicnotice" style="">
-      	<svg style="vertical-align:middle" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2108" width="20" height="20"><path d="M338.773333 362.666667H170.666667v298.666666h105.578666l45.013334 0.021334 17.258666 0.426666L682.666667 809.258667V214.890667L338.773333 362.666667z m-17.578666-85.333334L768 85.333333v853.333334l-448-191.978667L85.333333 746.666667V277.333333h235.861334zM170.666667 661.333333v85.333334h85.333333v-85.333334H170.666667zM853.333333 298.666667h85.333334v426.666666h-85.333334z" p-id="2109"></path></svg><span style="vertical-align:middle"> 紧急通告丨</span>
-        <span style="vertical-align:middle;width:calc(100% - 140px);display:inline-block" id="n-txt"></span>
-        <svg style="vertical-align:middle" onclick="$('.publicnotice').attr('style','')" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1881" width="20" height="20"><path d="M513 98.2c-229.2 0-415 185.8-415 415s185.8 415 415 415 415-185.8 415-415-185.8-415-415-415z m248.2 663.2C694.9 827.7 606.8 864.2 513 864.2s-181.9-36.5-248.2-102.8C198.5 695.1 162 607 162 513.2c0-93.8 36.5-181.9 102.8-248.2 66.3-66.3 154.4-102.8 248.2-102.8S694.9 198.7 761.2 265C827.5 331.3 864 419.5 864 513.2c0 93.8-36.5 181.9-102.8 248.2z" p-id="1882"></path><path d="M666.3 357.7c-12.5-12.5-32.8-12.5-45.3 0l-109 109-109-109c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l109 109-109 109c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l109-109 109 109c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-109-109 109-109c12.5-12.5 12.5-32.8 0-45.3z" p-id="1883"></path></svg>
-      </div>
-      <body ng-app="myApp" ng-controller="myCtrl" class="ng-scope">
-        <!--[if lt IE 9]>
-    <p class="browserupgrade">你正在使用过时的浏览器。请<a href="https://www.microsoft.com/edge">立即升级浏览器</a>以获得最佳浏览体验。</p>
-    <![endif]-->
-    <div id="kvFileinputModal" class="file-zoom-dialog modal fade" tabindex="-1" aria-labelledby="kvFileinputModalLabel"><div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">详细预览</h5>
-          <span class="kv-zoom-title"></span>
-          <div class="kv-zoom-actions"><button type="button" class="btn btn-sm btn-kv btn-default btn-outline-secondary btn-toggleheader" title="缩放" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="glyphicon glyphicon-resize-vertical"></i></button><button type="button" class="btn btn-sm btn-kv btn-default btn-outline-secondary btn-fullscreen" title="全屏" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="glyphicon glyphicon-fullscreen"></i></button><button type="button" class="btn btn-sm btn-kv btn-default btn-outline-secondary btn-borderless" title="无边界模式" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="glyphicon glyphicon-resize-full"></i></button><button type="button" class="btn btn-sm btn-kv btn-default btn-outline-secondary btn-close" title="关闭当前预览" data-dismiss="modal" aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></button></div>
+</head>
+<body style="top:0;transition:all .5s" class="dark" onload="loadstyle()">
+    <main>
+        <h1 id="time" onclick="scroll2page()" style="font-family:'Microsoft Yahei Light','Microsoft Yahei',PingFangSC-Regular,Helvetica,sans-serif,'等线';color:white;font-size:2.5em;font-weight:normal;text-shadow:0 0 5px grey;text-align:center;margin:0;margin-bottom:20px;margin-top:80px">你好</h1>
+        <section class="navi-search" style="height:100vh;text-align:center">
+            <span class="input-box search-backg">
+                <div class="search-select" title="切换搜索引擎" style="display:none">
+                    <div class="iconfont icon-baidu"></div>
+                </div>
+                <div class="search-selector"></div>
+                <input type="text" placeholder="Search" onfocus="searchstart()" onblur="searchstop()" onkeydown="entersearch(event)"/>
+            </span>
+            <div align="center">
+                <h1 onclick="copyyiyan()" id="yiyan" style="border-radius:10px;backdrop-filter:blur(5px);display:inline-block;font-family:微软雅黑;color:white;font-size:0.9em;font-weight:lighter;text-shadow:0 0 5px grey;text-align:center;margin:0;margin-top:20vh">正在加载一言......</h1>
+            </div>
+        </section>
+        <div style="height:calc(100vh - 300px);overflow-y:scroll;padding-bottom:30px;margin-top:30px" id="navisites-section">
+            <h1 id="time2" onclick="scroll1page()" style="font-family:'Microsoft Yahei Light','Microsoft Yahei',PingFangSC-Regular,Helvetica,sans-serif,'等线';color:white;font-size:2.5em;font-weight:normal;text-shadow:0 0 5px grey;text-align:center;margin:0;margin-bottom:20px"></h1>
+            <section class="navi-items"></section>
         </div>
-
-        <div class="modal-body">
-          <div class="floating-buttons"></div>
-          <div class="kv-zoom-body file-zoom-content krajee-default"></div>
-    <button type="button" class="btn btn-navigate btn-prev" title="预览上一个文件"><i class="glyphicon glyphicon-triangle-left"></i></button> <button type="button" class="btn btn-navigate btn-next" title="预览下一个文件"><i class="glyphicon glyphicon-triangle-right"></i></button>
-        </div>
-      </div>
+        <section class="navi-background" style="transition:all .2s;"></section>
+        <section class="navi-background-mask" style="transition:all .2s;"></section>
+        <section class="navi-loading-mask" style="transition:all .2s;" align="center">
+            <img src="/static/icon.png" height="200px" width="200px" style="margin-top:calc(50vh - 100px)">
+        </section>
+    </main>
+    <div id="he-plugin-simple"></div>
+    <style>.wv-lt-refresh{display:none!important}.s-sticker-cond.module img{max-width:30px!important;width:30px!important;height:30px!important}.s-sticker-cond.module{padding:0!important}.s-sticker-city.module,.s-sticker-tmp.module,.s-sticker-qlty.module{display:none!important}</style>
+    <div class="weather">
+      <script>WIDGET = {"CONFIG":{"modules": "01234","background": "5","tmpColor":"FFFFFF","tmpSize":"16","cityColor":"FFFFFF","citySize":"16","aqiColor":"FFFFFF","aqiSize": "16","weatherIconSize":"24",    "alertIconSize": "18",    "padding": "10px 10px 10px 10px",    "shadow": "0","language": "auto",    "fixed": "false",    "vertical": "top",    "horizontal": "left",    "key": "079764eefd5740d9b9efd86ffefabd78"  }}</script>
+      <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script>
     </div>
+<footer id="footer" style="text-align:center">
+    <p style="font-family:'Microsoft Yahei Light','Microsoft Yahei',PingFangSC-Regular,Helvetica,sans-serif,'等线';display:inline-block;border-radius:10px;backdrop-filter:blur(5px)">© 2022 <a href="https://simsoft.top/" target="_blank">SimSoft</a> | <a href="http://beian.miit.gov.cn/" target="_blank">赣ICP备2022000685号</a></p>
+</footer>
+<window>
+    <section class="the-window updated">
+        <div class="window-head">
+            <img src="static/icon.png" style="height:30px;float:left">
+            <button>-</button>
+            <h3>技巧</h3>
+        </div>
+        <div class="window-body">
+            <article>
+                <h2>别致技巧</h2>
+                <h3>账号云同步</h3> 
+                <p>是否希望自动同步不同设备的起始页数据？</p>
+                <ul>
+                    <li>在“选项”中，登录“账户”</li>
+                    <li>前往设置开启“自动同步”（默认开启）</li>
+                    <li>下次打开会自动同步数据</li>
+                </ul>
+                <h2>基础技巧</h2> 
+                <h3>设定致美壁纸</h3>
+                <p>是否希望设置壁纸？了解设置精致，美妙的动态壁纸</p>
+                <ul>
+                    <li>打开“设定”</li>
+                    <li>在“致美壁纸”中选择“必应每日壁纸”</li>
+                    <li>然后刷新网站</li>
+                </ul>
+                <p><img src="static/wallpaper.jpg" alt="设定致美壁纸"></p>
+                <h3>访问捷径</h3>
+                <ul>
+                    <li>单击“time”组件以访问/退出捷径</li>
+                    <li>您可以前往“设定”中编辑捷径</li>
+                </ul>
+                <p><img src="static/jiejing.jpg" alt="访问捷径"></p>
+            </article>
+        </div>
+    </section>
+    <section class="the-window about">
+        <div class="window-head">
+            <img src="static/icon.png" style="height:30px;float:left">
+            <button>-</button>
+            <h3>关于</h3>
+        </div>
+        <div class="window-body">
+            <article>
+                <p><iframe src="" id="intro-vid" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width:100%;height:50vh">您的设备不支持显示该视频。</iframe></p>
+                <a href="https://space.bilibili.com/18853927"> 
+                    <p style="text-align: center;">                    
+                    <img src="static/哔哩.jpg" width="380%" height="280%" />
+                    </p>
+                 </a>
+                <h2>    </h2>
+                <h2 id="update-date">正在获取...</h2>
+                <p>欢迎使用布斯起始页！本项目建设于 2020/2/21，是一个基于开源项目维护的网站。</p>
+                <p>开发者：Yuxuan(Yubius) & YanJi(SimSoft)</p>
+                <p>一起交流？<a href="https://jq.qq.com/?_wv=1027&k=rU9gu8El" target="_blank">QQ交流群</a>参与布斯的反馈，获取支持</p>
+                <p>进一步了解？<a href="https://space.bilibili.com/18853927" target="_blank">bilibili</a>了解有关布斯的最新动态</p>
+                <h3>类似项目：</h3>
+                <ul>
+                    <li><a href="https://limestart.cn" target="_blank" rel="nofollow">青柠起始页</a></li>
+                    <li><a href="https://h.simsoft.top" target="_blank" rel="nofollow">SimTab</a></li>
+                </ul>
+                <h3>使用了：</h3>
+                <ul>
+                    <li><a href="https://www.iconfont.cn" target="_blank" rel="nofollow">IconFont</a></li>
+                    <li><a href="https://github.com/Dreamer-Paul/Kico-Style" target="_blank" rel="nofollow">Kico Style</a></li>
+                    <li><a href="https://fontawesome.com" target="_blank" rel="nofollow">FontAwesome</a></li>
+                    <li><a href="https://github.com/Dreamer-Paul/KStart" target="_blank" rel="nofollow">Paul开源项目</a></li>
+                </ul>
+                <h3>意见反馈：</h3>
+                <a href="https://wj.qq.com/s2/9444065/a16d/"> 
+                    <p style="text-align: center;">                    
+                    <img src="static/fk.png" width="380%" height="280%" />
+                    </p>
+                    </a>
+        </div>
+    </section>
+    <section class="the-window setting">
+        <div class="window-head">
+            <img src="static/icon.png" style="height:30px;float:left">
+            <button>-</button>
+            <h3>设定</h3>
+        </div>
+        <div class="window-body">
+            <fieldset>
+                <label>
+                    <span>搜索引擎偏好</span>
+                    <select name="search" data-key="search_method"></select>
+                </label>
+                <label>
+                    <span>搜索框样式偏好</span>
+                    <select id="search-style" onchange="savestyle()">
+						<option value="black">深色</option>
+						<option value="white">浅色</option>
+						<option value="auto-time">根据时间切换</option>
+						<option value="auto-sys">跟随系统切换</option>
+                    </select>
+                </label>
+                <label>
+                    <span>亚克力特效</span>
+                    <img src="static/help.svg" style="float:right;margin-top: 5px;" onclick="ks.notice('使用亚克力特效会带来更好看的界面，但在大屏设备上会带来严重掉帧卡顿。如果您在使用过程中发现不流畅，建议关闭此选项。',{color:'green',time:5000})" height="15px">
+                    <select id="blur-set" onchange="saveblur()">
+						<option value="on">允许使用亚克力特效</option>
+						<option value="off">关闭亚克力特效</option>
+                    </select>
+                </label>
+                <label>
+                    <span>致美壁纸</span>
+                    <img src="static/help.svg" style="float:right;margin-top: 5px;" onclick="ks.notice('选择“必应壁纸”可以每日自动更新壁纸。',{color:'green',time:2000})" height="15px">
+                    <select name="background" data-key="back_method" id="backselect"></select>
+                </label>
+				<label id="setdiy-area">
+                    <textarea style='width:100%;border-radius:2px;background:transparent;border:1px solid #cccccc;resize:none;height:1em' onchange='savebackground()' id='backurl-input' placeholder="在此处输入自定义壁纸的网址"></textarea>
+                </label>
+				<label>
+                    <span>编辑捷径</span>
+                    <img src="static/help.svg" style="float:right;margin-top: 5px;" onclick="ks.notice('Windows用户请按住Ctrl键多选<br>Mac用户请按住Command键多选',{color:'green',time:2000})" height="15px">
+                    <select multiple name="sites" data-key="sites" style="height: 15em" id="set-site"></select>
+                </label>
+                <label class="sync-option">
+                    <span>云端同步</span>
+                    <select id="sync-set" onchange="savesync()">
+						<option value="on">使用自动同步</option>
+						<option value="off">关闭自动同步</option>
+                    </select>
+                </label>
+                <label>
+                    <span>版本切换</span>
+                    <img src="static/help.svg" style="float:right;margin-top: 5px;" onclick="ks.notice('提示：暂停止访问开发版',{color:'green',time:2000})" height="15px">
+                    <br>
+                  	您正在使用正式版<a href="https://dev.bius.top" target="_blank" rel="nofollow">尝鲜开发版</a></blockquote>
+                </label>
 
-    </div></body>
-      <div class="main-page">
-        <img class="backimg" src onload="$(this).css('opacity','1')" onerror="$(this).css('opacity','0');notice('背景图像加载出错，请检查网络')">
-        <div id="bg-mask" onclick=""></div>
-        <div class="preload-hide" style="opacity:0">
-          <center class="time"><div id="time" onclick="openset()">你好</div></center>
-          <center class="yiyan"><div id="yiyan" onclick=""></div></center>
-          <div class="search">
-            <input id="search" onkeydown="chksearch()" onfocus="startsearch()" oninput="startsearch()" placeholder="Search" autocomplete="off">
-            <div class="icon">
-              <svg onclick="stopsearch()" t="1619085462498" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2167" width="20" height="20"><path d="M569.578831 512l378.213892-378.213892c15.805954-15.805954 15.805954-41.772878 0-57.578831s-41.772878-15.805954-57.578831 0l-378.213892 378.213892-378.213892-378.213892c-15.805954-15.805954-41.772878-15.805954-57.578831 0l0 0c-15.805954 15.805954-15.805954 41.772878 0 57.578831l378.213892 378.213892-378.213892 378.213892c-15.805954 15.805954-15.805954 41.772878 0 57.578831l0 0c15.805954 15.805954 41.772878 15.805954 57.578831 0l378.213892-378.213892 378.213892 378.213892c15.805954 15.805954 41.772878 15.805954 57.578831 0l0 0c15.805954-15.805954 15.805954-41.772878 0-57.578831L569.578831 512z" p-id="2168"></path></svg>
-              <svg onclick="opensearch()" style="margin-left:5px;" t="1619085280431" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2290" width="20" height="20"><path d="M448.848193 835.136561c-212.815967 0-385.958352-173.138292-385.958352-385.952212 0-212.805734 173.142385-385.948119 385.958352-385.948119 212.818013 0 385.964492 173.141362 385.964492 385.948119C834.813708 661.998269 661.66723 835.136561 448.848193 835.136561M448.848193 158.231791c-160.433946 0-290.956651 130.522706-290.956651 290.952558 0 160.430876 130.522706 290.951535 290.956651 290.951535 160.435992 0 290.963815-130.520659 290.963815-290.951535C739.813031 288.754496 609.284185 158.231791 448.848193 158.231791" p-id="2291"></path><path d="M899.635039 958.408119c-14.966876 0-29.922497-5.711072-41.3385-17.120936L656.648936 739.656977c-22.825868-22.823821-22.825868-59.841923 0-82.678024 22.842241-22.820752 59.851133-22.820752 82.684164 0l201.64658 201.630207c22.826891 22.826891 22.826891 59.842946 0 82.678024C929.558559 952.697047 914.600893 958.408119 899.635039 958.408119" p-id="2292"></path></svg>
-            </div>
-          </div>
-		  <div class="advice">
-            <div class="advlist prosolst" onclick="advlistProso(this)"><svg style="vertical-align:middle" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3723" width="20" height="20"><path d="M512 249.442043c-139.111489 0-251.925787 108.042894-251.925787 241.337191 0 158.284255 109.916596 198.634213 109.916596 290.728851 0 22.76766 17.408 43.944851 43.552681 59.500936-5.468596 4.553532-8.518809 9.542809-8.518809 14.771745 0 7.015489 5.51217 13.573447 14.989617 19.194553-8.889191 5.51217-14.052766 11.852255-14.052766 18.628085 0 6.841191 5.272511 13.246638 14.357787 18.802383-9.281362 5.577532-14.684596 12.091915-14.684596 18.998468 0 8.453447 7.974128 16.187915 21.307915 22.484426-5.163574 4.684255-8.126638 9.869617-8.126638 15.316426 0 16.122553 25.120681 29.826723 60.437787 35.317106C485.463149 1016.025872 498.05617 1024 512.740766 1024c14.662809 0 27.234043-7.908766 33.443404-19.368851 35.665702-5.403234 61.069617-19.194553 61.069617-35.360681 0-5.381447-2.854128-10.501447-7.908766-15.12034 13.617021-6.340085 21.74366-14.183489 21.74366-22.702298 0-6.841191-5.250723-13.268426-14.357787-18.802383 9.259574-5.599319 14.684596-12.070128 14.684596-18.976681 0-7.015489-5.533957-13.573447-14.989617-19.21634 8.932766-5.490383 14.074553-11.852255 14.074553-18.628085 0-5.425021-3.289872-10.545021-9.172426-15.207489 25.730723-15.534298 42.833702-36.493617 42.833702-59.065191 0-92.138213 109.785872-132.466383 109.785872-290.728851C763.925787 357.484936 651.133277 249.442043 512 249.442043zM643.551319 640.130723c-25.098894 36.864-53.48766 78.521191-55.230638 135.778043-8.627745 9.60817-39.413106 25.229617-76.233532 25.229617-36.842213 0-67.649362-15.621447-76.255319-25.273191-1.742979-57.278638-30.175319-98.93583-55.317787-135.778043-28.04017-41.090723-54.51166-79.893787-54.51166-149.329702 0-96.713532 83.445106-175.409021 185.997617-175.409021 102.574298 0 186.019404 78.695489 186.019404 175.409021C698.019404 560.215149 671.547915 599.04 643.551319 640.130723z" p-id="3724"></path><path d="M512 164.798638c18.126979 0 32.964085-19.608511 32.964085-43.574468L544.964085 43.574468c0-23.965957-14.837106-43.574468-32.964085-43.574468s-32.964085 19.608511-32.964085 43.574468l0 77.649702C479.035915 145.211915 493.873021 164.798638 512 164.798638z" p-id="3725"></path><path d="M343.083574 210.072511c15.708596-9.063489 18.715234-33.465191 6.754043-54.206638l-38.803064-67.257191c-11.982979-20.763234-34.641702-30.32783-50.350298-21.26434-15.708596 9.063489-18.737021 33.465191-6.77583 54.206638l38.846638 67.257191C304.738043 209.571404 327.374979 219.136 343.083574 210.072511z" p-id="3726"></path><path d="M198.154894 283.386553 130.941277 244.561702c-20.763234-11.982979-45.164936-8.954553-54.228426 6.754043-9.063489 15.708596 0.479319 38.345532 21.26434 50.328511l67.235404 38.824851c20.763234 11.982979 45.164936 8.954553 54.206638-6.754043C228.460936 318.006468 218.918128 295.369532 198.154894 283.386553z" p-id="3727"></path><path d="M926.044596 703.618723l-67.235404-38.803064c-20.763234-12.004766-45.164936-8.97634-54.206638 6.754043-9.063489 15.708596 0.457532 38.345532 21.286128 50.328511l67.19183 38.824851c20.763234 11.982979 45.164936 8.954553 54.228426-6.754043C956.372426 738.238638 946.829617 715.601702 926.044596 703.618723z" p-id="3728"></path><path d="M174.167149 502.631489c0-18.148766-19.608511-32.964085-43.574468-32.964085L52.942979 469.667404c-23.965957 0-43.574468 14.837106-43.574468 32.964085 0 18.126979 19.608511 32.964085 43.574468 32.964085l77.649702 0C154.558638 535.595574 174.167149 520.758468 174.167149 502.631489z" p-id="3729"></path><path d="M971.057021 469.667404l-77.627915 0c-23.987745 0-43.574468 14.837106-43.574468 32.964085 0 18.126979 19.586723 32.964085 43.574468 32.964085l77.627915 0c23.987745 0 43.574468-14.837106 43.574468-32.964085C1014.631489 484.504511 995.022979 469.667404 971.057021 469.667404z" p-id="3730"></path><path d="M165.190809 664.81566l-67.235404 38.803064c-20.763234 11.982979-30.32783 34.619915-21.26434 50.350298 9.063489 15.708596 33.465191 18.715234 54.228426 6.754043l67.213617-38.824851c20.763234-11.982979 30.32783-34.619915 21.26434-50.328511C210.355745 655.882894 185.954043 652.810894 165.190809 664.81566z" p-id="3731"></path><path d="M858.809191 340.469106l67.235404-38.824851c20.763234-11.982979 30.32783-34.619915 21.26434-50.328511-9.063489-15.708596-33.465191-18.737021-54.228426-6.754043l-67.213617 38.824851c-20.741447 11.982979-30.32783 34.619915-21.26434 50.328511C813.644255 349.42366 838.045957 352.452085 858.809191 340.469106z" p-id="3732"></path><path d="M763.337532 67.322553c-15.730383-9.063489-38.389106 0.501106-50.372085 21.26434l-38.803064 67.257191c-11.982979 20.763234-8.954553 45.143149 6.754043 54.206638 15.730383 9.063489 38.367319-0.501106 50.350298-21.26434l38.846638-67.257191C782.074553 100.787745 779.02434 76.386043 763.337532 67.322553z" p-id="3733"></path></svg> <span id="prosolst" style="display:inline-block"></span></div>
-            <div class="advlist httplst" onclick="advlistHttp(this)"><svg style="vertical-align:middle" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2561" width="20" height="20"><path d="M525.835822 1024c2.669032 0 5.484312-0.18281 8.482402-0.511869 2.99809-0.329059 5.849933-0.475307 8.482403-0.475307 66.542984-4.021829 129.064139-20.182268 187.563466-48.517879a526.932684 526.932684 0 0 0 153.195111-110.96591 510.406625 510.406625 0 0 0 102.739442-158.935358C1011.307109 644.266246 1023.738216 580.099797 1023.738216 512.130892c0-68.005467-12.467669-132.135354-37.403007-192.462784a510.406625 510.406625 0 0 0-102.776005-158.935358 526.932684 526.932684 0 0 0-153.195111-110.96591 494.50212 494.50212 0 0 0-187.563466-48.517879c-2.669032 0-5.484312-0.146248-8.482403-0.475307A76.816928 76.816928 0 0 0 525.835822 0.261784H511.869108c-70.528251 0-136.851862 13.527969-199.043959 40.474222a519.547144 519.547144 0 0 0-162.66469 109.978734A522.252738 522.252738 0 0 0 40.401097 313.233182C13.454845 375.169344 0 441.492955 0 512.130892s13.454845 136.961548 40.401097 198.934273a522.252738 522.252738 0 0 0 109.759362 162.481879 519.547144 519.547144 0 0 0 162.66469 109.978734C374.980684 1010.472031 441.304295 1024 511.869108 1024h13.966714z m16.964805-671.828204V68.23069c19.304778 5.996181 37.914876 17.001367 55.866857 33.015557 17.951981 15.977629 34.587727 35.977086 49.907238 59.96181a442.401157 442.401157 0 0 1 40.401097 82.48405c11.626741 31.004643 21.46194 64.495508 29.432474 100.472594-24.606279 2.010914-51.369721 3.656208-80.326888 5.009005-28.920605 1.316235-60.693051 2.339973-95.280778 2.99809z m-63.873953 0c-33.893047-0.658117-65.519246-1.681856-94.768909-2.99809-29.249663-1.316235-56.232478-2.99809-80.802194-5.009005a710.035577 710.035577 0 0 1 29.90778-99.448855c11.9558-31.004643 25.447207-58.353078 40.401098-82.008744 14.990452-23.655665 31.443388-43.655122 49.395369-59.96181 17.951981-16.343249 36.562079-27.494684 55.866856-33.490864v282.917368zM241.455971 339.192258c-36.562079-4.021829-65.811742-8.043657-87.785552-12.028924-21.937247-3.985267-37.293321-7.312416-45.921972-9.981448 12.650479-25.995638 27.78718-50.455669 45.410102-73.489779a480.060099 480.060099 0 0 1 58.389641-63.471769c21.27913-19.34134 44.240116-36.488955 68.846395-51.479407 24.606279-14.990452 50.857852-27.494684 78.827842-37.512694-25.959076 29.980905-49.249121 65.994553-69.833571 107.96782C268.731282 241.205886 252.753653 287.859099 241.455971 339.192258z m541.81345-1.023738c-9.32333-47.969448-21.937247-92.136439-37.914876-132.464413-15.977629-40.327973-34.258668-75.135073-54.879681-104.45786A452.675102 452.675102 0 0 1 821.184297 188.190871a441.158047 441.158047 0 0 1 92.794557 125.956363 1258.466763 1258.466763 0 0 1-38.902052 9.50614c-21.27913 4.972443-51.918152 9.835199-91.807381 14.478584z m-689.487688 334.908645a399.623525 399.623525 0 0 1-22.449117-77.475046c-4.972443-26.982814-7.458664-54.843119-7.458664-83.471227 0-23.326606 1.828104-46.324154 5.484312-68.992643 3.656208-22.668489 8.774899-44.642299 15.46576-65.957991 5.959619 1.974352 20.767261 5.484312 44.386364 10.493317 23.619103 4.972443 57.036843 9.835199 100.289783 14.478583a548.796808 548.796808 0 0 0-5.484312 54.002191c-1.023738 18.64666-1.499045 37.293321-1.499045 55.976543 0 23.984724 0.987176 47.640389 2.99809 70.966996 1.974352 23.326606 4.972443 45.995096 8.957709 68.005467-37.256759 4.021829-67.493598 8.153344-90.783642 12.504231-23.290044 4.314325-39.92579 7.495226-49.907238 9.506141z m630.622741-27.969991c-25.264397-2.010914-53.051577-3.656208-83.324979-5.009005-30.273402-1.316235-63.033024-2.339973-98.278868-2.99809v-221.931821c36.562079 0 70.34544-0.69468 101.276959-2.010914a1372.942633 1372.942633 0 0 0 84.312154-5.996181c2.010914 17.330426 3.656208 34.660851 4.972443 51.991277a752.337902 752.337902 0 0 1-0.987176 120.983919 1019.570138 1019.570138 0 0 1-7.970533 64.970815z m-428.068823 0a1019.570138 1019.570138 0 0 1-7.970533-65.007377 752.337902 752.337902 0 0 1-0.987176-120.947357c1.316235-17.330426 2.99809-34.331792 4.972443-51.004101a2364.250285 2364.250285 0 0 0 186.576289 6.983357v221.968383c-35.245844 0.658117-68.005467 1.681856-98.278868 2.99809a2577.626578 2577.626578 0 0 0-84.312155 5.009005z m182.591023 309.900183a154.913529 154.913529 0 0 1-51.88159-30.492774 276.519004 276.519004 0 0 1-46.872585-53.490322c-14.624832-21.315692-27.933428-45.812285-39.925791-73.489779-11.9558-27.640932-21.937247-57.475588-29.944342-89.467408a1647.04854 1647.04854 0 0 1 77.840666-4.497135c27.933428-0.987176 58.20683-1.828104 90.783642-2.486222v253.92364z m63.873953 1.023738v-254.947378c32.576813 0.658117 63.033024 1.499045 91.295511 2.486222 28.262487 1.023738 54.038753 2.522783 77.328798 4.497135a620.312234 620.312234 0 0 1-29.432474 91.003015c-11.626741 27.969991-24.78909 52.649394-39.413921 73.965086a267.488171 267.488171 0 0 1-47.384455 53.490322c-16.964805 14.332335-34.441479 24.130972-52.393459 29.505598z m-183.5782-23.03411a385.181504 385.181504 0 0 1-72.356354-33.454302 463.095294 463.095294 0 0 1-119.740809-102.008201 449.713573 449.713573 0 0 1-45.410103-65.446122c11.992362-2.010914 28.299049-4.862757 48.920062-8.518964 20.621013-3.656208 46.543527-7.166168 77.804105-10.493317 11.992362 45.336978 27.421559 86.652128 46.43384 123.945448 18.939157 37.366445 40.401097 69.358264 64.349259 96.01202z m331.252437-9.981448c18.64666-26.653756 35.428655-57.658399 50.382545-92.977367 14.990452-35.318968 27.129063-73.965086 36.415831-115.974915 31.955257 4.021829 57.877771 7.860847 77.840667 11.517055s34.916786 6.837109 44.898233 9.506141a438.452453 438.452453 0 0 1-89.796467 110.96591 454.027899 454.027899 0 0 1-119.740809 76.963176zM937.890454 373.194992l4.716508 15.356073c3.144339 11.151434 5.886495 22.522241 8.299592 34.11242 5.996181 28.993729 8.957709 58.791823 8.957709 89.467407a451.468553 451.468553 0 0 1-30.931519 164.968101 925.459347 925.459347 0 0 0-47.896323-11.517055c-22.595365-4.972443-53.197825-9.835199-91.770819-14.478583 2.669032-22.010372 4.972443-44.678861 6.946795-68.005467a832.48198 832.48198 0 0 0 1.023738-127.455408 1440.436231 1440.436231 0 0 0-4.972442-54.477498c49.212559-5.996181 85.299331-11.992362 108.223754-17.988543 20.438202-5.338064 32.54025-8.555527 36.379269-9.688951l1.023738-0.292496z" p-id="2562"></path></svg> <span id="httplst" style="display:inline-block"></span></div>
-            <div class="advlist oslist" onclick="advlistSearch(this)"><svg style="vertical-align:middle" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2780" width="20" height="20"><path d="M700.8 775.765333a384 384 0 1 1 74.965333-74.965333l147.370667 147.370667a53.034667 53.034667 0 0 1-74.965333 74.965333l-147.370667-147.370667zM469.333333 768a298.666667 298.666667 0 1 0 0-597.333333 298.666667 298.666667 0 0 0 0 597.333333z" p-id="2781"></path></svg> <span id="oslist"></span></div>
-            <div class="advlist nlist1" onclick="advlistSearch(this)"><svg style="vertical-align:middle" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2780" width="20" height="20"><path d="M700.8 775.765333a384 384 0 1 1 74.965333-74.965333l147.370667 147.370667a53.034667 53.034667 0 0 1-74.965333 74.965333l-147.370667-147.370667zM469.333333 768a298.666667 298.666667 0 1 0 0-597.333333 298.666667 298.666667 0 0 0 0 597.333333z" p-id="2781"></path></svg> <span id="nlist1"></span></div>
-            <div class="advlist nlist2" onclick="advlistSearch(this)"><svg style="vertical-align:middle" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2780" width="20" height="20"><path d="M700.8 775.765333a384 384 0 1 1 74.965333-74.965333l147.370667 147.370667a53.034667 53.034667 0 0 1-74.965333 74.965333l-147.370667-147.370667zM469.333333 768a298.666667 298.666667 0 1 0 0-597.333333 298.666667 298.666667 0 0 0 0 597.333333z" p-id="2781"></path></svg> <span id="nlist2"></span></div>
-            <div class="advlist nlist3" onclick="advlistSearch(this)"><svg style="vertical-align:middle" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2780" width="20" height="20"><path d="M700.8 775.765333a384 384 0 1 1 74.965333-74.965333l147.370667 147.370667a53.034667 53.034667 0 0 1-74.965333 74.965333l-147.370667-147.370667zM469.333333 768a298.666667 298.666667 0 1 0 0-597.333333 298.666667 298.666667 0 0 0 0 597.333333z" p-id="2781"></path></svg> <span id="nlist3"></span></div>
-            <div class="advlist nlist4" onclick="advlistSearch(this)"><svg style="vertical-align:middle" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2780" width="20" height="20"><path d="M700.8 775.765333a384 384 0 1 1 74.965333-74.965333l147.370667 147.370667a53.034667 53.034667 0 0 1-74.965333 74.965333l-147.370667-147.370667zM469.333333 768a298.666667 298.666667 0 1 0 0-597.333333 298.666667 298.666667 0 0 0 0 597.333333z" p-id="2781"></path></svg> <span id="nlist4"></span></div>
-            <div class="advlist nlist5" onclick="advlistSearch(this)"><svg style="vertical-align:middle" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2780" width="20" height="20"><path d="M700.8 775.765333a384 384 0 1 1 74.965333-74.965333l147.370667 147.370667a53.034667 53.034667 0 0 1-74.965333 74.965333l-147.370667-147.370667zM469.333333 768a298.666667 298.666667 0 1 0 0-597.333333 298.666667 298.666667 0 0 0 0 597.333333z" p-id="2781"></path></svg> <span id="nlist5"></span></div>
-          </div>
+          
+                <p align="center" style="display:none">
+                    <button class="btn small blue" name="reset">恢复默认</button>
+                    <button class="btn small blue" name="output">导出</button>
+                    <button class="btn small blue" name="input" onclick="loadnewsetting()">导入</button>
+                </p>
+            </fieldset>
         </div>
-      </div>
-      
-      <div class="setting-mask" style="display:none" onclick="closeset()"></div>
-      <div class="setting" style="opacity:0;transform:scale(1.1);display:none">
-        <div class="close-btn" onclick="closeset()"><svg t="1618826006171" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2026" width="15" height="15"><path d="M510.8096 420.3008l335.296-335.296 90.5088 90.5088-335.296 335.296 335.296 335.296-90.5088 90.5088-335.296-335.296-335.296 335.296-90.5088-90.5088 335.296-335.296-335.296-335.296 90.5088-90.5088z" p-id="2027"></path></svg></div>
-      	<div class="left-bar">
-          <div class="header">
-          	<svg t="1618823229185" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2072"><path d="M809.188 550.978c1.6-12.8 2.799-25.799 2.799-38.998s-1.2-26.198-2.799-38.998l84.596-66.197c7.6-6 9.8-16.799 4.8-25.599l-79.996-138.594c-5-8.6-15.399-12.199-24.399-8.6l-99.596 40.199c-20.599-15.8-43.198-29.198-67.597-39.398l-14.999-105.996c-1.8-9.399-9.999-16.799-20-16.799l-159.994 0c-9.999 0-18.199 7.4-19.799 16.799l-14.999 105.996c-24.399 10.2-46.999 23.399-67.597 39.398l-99.596-40.199c-9-3.4-19.399 0-24.399 8.6l-79.996 138.594c-5 8.6-2.8 19.399 4.8 25.599l84.397 66.197c-1.6 12.8-2.8 25.799-2.8 38.998 0 13.2 1.2 26.198 2.8 38.998l-84.397 66.197c-7.6 6-9.8 16.799-4.8 25.599l79.996 138.594c5 8.6 15.399 12.199 24.399 8.6l99.596-40.199c20.599 15.8 43.198 29.198 67.597 39.398l14.999 105.996c1.6 9.399 9.8 16.799 19.799 16.799l159.994 0c9.999 0 18.199-7.4 19.799-16.799l14.999-105.996c24.399-10.2 46.999-23.399 67.597-39.398l99.596 40.199c9 3.4 19.399 0 24.399-8.6l79.996-138.594c5-8.6 2.8-19.399-4.8-25.599l-84.396-66.197zM512 651.973c-77.396 0-139.994-62.598-139.994-139.994s62.598-139.994 139.994-139.994 139.994 62.598 139.994 139.994-62.598 139.994-139.994 139.994z" p-id="2073"></path></svg>
-          	<span> 设置</span>
-          </div>
-          <div class="list active" onclick="changesetpage(this,'account')">
-            <svg t="1618825056807" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2041" width="20" height="20"><path d="M908 799.542857a427.428571 427.428571 0 0 0-92.114286-136.571428 429.291429 429.291429 0 0 0-136.571428-92.114286c-0.457143-0.228571-0.914286-0.342857-1.371429-0.571429C749.142857 518.857143 795.428571 435.085714 795.428571 340.571429c0-156.571429-126.857143-283.428571-283.428571-283.428572S228.571429 184 228.571429 340.571429c0 94.514286 46.285714 178.285714 117.485714 229.828571-0.457143 0.228571-0.914286 0.342857-1.371429 0.571429-51.2 21.6-97.142857 52.571429-136.571428 92.114285a429.291429 429.291429 0 0 0-92.114286 136.571429A424.8 424.8 0 0 0 82.285714 957.485714a9.142857 9.142857 0 0 0 9.142857 9.371429h68.571429c5.028571 0 9.028571-4 9.142857-8.914286 2.285714-88.228571 37.714286-170.857143 100.342857-233.485714 64.8-64.8 150.857143-100.457143 242.514286-100.457143s177.714286 35.657143 242.514286 100.457143C817.142857 787.085714 852.571429 869.714286 854.857143 957.942857c0.114286 5.028571 4.114286 8.914286 9.142857 8.914286h68.571429a9.142857 9.142857 0 0 0 9.142857-9.371429c-1.142857-54.628571-12.457143-107.771429-33.714286-157.942857zM512 537.142857c-52.457143 0-101.828571-20.457143-138.971429-57.6S315.428571 393.028571 315.428571 340.571429c0-52.457143 20.457143-101.828571 57.6-138.971429S459.542857 144 512 144s101.828571 20.457143 138.971429 57.6S708.571429 288.114286 708.571429 340.571429c0 52.457143-20.457143 101.828571-57.6 138.971428S564.457143 537.142857 512 537.142857z" p-id="2042"></path></svg>
-            <span>账户与同步</span>
-          </div>
-          <div class="list" onclick="changesetpage(this,'home')">
-            <svg t="1619861451290" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1140" width="20" height="20"><path d="M704 938.666667H74.666667V337.706667h0.213333L512 85.333333l437.12 252.373334h0.213333V938.666667h-85.333333V391.616h-704V853.333333H704v85.333334zM512 188.373333L160 391.616h704L512 188.373333z" p-id="1141"></path><path d="M629.333333 576h85.333334v362.666667h-85.333334z" p-id="1142"></path></svg>
-            <span>主界面</span>
-          </div>
-          <div class="list" onclick="changesetpage(this,'proso')">
-            <svg t="1621417052362" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2630" width="20" height="20"><path d="M742.4 153.6C579.2-9.6 316.8-9.6 153.6 153.6c-163.2 163.2-163.2 425.6 0 588.8 147.2 147.2 380.8 160 544 38.4l192 192c22.4 22.4 60.8 22.4 83.2 0 22.4-22.4 22.4-60.8 0-83.2l-192-192c121.6-163.2 108.8-396.8-38.4-544z m-64 524.8c-128 128-336 128-464 0s-128-336 0-464 336-128 464 0c128 131.2 128 339.2 0 464z" p-id="2631"></path></svg>
-            <span>站点直达</span>
-          </div>
-          <div class="list" onclick="changesetpage(this,'theme')">
-            <svg t="1619949608951" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1988" width="20" height="20"><path d="M921.144889 70.997333h-235.662222c-19.911111 0-37.603556 13.596444-42.296889 33.479111a134.826667 134.826667 0 0 1-262.4 0 43.377778 43.377778 0 0 0-42.268445-33.479111H102.855111a50.289778 50.289778 0 0 0-50.289778 50.289778v288a50.289778 50.289778 0 0 0 50.289778 50.289778h85.703111v443.420444a50.289778 50.289778 0 0 0 50.289778 50.289778h546.275556a50.289778 50.289778 0 0 0 50.289777-50.289778v-443.448889h85.731556a50.289778 50.289778 0 0 0 50.261333-50.261333V121.287111a50.289778 50.289778 0 0 0-50.261333-50.289778z m-32 306.289778h-136.021333V870.968889H270.848V377.287111H134.855111V153.287111h175.217778a217.258667 217.258667 0 0 0 403.854222 0h175.217778v224z" p-id="1989"></path></svg>
-            <span>个性主题</span>
-          </div>
-          <div class="list" onclick="changesetpage(this,'help');">
-            <svg t="1620207051287" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2978" width="20" height="20"><path d="M649.142857 941.714286H374.857143c-5.028571 0-9.142857 4.114286-9.142857 9.142857v36.571428c0 20.228571 16.342857 36.571429 36.571428 36.571429h219.428572c20.228571 0 36.571429-16.342857 36.571428-36.571429v-36.571428c0-5.028571-4.114286-9.142857-9.142857-9.142857zM512 0c-206.971429 0-374.857143 167.885714-374.857143 374.857143 0 138.742857 75.428571 259.885714 187.428572 324.685714V832c0 20.228571 16.342857 36.571429 36.571428 36.571429h301.714286c20.228571 0 36.571429-16.342857 36.571428-36.571429V699.542857c112-64.8 187.428571-185.942857 187.428572-324.685714 0-206.971429-167.885714-374.857143-374.857143-374.857143z m146.171429 628.342857L617.142857 652.114286V786.285714H406.857143V652.114286l-41.028572-23.771429C275.885714 576.342857 219.428571 480.571429 219.428571 374.857143c0-161.6 130.971429-292.571429 292.571429-292.571429s292.571429 130.971429 292.571429 292.571429c0 105.714286-56.457143 201.485714-146.4 253.485714z" p-id="2979"></path></svg>
-            <span>帮助与反馈</span>
-          </div>
-          <div class="list" onclick="changesetpage(this,'info')">
-            <svg t="1620048065959" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2028" width="20" height="20"><path d="M511.250625 414.911719a46.545031 46.545031 0 0 1 46.545031 46.545031l0.162908 283.575604a46.545031 46.545031 0 0 1-93.090063 0l-0.162907-283.575604a46.545031 46.545031 0 0 1 46.545031-46.545031z m-50.012636-136.53985a50.035909 50.035909 0 0 1 100.071817 0l0.18618 1.512714a50.035909 50.035909 0 0 1-100.071817 0zM511.995345 1024a508.178653 508.178653 0 0 1-293.233697-93.299515 46.405396 46.405396 0 0 1-34.210598-44.683231l-0.418906-4.305415a46.405396 46.405396 0 0 1 80.592722-31.557531 420.534359 420.534359 0 1 0-132.653339-160.161453l-7.540295 7.540295a46.545031 46.545031 0 0 1 29.020827 43.077426l0.442177 4.328688a46.428669 46.428669 0 0 1-91.088626 12.776611A511.995345 511.995345 0 1 1 511.995345 1024z" p-id="2029" data-spm-anchor-id="a313x.7781069.0.i0" class="selected"></path></svg>
-            <span>关于布斯</span>
-          </div>
-        </div>
-        <div class="set-main">
-          <div class="page active" id="account">
-            <header>账户与同步</header>
-            <div class="detail">
-              <div class="logincard" onclick="window.open('/sync/login.php')"><span style="font-size:1.5em;">我的布斯账号</span><br><span class="lnotice">正在拉取，请稍候...</span></div>
-              <div class="set on" onclick="csync(this)" id="syncs">
-                <span class="name">设置多端同步</span>
-                <span class="btn"><span></span></span>
-              </div>
-              <div class="set on" onclick="chello(this)" id="hellos">
-                <span class="name">页面加载时显示问候语</span>
-                <span class="btn"><span></span></span>
-              </div>
-              <div class="set" onclick="if(confirm('确实退出登录？')){window.location.href='/sync/logout.php'}" id="logout">
-                <span class="name">退出登录</span>
-                <span style="color:grey;text-align:right;width:30px;display:inline-block">></span>
-              </div>
-              <br>
-              <div class="txtblock" id="loginfaq">
-                <b style="font-size:1.1em">登录后依然不显示账号信息？</b><br>
-                请允许bius.top设置Cookie。请注意，布斯起始页的账号系统与SimSoft主站相同，但登录状态并不同步。
-              </div>
-            </div>
-          </div>
-          <div class="page" id="home">
-            <header>主界面</header>
-              <div class="detail">
-                <div class="set off" onclick="ctime(this)" id="times">
-                  <span class="name">显示精确时间</span>
-                  <span class="btn"><span></span></span>
-                </div>
-                <div class="set on" onclick="cyiyan(this)" id="yiyans">
-                  <span class="name">加载一言诗句</span>
-                  <span class="btn"><span></span></span>
-                </div>
-                <div class="set off" onclick="cblur(this)" id="blurs">
-                  <span class="name">亚克力特效</span>
-                  <span class="btn"><span></span></span>
-                </div>
-                <div class="set off" onclick="cbgmask(this)" id="bgmasks">
-                  <span class="name">降低背景图像亮度</span>
-                  <span class="btn"><span></span></span>
-                </div>
-            </div>
-          </div>
-          <div class="page" id="proso">
-            <header>站点直达</header>
-              <div class="detail">
-                <br>
-                <table id="proso-set" class="txtblock" style="width:100%;font-size:1.1em;white-space:nowrap;overflow:hidden;display:block">
-                  <tr><th style="text-align:left;width:100px;overflow:hidden;display:inline-block">功能关键字</th><th style="text-align:left;width:calc(100% - 100px);overflow:hidden;display:inline-block">访问网址</th></tr>
-                </table>
-                <div class="set" onclick="newproso()">
-                  <span style="float:left">添加新的功能关键字</span>
-                  <span style="float:right;color:grey">></span>
-                </div>
-            </div>
-          </div>
-          <div class="page" id="theme">
-            <header>个性主题</header>
-              <div class="detail">
-                <div class="set" style="opacity:1">
-                  <span class="name" style="width:calc(100% - 105px)">主题色</span>
-                  <select onchange="savecolor(this)" id="mcolor-select">
-                    <option value="default">布斯蓝</option>
-                    <option value="lime">青柠绿</option>
-                    <option value="orange">活力橙</option>
-                    <option value="random">随机颜色</option>
-                    <option value="diy" id="mcolor-diy-btn">自定义</option>
-                  </select>
-                  <input type="color" style="display:none" id="selectdiycolor" onchange="sdiycolor(this.value)">
-                </div>
-                <div class="set" style="opacity:1">
-                  <span class="name">背景图片</span>
-                  <div class="txtblock">
-                    <img class="wallpapers selected" src="" onerror="this.src='https://img.maocdn.cn/img/2021/05/04/No_Image.png'" style="vertical-align:middle" id="bing" onclick="cwall(this)">
-                    <span style="vertical-align:middle;display:inline-block;margin:5px;width:calc(100% - 120px)">
-                      <b style="font-size:1.1em">必应每日壁纸</b><br>
-                      <span style="color:grey">每日更新必应美图<a href="https://api.paugram.com/bing" style="color:grey;text-decoration:none">奇趣保罗</a>提供API支持。</span>
-                    </span><br><br>
-                    <img class="wallpapers" src="" onerror="this.src='https://img.maocdn.cn/img/2021/05/04/No_Image.png'" style="vertical-align:middle" id="randomfj" onclick="cwall(this)">
-                    <span style="vertical-align:middle;display:inline-block;margin:5px;width:calc(100% - 120px)">
-                      <b style="font-size:1.1em">随机风景壁纸</b><br>
-                      <span style="color:grey">每次刷新更新壁纸，可能不稳定。<a href="https://api.ixiaowai.cn/" style="color:grey;text-decoration:none">小歪</a>提供API。</span>
-                    </span><br><br>
-                    <img class="wallpapers" src="" onerror="this.src='https://img.maocdn.cn/img/2021/05/04/No_Image.png'" style="vertical-align:middle" id="randomdm" onclick="cwall(this)">
-                    <span style="vertical-align:middle;display:inline-block;margin:5px;width:calc(100% - 120px)">
-                      <b style="font-size:1.1em">随机动漫壁纸</b><br>
-                      <span style="color:grey">所有壁纸由第三方提供。<a href="https://api.ixiaowai.cn/" style="color:grey;text-decoration:none">小歪</a>提供API。</span>
-                    </span><br><br>
-                    <img class="wallpapers" src="" id="diybackimg" onerror="this.src='https://img.maocdn.cn/img/2021/05/04/No_Image.png'" style="vertical-align:middle" onclick="setdiywallnow()">
-                    <span style="vertical-align:middle;display:inline-block;margin:5px;width:calc(100% - 120px)">
-                      <b style="font-size:1.1em">自定义壁纸</b><br>
-                      <div class="diy-btn" onclick="setdiywall()">设置</div>
-                    </span><br><br>
-                    <div style="overflow-x:scroll;width:100%">
-                      <div style="white-space:nowrap;width:fit-content">
-                        <img src="" class="wallpapers" id="wall1" onclick="cwall(this)" onerror="this.src='https://img.maocdn.cn/img/2021/05/04/No_Image.png'">
-                        <img src="" class="wallpapers" id="wall2" onclick="cwall(this)" onerror="this.src='https://img.maocdn.cn/img/2021/05/04/No_Image.png'">
-                        <img src="" class="wallpapers" id="wall3" onclick="cwall(this)" onerror="this.src='https://img.maocdn.cn/img/2021/05/04/No_Image.png'">
-                        <img src="" class="wallpapers" id="wall4" onclick="cwall(this)" onerror="this.src='https://img.maocdn.cn/img/2021/05/04/No_Image.png'">
-                        <img src="" class="wallpapers" id="wall5" onclick="cwall(this)" onerror="this.src='https://img.maocdn.cn/img/2021/05/04/No_Image.png'">
-                        <img src="" class="wallpapers" id="wall6" onclick="cwall(this)" onerror="this.src='https://img.maocdn.cn/img/2021/05/04/No_Image.png'">
-                        <img src="" class="wallpapers" id="wall7" onclick="cwall(this)" onerror="this.src='https://img.maocdn.cn/img/2021/05/04/No_Image.png'">
-                        <img src="" class="wallpapers" id="wall8" onclick="cwall(this)" onerror="this.src='https://img.maocdn.cn/img/2021/05/04/No_Image.png'">
-                        <img src="" class="wallpapers" id="wall9" onclick="cwall(this)" onerror="this.src='https://img.maocdn.cn/img/2021/05/04/No_Image.png'">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
- 
-          <div class="page" id="help">
-            <header>帮助与反馈</header>
-              <div class="detail">
-                <br>
-                <div>
-                  <a href="https://wj.qq.com/s2/9444065/a16d" style="color:var(--maincolor);text-decoration:none">在线反馈</a>丨<a href="https://jq.qq.com/?_wv=1027&k=rU9gu8El" target="_blank" style="color:var(--maincolor);text-decoration:none">QQ交流群</a>
-                </div><br>
-                <div class="txtblock" style="font-size:1ems">
-                  <b>站点直达是什么功能？</b><br>
-                  <span>在首页搜索框输入“功能关键字+空格+搜索关键词”，即可马上跳转到对应网站。比如您使用默认的设置，在搜索框输入“hy 关雎”便可以打开百度汉语中“关雎”对应的页面。</span>
-                  <hr>
-                  <b>账号同步功能在哪？</b><br>
-                  <span>抱歉，账号系统正在维护，暂不支持登录账号。</span>
-                  <hr>
-                  <b>动画不流畅，掉帧严重？</b><br>
-                  <span>请在设置-个性主题-亚克力特效-关闭。如果依然卡顿，请更换国际主流的浏览器访问本站。</span>
-                  <hr>
-                  <b>如何将布斯设置为新标签页？</b><br>
-                  <span>请在<a style="color:var(--maincolor);text-decoration:none" target="_blank" href="/extension.html">这里</a>下载布斯起始页官方浏览器扩展。</span>
-                </div>
-              </div>
-          </div>
-          <div class="page" id="info">
-            <header>关于布斯</header>
-            <div class="detail">
-              <img src="static/picture/icon.png" style="width:50px;height:50px;vertical-align:middle">
-              <span style="vertical-align:middle;display:inline-block" align="center"><font style="font-size:1.5em">布斯·起始页</font><br><font style="font-size:1em;color:grey">Bius StartPage</font></span>
-              <div style="font-size:1.5em"><span onclick="window.open('//simsoft.top')"><font style="font-weight:bold;color:#1E9FFF">Sim</font><font style="font-weight:normal;color:#ff7f27">Soft</font></span> × <font style="font-weight:bold" onclick="window.open('https://space.bilibili.com/18853927')">Yubius</font></div>
-              <div class="txtblock">
-                <span><b style="font-size:1.1em">法律信息</b><br>您可以出于学习目的查看我们的源代码，但您不可以盗用任何代码，无论是否为商业用途。在未经布斯起始页授权的情况下，您不可以制作或发行使用布斯起始页内部接口的应用或网站。您不可以在未经布斯起始页授权的应用或网站上使用布斯起始页的服务。布斯起始页有权对违规者追究法律责任。</span>
-              </div>
-              <br>
-              <div class="txtblock">
-                <span>
-                  <b style="font-size:1.1em">特别感谢</b><br>
-                  <a href="//limestart.cn/" style="color:var(--maincolor);text-decoration:none">青柠起始页：为本站设计提供极大灵感</a><br>
-                  <a href="//www.retiehe.com/" style="color:var(--maincolor);text-decoration:none">热铁盒软件：为本站提供了一些公开API</a><br>
-                  <a href="//maorx.cn/" style="color:var(--maincolor);text-decoration:none">毛若昕：青柠起始页的开发者</a><br>
-                  <a href="//www.yangshangzhen.com/" style="color:var(--maincolor);text-decoration:none">杨尚臻：为本站提供了一些代码建议</a><br>
-                  <a href="//horain.net/" style="color:var(--maincolor);text-decoration:none">Horain：提供云计算基础</a><br>
-                  <a href="//cloudflare.com/" style="color:var(--maincolor);text-decoration:none">Cloudflare：为本站后端服务提供攻击防御</a><br>
-                  <a href="//simsoft.top/" style="color:var(--maincolor);text-decoration:none">SimSoft：完成本站多数代码</a><br>
-                </span>
-              </div>
-              <br>
-              <div class="txtblock">
-                <b style="font-size:1.1em">更新日志</b><br>
-                <b>2021.5.27</b>
-                <li>重写搜索逻辑。</li>
-                <li>修复搜索框动画鬼畜的问题。</li>
-                <b>2021.5.19</b>
-                <li>大幅度优化搜索结果加载逻辑。</li>
-                <li>完成搜索Pro的Javascript算法。</li>
-                <b>2021.5.17</b>
-                <li>云端Json解析失败时的自恢复能力。</li>
-                <b>2021.5.16</b>
-                <li>优化移动版PWA应用体验。</li>
-                <li>修复了更改主题色后同步数据导致本地Json数据库损坏的重大Bug。</li>
-                <li>大幅度优化新用户加载速度，节省流量消耗。目前网络状况较好的用户可以秒开起始页。</li>
-                <b>2021.5.15</b>
-                <li>增加云端设置同步系统</li>
-                <li>修复了降低背景图像亮度设置项默认开关的问题，优化对老旧内核的兼容性。</li>
-                <b>2021.5.4</b>
-                <li>上线主题与壁纸切换等功能</li>
-                <li>更新帮助与关于界面</li>
-                <li>优化一言的显示</li>
-                <b>2021.4.23</b>
-                <li>上线搜索功能</li>
-                <li>更改设置UI界面</li>
-                <b>2021.4.21</b>
-                <li>4.0正式开始开发，完成基本界面</li>
-              </div>
-              <br>
-              <br>
-            </div>
-        </div>
-      </div>
-    </div>
+    </section>
+</window>
+<div class="menu-btm" onmouseover="$(this).attr('class','menu-btm-active')" onmouseout="$(this).attr('class','menu-btm')">
+    <img src="https://imgcdn.simsoft.top/upload/21-08-02-08-55-22-菜单.png" width="25px" height="25px"><span style="vertical-align:middle;font-size:1.2em;font-weight:bold;padding-left:20px;white-space:nowrap">选项</span>
+    <br><br>
+    <div class="user" onclick="window.open('//my.bius.top')"><img src="https://imgcdn.simsoft.top/upload/21-08-02-09-01-34-账户.png" width="20px" height="20px"><span style="vertical-align:middle;font-size:1.1em;padding-left:10px;white-space:nowrap;display:inline-block;line-height: 1em;"><span>账户</span><br><span id="uid" style="color:#2f88ff;font-size:0.8em;overflow: hidden;width: 110px;display: inline-block;">获取中...</span></span></div>
+    <div class="action-btn updated"><img src="https://imgcdn.simsoft.top/upload/21-08-02-09-01-06-%E6%8A%80%E5%B7%A7.png" width="20px" height="20px"><span style="vertical-align:middle;font-size:1.1em;padding-left:10px;white-space:nowrap">技巧</span></div>
+    <div class="action-btn about"><img src="https://imgcdn.simsoft.top/upload/21-08-02-09-00-40-%E5%85%B3%E4%BA%8E.png" width="20px" height="20px"><span style="vertical-align:middle;font-size:1.1em;padding-left:10px;white-space:nowrap">关于</span></div>
+    <div class="action-btn setting"><img src="https://imgcdn.simsoft.top/upload/21-08-02-09-01-21-设定.png" width="20px" height="20px"><span style="vertical-align:middle;font-size:1.1em;padding-left:10px;white-space:nowrap">设定</span></div>
+</div>
+<textarea id="yiyaninput" style="position:fixed;top:0;width:0;height:0;opacity:0"></textarea>
 
-	  <script src="static/js/bius.js"></script>
-	</body> 
+<script src="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Kico-Style/kico.js"></script>
+<script src="https://my.bius.top/static/"></script>
+<script src="static/jq.js"></script>
+<script src="https://code.simsoft.top/getCode.php?app=biuso"></script>
+<script src="https://code.simsoft.top/getCode.php?app=bius-o"></script>
+<style id="backgroundstyle"></style><style id="blurstyle"></style>
+</body>
 </html>
+<!-- 代码优化：By SimSoft
+    https://simsoft.top/ -->

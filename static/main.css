@@ -6,7 +6,7 @@
 
 一个简洁不失细节的起始页
 
-本代码为奇趣保罗原创，是鱼布斯啊参与维护
+本代码为奇趣保罗原创，是鱼布斯啊&YanJi参与维护
 
 ---- */
 
@@ -239,11 +239,12 @@ footer{
     bottom: 0;
     color: #999;
     color: var(--font-color);
-    text-shadow: var(--font-shadow);
+    text-shadow: 0 0 5px grey;
     padding: 1em 0;
     position: fixed;
     font-size: .875em;
     text-align: center;
+    z-index:-1
 }
 
 footer a{
@@ -254,6 +255,7 @@ footer a{
     footer{
         position: static;
     }
+    #set-site{height:30px!important}
 }
 
 window{
@@ -283,9 +285,10 @@ window.active{
     display: none;
     min-width: 15em;
     max-width: 40em;
-    background: #fff;
+    background: rgba(255, 255, 255,0.85);
     border-radius: 1em;
     box-shadow: var(--shadow-thick);
+    overflow:hidden
 }
 .the-window.active{
     display: block;
@@ -298,6 +301,7 @@ window.active{
 
 .the-window .window-head{
     padding: 1em 1.5em;
+    background:white;
     text-align: center;
     position: relative;
     box-shadow: var(--shadow);
@@ -320,3 +324,45 @@ window.active{
 .the-window .window-body{
     padding: 1.5em;
 }
+
+
+/* YanJi原创代码 */
+
+*{user-select:none;cursor:default!important;-webkit-tap-highlight-color:transparent;scrollbar-width: none;}
+.navi-background{z-index:-2}
+.navi-background-mask{transition:all .2s!important;z-index:-1;background:rgba(0,0,0,0.5);position:fixed;top:0;bottom:0;left:0;right:0;backdrop-filter:blur(5px);opacity:0}
+.navi-loading-mask-finished{transition:all .5s!important;z-index:10;background:rgba(0,0,0,0.5);position:fixed;top:0;bottom:0;left:0;right:0;opacity:0;transform:scale(3)}
+#time,#time2{transition:all .2s}
+#time:active,#time2:active{transform:scale(0.9)}
+.search-select{width:fit-content;height:40px}
+.input-box.search-border{background: rgba(255,255,255,0.5);padding:3px;padding-left:10px;backdrop-filter:blur(5px);width:30%;min-width:300px;transition:all .2s;display:inline-flex;height:45px;max-width:700px;color:black;box-shadow:0 0 0 0 black!important}
+.input-box.search-backg{background: rgba(0,0,0,0.5);backdrop-filter:blur(5px);padding:3px;padding-left:10px;width:30%;min-width:300px;transition:all .2s;display:inline-flex;height:45px;max-width:700px;color:white;box-shadow:0 0 0 0 black!important}
+.input-box.search-border input::placeholder{color:#474747;transition:all .2s}
+.input-box.search-backg input::placeholder{color:#d1d1d1;transition:all .2s}
+.input-box.search-backg input:focus::placeholder{color:black}
+.input-box.search-border input:focus::placeholder{color:white}
+.input-box input{padding:0;text-align:center}
+.input-box:hover{width:100%}
+.input-box:focus-within{width:100%}
+header .updated{display:block!important}
+body{position: fixed;width: 100%;}
+.fa{margin-top:30%}
+#backselect option[0]{background:url('https://api.simsoft.top/bing/api.php?f=img')}
+.ks-notice .content{user-select:text}
+#navisites-section::-webkit-scrollbar{display:none}
+window{backdrop-filter:blur(5px)}
+.the-window{border-radius:5px}
+.window-head h3{font-weight:bold;margin-right: 30px;}
+.navi-icon{border-radius:7px;box-shadow:0 0 0 0}
+.window-head button{color:red!important;background:white!important}
+.navi-background{background:url() center center / cover no-repeat}
+body{background:grey}
+.menu-btm{position:fixed;bottom:5px;left:5px;border-radius:10px;padding:5px;background:rgba(255,255,255,0.5);transition:all .4s;overflow:hidden;width:35px;height:35px;white-space:nowrap}
+.menu-btm-active{position:fixed;bottom:5px;left:5px;border-radius:10px;padding:5px;background:rgba(255,255,255,0.5);transition:all .4s;overflow:hidden;width:35px;height:35px;white-space:nowrap;border-radius:10px;padding:15px;background:rgba(255,255,255,1);width:200px;height:250px}
+.menu-btm div,.menu-btm-active div{border-radius:5px;margin:3px;transition:all .2s;padding:5px}
+.menu-btm div:hover,.menu-btm-active div:hover{background:#f1f1f1}
+#he-plugin-simple{position:fixed!important;bottom:5px!important;right:5px!important;border-radius:10px!important;padding:5px;background:rgba(255,255,255,0.5);width:35px;height:35px;white-space:nowrap}
+.s-sticker{padding:0!important}
+.sync{text-align:center}
+.sync svg{vertical-align:middle;opacity:0.5;fill:white}
+.sync span{vertical-align:middle;opacity:0.5;font-size:0.8em}
