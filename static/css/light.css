@@ -21,24 +21,25 @@ body{--bradius:10px}/*全局动态调节*/
   .main-page .backimg{position:absolute;z-index:-1;object-fit:cover;width:100vw;height:100vh;opacity:0;transition:all .2s}
   .main-page #bg-mask{position:absolute;z-index:-1;width:100vw;height:100vh;opacity:0;transition:all .2s;background:radial-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%), radial-gradient(rgba(0,0,0,0) 33%, rgba(0,0,0,0.3) 166%)}
   .main-page .time{position:absolute;top:20vh;width:100%}
-  .main-page #time{display:inline-block;font-size:3.4em;color:white;text-shadow:0 0 5px black;transition:all .2s;}
+  .main-page #time{display:inline-block;font-size:3.4em;color:white;text-shadow:0 0 5px black;transition:all .2s;margin-right:auto;margin-left:auto;}
   .main-page #time:hover{color:#ececec}
   .main-page #time:active{transform:scale(0.9)}
   .main-page .yiyan{position:absolute;top:calc(20vh + 55px);width:100%;display:none;}
-  .main-page #yiyan{display:inline-block;font-size:1em;color:white;text-shadow:0 0 5px black;transition:all .2s;padding-left:1em}
+  .main-page #yiyan{display:inline-block;font-size:1em;color:white;text-shadow:0 0 5px black;transition:all .2s;padding-left:1em;margin-right:auto;margin-left:auto;}
   .main-page #yiyan:hover{color:#ececec}
-  .main-page .search{transition:all .2s;height:35px;position:absolute;left:0;right:0;margin:auto;width:80vw;min-width:300px;max-width:400px;top:calc(20vh + 100px);border-radius:var(--bradius);backdrop-filter:var(--blur);background:rgba(255,255,255,0.6)}
-  .main-page .search-focus{max-width:100vw;min-width:300px;transition:all .2s;height:35px;position:absolute;left:0;right:0;margin:auto;width:calc(100vw - 30px);top:10px;border-radius:var(--bradius);box-shadow:0 0 5px 0 black;background:white;border:1px solid white}
+  .main-page .search{box-shadow: 0 0 5px 0 black;transition:all .2s;height:40px;position:absolute;left:250px;right:0;margin:auto;width:80vw;min-width:300px;max-width:400px;top:calc(20vh + 100px);border-radius:var(--bradius);backdrop-filter:var(--blur);background:rgba(255,255,255,0.8)}
+  .main-page .search:hover{background:white;box-shadow: 0 0 5px 0 black}
+  .main-page .search-focus{max-width:500px;min-width:300px;transition:all .2s;height:40px;position:absolute;left:0;right:0;margin:auto;width:calc(100vw - 30px);top:calc(50vh - 250px);border-radius:var(--bradius);box-shadow:0 0 5px 0 black;background:white;border:1px solid white}
   .main-page .search #search{color:black;background:transparent;border:0;outline:none;padding:8px;width:calc(100% - 20px);text-align:center;font-size:1.1em}
   .main-page .search:focus-within{background:white}
   .main-page .search:focus-within #search::placeholder{color:transparent}
   .main-page .search-focus #search{color:black;background:transparent;border:0;outline:none;padding:8px;width:calc(100% - 80px);text-align:left;font-size:1.1em}
   .main-page .search #search::placeholder{color:#4e4e4e}
-  .main-page .search div.icon{white-space:nowrap;display:inline-block;overflow:hidden;width:0;overflow:hidden;vertical-align:middle}
+  .main-page .search div.icon{white-space:no-wrap;display:inline-block;overflow:hidden;width
   .main-page .search-focus div.icon{display:inline-block;overflow:hidden;width:55px;vertical-align:middle}
   .main-page .search-focus div.icon svg:hover{fill:var(--maincolor)}
-  .main-page .advice{--toppx:60px;top:150vh;position:fixed;background:rgba(255,255,255,0.8);height:fit-content;margin-top:10px;opacity:0;transition:margin-top .2s,opacity .2s,top .4s;left:0;right:0;width:calc(100vw - 30px);border-radius:var(--bradius);margin-top:10px;padding-bottom:10px;padding-top:10px;margin:auto;}
-  .main-page .advice .advlist{padding:10px;transition:background .2s,color .2s,opacity .2s,fill .2s;white-space:nowrap;width:calc(100% - 20px);overflow:hidden;text-overflow:ellipsis;}
+  .main-page .advice{--toppx:calc(50vh - 200px);top:150vh;position:fixed;background:rgba(255,255,255,0.8);height:fit-content;margin-top:10px;opacity:0;transition:margin-top .2s,opacity .2s,top .4s;left:0;right:0;width:calc(100vw - 30px);border-radius:var(--bradius);margin-top:10px;padding-bottom:10px;padding-top:10px;margin:auto;max-width:500px;}
+  .main-page .advice .advlist{padding:10px;transition:background .2s,color .2s,opacity .2s,fill .2s;white-space:no-wrap;width:calc(100% - 20px);overflow:hidden;text-overflow:ellipsis;}
   .main-page .advice .advlist:hover{background:var(--maincolor);color:white;fill:white}
   .main-page .advice .advlist:active{opacity:0.8;}
   .main-page .advice .advlist span{vertical-align:middle}
