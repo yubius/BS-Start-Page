@@ -5,7 +5,7 @@
     <meta name="baidu-site-verification" content="code-tBgKvePhx0" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="SimSoft,YSH,YanShuHao,盐鸡,个人网站,起始页,新标签页,Yubius,是鱼布斯啊,鱼布斯,布斯,Bius,布斯起始页,余雨轩,青柠起始页,浏览器,美化,上网主页,网址导航,纯净,无广告,simsoft">
+    <meta name="keywords" content="SimSoft,YSH,YanShuHao,盐鸡,个人网站,起始页,新标签页,Yubius,是鱼布斯啊,鱼布斯,布斯,Bius,布斯起始页,浏览器,美化,上网主页,网址导航,纯净,无广告">
     <meta name="description" content="简洁·便捷·时尚！这里是布斯起始页~">
     <title>布斯起始页</title>
     <link rel="icon" href="static/icon.png" sizes="192x192"/>
@@ -13,17 +13,21 @@
     <link rel="stylesheet" href="https://at.alicdn.com/t/font_1809713_rg58vy6eb7.css">
     <link href="https://fastly.jsdelivr.net/gh/FortAwesome/Font-Awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="static/main.css">
-
+    
 </head>
 <body style="top:0;transition:all .5s">
     <header>
-        <div class="action-btn updated" ks-tag="bottom" ks-text="支持">
-            <?xml version="1.0" encoding="UTF-8"?><svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.3399 9L6.67969 14V24V34L15.3399 39L24.0002 44L32.6605 39L41.3207 34V24V14L32.6605 9L24.0002 4L15.3399 9Z" fill="#2F88FF" stroke="#333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M24.0002 24L13.6079 30M24.0002 24V11V24ZM24.0002 24L34.3925 30L24.0002 24Z" stroke="#FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M26.8147 35.375L24.0001 37L21.1855 35.375" stroke="#FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M32.4438 15.875L35.2584 17.5V20.75" stroke="#FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.7417 20.75V17.5L15.5563 15.875" stroke="#FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="action-btn edit" ks-tag="bottom" ks-text="管理导航项">
+            <i class="fa fa-edit"></i>
+        </div>
+        <div class="action-btn updated" ks-tag="bottom" ks-text="更新日志">
+            <i class="fa fa-bullhorn"></i>
         </div>
         <div class="action-btn about" ks-tag="bottom" ks-text="关于">
-            <?xml version="1.0" encoding="UTF-8"?><svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 44L8 6C8 4.89543 8.89543 4 10 4H38C39.1046 4 40 4.89543 40 6V44L24 35.7273L8 44Z" fill="#2F88FF" stroke="#333" stroke-width="4" stroke-linejoin="round"/><path d="M16 18H32" stroke="#FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>        </div>
+            <i class="fa fa-info-circle"></i>
+        </div>
         <div class="action-btn setting" ks-tag="bottom" ks-text="设定">
-            <?xml version="1.0" encoding="UTF-8"?><svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M34.0003 41L44 24L34.0003 7H14.0002L4 24L14.0002 41H34.0003Z" fill="#2F88FF" stroke="#333" stroke-width="4" stroke-linejoin="round"/><path d="M24 29C26.7614 29 29 26.7614 29 24C29 21.2386 26.7614 19 24 19C21.2386 19 19 21.2386 19 24C19 26.7614 21.2386 29 24 29Z" fill="#43CCF8" stroke="#FFF" stroke-width="4" stroke-linejoin="round"/></svg>
+            <i class="fa fa-cog"></i>
         </div>
     </header>
 <main>
@@ -34,10 +38,10 @@
                 <div class="iconfont icon-baidu"></div>
             </div>
             <div class="search-selector"></div>
-            <input type="text" placeholder="搜索" onfocus="searchstart()" onblur="searchstop()" onkeydown="entersearch(event)"/>
+            <input type="text" placeholder="Search" onfocus="searchstart()" onblur="searchstop()" onkeydown="entersearch(event)"/>
         </span>
 		<div align="center">
-			<h1 onclick="copyyiyan()" id="yiyan" style="border-radius:10px;backdrop-filter:blur(5px);display:inline-block;font-family:微软雅黑;color:white;font-size:0.9em;font-weight:lighter;text-shadow:0 0 5px grey;text-align:center;margin:0;margin-top:20vh">正在撰写一言...</h1>
+			<h1 onclick="copyyiyan()" id="yiyan" style="border-radius:10px;backdrop-filter:blur(5px);display:inline-block;font-family:微软雅黑;color:white;font-size:0.9em;font-weight:lighter;text-shadow:0 0 5px grey;text-align:center;margin:0;margin-top:20vh">正在撰写一言......</h1>
 		</div>
     </section>
 	<div style="height:calc(100vh - 300px);overflow-y:scroll;padding-bottom:30px;margin-top:30px" id="navisites-section">
@@ -49,56 +53,41 @@
     <section class="navi-loading-mask" style="transition:all .2s;" align="center">
 		<img src="/static/icon.png" height="200px" width="200px" style="margin-top:calc(50vh - 100px)">
 	</section>
-    <label>
-          <select name="hall" id="hall" value="0"> // 添加了 value="0"
-            <option selected>必应</option> // 添加了 selected
-            <option>百度</option>
-            <option>无追</option>
-            <option>谷歌</option>
-            <option>搜狗</option>
-            <option>360搜索</option>
-            <option>神马搜索</option>
-            </select>                </label>
-    <label id="setdiy-area">
- <!--       <textarea style='width:100%;border-radius:2px;background:transparent;border:1px solid #cccccc;resize:none;height:1em' onchange='savebackground()' id='backurl-input' placeholder="在此处输入自定义壁纸的网址"></textarea>      !-->   
-    </label>
 </main>
 <div id="he-plugin-simple"></div>
 <style>#he-plugin-simple{border-radius:10px;backdrop-filter:blur(5px);right:0!important;width:150px;text-shadow:0 0 5px black!important;position:fixed!important;bottom:0}</style>
 <script>WIDGET = {"CONFIG":{"modules": "01234","background": "5","tmpColor":"FFFFFF","tmpSize":"16","cityColor":"FFFFFF","citySize":"16","aqiColor":"FFFFFF","aqiSize": "16","weatherIconSize":"24",    "alertIconSize": "18",    "padding": "10px 10px 10px 10px",    "shadow": "0","language": "auto",    "fixed": "false",    "vertical": "top",    "horizontal": "left",    "key": "079764eefd5740d9b9efd86ffefabd78"  }}</script>
 <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script>
-  <footer id="footer" style="text-align:center">
-    <p style="font-family:'Microsoft Yahei Light','Microsoft Yahei',PingFangSC-Regular,Helvetica,sans-serif,'等线';display:inline-block;border-radius:10px;backdrop-filter:blur(5px)">© 2023 <a href="https://space.bilibili.com/18853927" target="_blank">是鱼布斯啊</a>&<a href="https://simsoft.top" target="_blank">YanJi</a> | <a href="https://github.com/yubius/yubius.github.com/discussions" target="_blank">帮助反馈</a> | <a href="https://github.com/yubius/yubius.github.com/discussions/categories/%E7%BD%91%E5%9D%80%E6%8F%90%E4%BA%A4" target="_blank">提交网址</a> | <a href="https://jq.qq.com/?_wv=1027&k=76LGja0W" target="_blank">加官方群</a></p>
-</footer>  
-<window>
+<footer id="footer" style="text-align:center">
+    <p style="font-family:'Microsoft Yahei Light','Microsoft Yahei',PingFangSC-Regular,Helvetica,sans-serif,'等线';display:inline-block;border-radius:10px;backdrop-filter:blur(5px)">© 2022 <a href="https://space.bilibili.com/18853927" target="_blank">是鱼布斯啊</a>&<a href="https://simsoft.top" target="_blank">YanJi</a> | <a href="https://github.com/yubius/yubius.github.com/discussions" target="_blank">帮助反馈</a> | <a href="https://github.com/yubius/yubius.github.com/discussions/categories/%E7%BD%91%E5%9D%80%E6%8F%90%E4%BA%A4" target="_blank">提交网址</a> | <a href="https://jq.qq.com/?_wv=1027&k=wtADllTR" target="_blank">加官方群</a></p>
+</footer>
+<window>   
+<section class="the-drawer sites">
+</window>   
+<window>   
+
+    <div class="drawer-head">
+        <img src="static/icon.png" style="height:30px;float:left">
+        <button data-type="close">×</button>
+        <h3>管理导航项</h3>
+    </div>
+    <div class="drawer-body">
+        <div class="sites"></div>
+        <p class="add-sites">若想扩展添加更多导航项，欢迎在本项目 Issues 区 <a href="https://github.com/Dreamer-Paul/KStart/issues/1" target="_blank">公共导航列表添加建议区</a> 留言讨论！</p>
+    </div>
+</section>
     <section class="the-window updated">
         <div class="window-head">
             <img src="static/icon.png" style="height:30px;float:left">
-            <button>-</button>
-            <h3>支持</h3>
+            <button>×</button>
+            <h3>更新日志</h3>
         </div>
         <div class="window-body">
             <article>
-                <a href="https://github.com/yubius/yubius.github.com/releases"><img src="https://imgcdn.simsoft.top/1673865594-自定义模板 (5).jpg" alt="布斯起始页"></a>
-                <h3>    </h3>
-                <blockquote>
-                        <h2>上一次更新2023/1/16</h2>
-                  </blockquote>
-                <!--       <li>新年快乐！</li>
-                <ol>
-                    <li>解决长期困扰的搜索框无响应问题</li>
-                    <li>支持无追搜索引擎[无追融合了多引擎内容]</li>
-                    <li>搭载全新Mica设计风格更灵动更时尚</li>
-                </ol>   !-->
-
-                <h2>布斯驭骏引擎为你而驱动</h2>
-                <li>稳定快速的服务器、简而易用的操作界面、美轮美奂的个性化体验...无不得益于布斯驭骏引擎的强劲驱动</li>
-                <h2>布斯尊重且保障你的权利</h2>
-                <li>隐私是每个人的基本权利，同时也是 布斯 的一项核心价值观。你的活动在生活的方方面面都发挥着重要作用。其中的哪些东西可以分享，以及与谁分享，都应该由你来决定。我们设计 布斯 产品的理念就是保护你的隐私，并让你全权管控自己的信息。这并非易事，但我们坚信这才是真正的创新。</li>
-                <h2>创新是引领发展的第一动力</h2>
-                <li>致美的轮换墙纸、感同身受的一言、极具科技感的简约，从各个角度看布斯都是极具创新力的。满载全新的个性化功能、更具深度的智能技术，以及更多无缝的沟通与共享方式，让 起始页 的体验更进一步。</li>
+                <h2>更新日期:2022/8/3</h2>
+                <li>修复已知bug，不久后将带来全新版本！</li>
                 </ul>
-             <!--   <a href="https://github.com/yubius/yubius.github.io/releases"> 
+                <a href="https://github.com/yubius/yubius.github.io/releases"> 
                     <p style="text-align: center;">                    
                     <img src="https://imgcdn.simsoft.top/upload/22-04-03-11-14-22-update.jpg" width="380%" height="280%" />
                     </p>
@@ -108,63 +97,72 @@
                         <p style="text-align: center;">                    
                         <img src="https://imgcdn.simsoft.top/upload/22-01-29-16-24-50-fk.png" width="380%" height="280%" />
                         </p>
-                    </a>       !-->
+                    </a>
             </article>
         </div>
     </section>
+
     <section class="the-window about">
         <div class="window-head">
             <img src="static/icon.png" style="height:30px;float:left">
-            <button>-</button>
+            <button>×</button>
             <h3>关于</h3>
         </div>
         <div class="window-body">
             <article>
-                <a href="https://space.bilibili.com/18853927"><img src="https://imgcdn.simsoft.top/1673011080-自定义模板 (1).jpg" alt="布斯起始页"></a>
+                <a href="https://github.com/yubius/yubius.github.com/discussions/categories/%E7%BD%91%E5%9D%80%E6%8F%90%E4%BA%A4"><img src="https://imgcdn.simsoft.top/1651928049-dev.jpg" alt="欢迎站长投递网站至捷径"></a>
 
-                <h3>    </h3>
+                <h2>    </h2>
                 <h2>你好！欢迎访问布斯起始页</h2>
+                <h2>更新日期：2022/7/24</h2>
+                <h2>Based on BiusUI</h2>
+
                 <h2>本项目建设于2021/2/22</h2>
                 <h3>贡献者：</h3>
                 <a href="https://space.bilibili.com/18853927" target="_blank">YuXuan(Yubius)</a> | <a href="https://simsoft.top/" target="_blank">YanJi(SimSoft)</a> | <a href="https://paul.ren/" target="_blank">奇趣保罗</a>
                 <h3>联系我们：</h3>
-                <a href="https://space.bilibili.com/18853927" target="_blank">哔哩哔哩:是鱼布斯啊</a>
-                 <h4> </h4>
-                <a href="https://jq.qq.com/?_wv=1027&k=76LGja0W" target="_blank">QQ交流群:Win11系统Office交流</a>
-                <h4> </h4>
-                <a href="mailto:yu@yubius.com" target="_blank">电子邮件:yu@yubius.com</a>
-                <h3> </h3>
+                <a href="https://space.bilibili.com/18853927"> 
+                    <p style="text-align: center;">                    
+                    <img src="https://imgcdn.simsoft.top/upload/22-04-03-10-08-08-bilibili.jpg" width="380%" height="280%" />
+                    </p>
+                 </a>
+                 <h3> </h3>
 
+                 <a href="https://jq.qq.com/?_wv=1027&k=rU9gu8El"> 
+                    <p style="text-align: center;">                    
+                    <img src="https://imgcdn.simsoft.top/upload/22-01-30-21-14-33-QQ.jpg" width="380%" height="280%" />
+                    </p>
+                 </a>
+                 
                 <h3>类似项目：</h3>
-                <a href="https://s.paul.ren/" target="_blank">奇趣起始页</a> | <a href="https://limestart.cn/" target="_blank">青柠起始页</a> | <a href="https://h.simsoft.top/" target="_blank">氢起始页</a>
-                <h3> </h3>
+                <a href="https://tab.urasoft.top"> 
+                    <p style="text-align: center;">                    
+                    <img src="https://imgcdn.simsoft.top/upload/22-01-30-21-06-43-wx.jpg" width="380%" height="280%" />
+                    </p>
+                    </a>
                 <h3>意见反馈：</h3>
-                <a href="mailto:yu@yubius.com" target="_blank">邮件联系站长</a> | <a href="https://jq.qq.com/?_wv=1027&k=76LGja0W" target="_blank">QQ交流群</a> | <a href="https://github.com/yubius/yubius.github.com/discussions" target="_blank">GitHub社区</a>
-                <h3> </h3>
-                <!--<a href="https://github.com/yubius/yubius.github.com/discussions"> 
+                <a href="https://github.com/yubius/yubius.github.com/discussions"> 
                     <p style="text-align: center;">                    
                     <img src="https://imgcdn.simsoft.top/upload/22-01-29-16-24-50-fk.png" width="380%" height="280%" />
                     </p>
-                    </a>           !-->
+                    </a>
         </div>
     </section>
     <section class="the-window setting">
         <div class="window-head">
             <img src="static/icon.png" style="height:30px;float:left">
-            <button>-</button>
+            <button>×</button>
             <h3>设定</h3>
         </div>
         <div class="window-body">
             <fieldset>
                 <label>
                     <span>搜索引擎偏好</span>
-                    <img src="https://imgcdn.simsoft.top/upload/22-01-29-17-26-12-help.png" style="float:right;margin-top: 5px;" onclick="ks.notice('布斯推荐使用必应或无追搜索引擎 ',{color:'green',time:5000})" height="15px">
-
                     <select name="search" data-key="search_method"></select>
                 </label>
                 <label>
                     <span>亚克力特效</span>
-                    <img src="https://imgcdn.simsoft.top/upload/22-01-29-17-26-12-help.png" style="float:right;margin-top: 5px;" onclick="ks.notice('使用亚克力特效会带来更好看的界面，但在大屏设备上会带来严重掉帧卡顿。如果您在使用过程中发现不流畅，可以关闭此选项。',{color:'green',time:5000})" height="15px">
+                    <img src="https://imgcdn.simsoft.top/upload/22-01-29-17-26-12-help.png" style="float:right;margin-top: 5px;" onclick="ks.notice('使用亚克力特效会带来更好看的界面，但在大屏设备上会带来严重掉帧卡顿。如果您在使用过程中发现不流畅，建议关闭此选项。',{color:'green',time:5000})" height="15px">
                     <select id="blur-set" onchange="saveblur()">
 						<option value="on">允许使用亚克力特效</option>
 						<option value="off">关闭亚克力特效</option>
@@ -176,37 +174,37 @@
                     <select name="background" data-key="back_method" id="backselect"></select>
                 </label>
 				<label id="setdiy-area">
-             <!--       <textarea style='width:100%;border-radius:2px;background:transparent;border:1px solid #cccccc;resize:none;height:1em' onchange='savebackground()' id='backurl-input' placeholder="在此处输入自定义壁纸的网址"></textarea>      !-->   
-                </label>
-				<label>
-                    <span>编辑捷径</span>
-                    <img src="https://imgcdn.simsoft.top/upload/22-01-29-17-26-12-help.png" style="float:right;margin-top: 5px;" onclick="ks.notice('Windows用户请按住Ctrl键多选<br>Mac用户请按住Command键多选',{color:'green',time:2000})" height="15px">
-                    <select multiple name="sites" data-key="sites" style="height: 15em" id="set-site"></select>
+                    <textarea style='width:100%;border-radius:2px;background:transparent;border:1px solid #cccccc;resize:none;height:1em' onchange='savebackground()' id='backurl-input' placeholder="在此处输入自定义壁纸的网址"></textarea>
                 </label>
 
-                <p align="center" style="display:none">
-                    <button class="btn small blue" name="reset">恢复默认</button>
-                    <button class="btn small blue" name="output">导出</button>
-                    <button class="btn small blue" name="input" onclick="loadnewsetting()">导入</button>
+                                
+                <p class="btn-group">
+                    <button class="btn small primary" id="set-reset" title="重置个人设置为默认值">重置为默认</button>
+                    <button class="btn small transparent" id="set-input" title="导入个人设置">导入</button>
+                    <button class="btn small transparent" id="set-output" title="导出个人设置">导出</button>
+                    <input type="file" id="set-file" hidden />
                 </p>
             </fieldset>
         </div>
     </section>
+
 </window>
+
+
+<p align="center" style="display:none">
+    <button class="btn small blue" name="reset">恢复默认</button>
+    <button class="btn small blue" name="output">导出</button>
+    <button class="btn small blue" name="input" onclick="loadnewsetting()">导入</button>
+</p>
+</fieldset>
+</div>
+</section>
 <textarea id="yiyaninput" style="position:fixed;top:0;width:0;height:0;opacity:0"></textarea>
 
 
 <script src="https://fastly.jsdelivr.net/gh/Dreamer-Paul/Kico-Style/kico.js"></script>
 <script src="https://h.simsoft.top/js/jq.js"></script>
 <script src="static/main.js?https://simsoft.top/"></script>
-    <script>
-     data.user = {
-        search: 0,
-        background: 0,
-        sites: [],
-        custom: []
-     };
-    </script>
 	<script>
 	function showtime() { 
 		var today = new Date() 
@@ -240,7 +238,7 @@
 	    var img = new Image();
             img.crossOrigin = "Anonymous";
             img.src = data.back_method[data.user.background].url;
-
+            
             img.onload = function (ev) {
                 obj.main.bg.style.background = "url(" + img.src + ") " + data.back_method[data.user.background].set;
                 obj.main.bg.classList.add("active");
@@ -281,9 +279,7 @@
 		if(delta < 0) {scroll2page()}
 		else {scroll1page()}
 	});
-
 	</script>
-
 	<style id="backgroundstyle"></style>
 	<style>
 		*{user-select:none}
@@ -309,6 +305,6 @@
 </html>
 <!-- 网站开发：By Yubius
     https://space.bilibili.com/18853927/ -->
-
+    
 <!-- 代码优化：By SimSoft
     https://simsoft.top/ -->
