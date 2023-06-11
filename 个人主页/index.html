@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>YanJi's Site</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<meta name="keywords" content="Simsv Studio,氢软,YSH,盐鸡,个人网站,起始页,新标签页,语音合成,文件传输,音乐解析,VIP解析,图床,图片CDN,文字识别,工具箱">
+	<meta name="description" content="这里是菜鸟开发者 YanJi 的主页 ~ 欢迎在这里查看他的一些主要项目">
+	<link rel="stylesheet" href="style.css?v=4">
+	<link rel="icon" href="//asset.simsoft.top/branding/projects/yanji.png">
+</head>
+<body>
+	<div class="main fadeIn" id="mainContainer">
+		<div class="header">
+			<div id="headerText"></div>
+			<svg onclick="closeWindow()" width="25" height="25" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 8L40 40" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 40L40 8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+		</div>
+
+
+		<div class="aboutMe" onclick="toggleMobileIntroFocus()">
+			<img src="//asset.simsoft.top/branding/projects/yanji.png">
+			<div class="name">YanJi's Site</div>
+			<div class="intro">
+				<p class="fadeIn">坐标申城 在校高一学生</p>
+				<p class="fadeIn">半个不专业地铁迷 业余编程</p>
+				<p class="fadeIn">氢软开发者 & <u onclick="location='//nlrdev.top'">NLRDev</u> 成员<br>对 Web 前后端开发略有了解</p>
+				<p class="fadeIn">如果您有条件 可以选择<u onclick="gid('donate').classList.add('active');gid('donateMask').style.display='block';">捐助我</u></p>
+			</div>
+			<svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" fill="white" fill-opacity="0.01"/><path d="M37 18L25 30L13 18" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+		</div>
+
+		<div class="buttons">
+			<!--我的作品-->
+			<div class="mainBtn works fadeIn" onclick="openWindow(this,'我的作品 / Works')" id="worksBtn">
+				<div class="button">
+					<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M43 33V19H5V41C5 42.1046 5.89543 43 7 43H24" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10C5 8.89543 5.89543 8 7 8H41C42.1046 8 43 8.89543 43 10V19H5V10Z" stroke="#000000" stroke-width="2" stroke-linejoin="round"/><path d="M16 5V13" stroke="#000000" stroke-width="2" stroke-linecap="round"/><path d="M32 5V13" stroke="#000000" stroke-width="2" stroke-linecap="round"/><circle cx="30" cy="32" r="7" fill="none" stroke="#000000" stroke-width="2"/><path d="M36 37L42 42" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+					<div class="buttonTxt">
+						<div>我的作品</div>
+						<span>我开发过的一些主要作品</span>
+					</div>
+				</div>
+				<div class="contents">
+					<div class="workGroupTitle">主要项目</div>
+					<div class="workBox" onclick="window.open('//simsv.com')">
+						<img src="//asset.simsoft.top/products/navsite/projects/simsoft.webp"><div><b>Simsv Studio丨氢软</b><span>便捷 · 创新 · 公益</span></div>
+					</div>
+					<div class="workBox" onclick="window.open('//desware.simsoft.top')">
+						<img src="//asset.simsoft.top/products/navsite/projects/desware.webp"><div><b>DesWare 迪教</b><span>做干干脆脆的课堂辅助工具</span></div>
+					</div>
+					<div class="workBox" onclick="window.open('//certx.nlrdev.top')">
+						<img src="//asset.simsoft.top/products/navsite/projects/certx.webp" style="background:#00b151"><div><b>CertX</b><span>SSL证书申请工具</span></div>
+					</div>
+					<div class="workBox" onclick="window.open('//github.com/NLR-DevTeam/QQImageGenerator')">
+						<img src="//asset.simsoft.top/products/navsite/projects/qqimagegenerator.webp" style="background:#f9ae08"><div><b>QQImageGenerator</b><span>QQ群友合影生成器</span></div>
+					</div>
+					<div class="workBox" onclick="window.open('//fa.nlrdev.top')">
+						<img src="//asset.simsoft.top/products/navsite/projects/fileadmin.webp" style="background:#1e9fff"><div><b>FileAdmin</b><span>轻量级单文件PHP管理面板</span></div>
+					</div>
+					<div class="workBox" onclick="window.open('/kfxl/')">
+						<img src="//asset.simsoft.top/products/navsite/projects/kfxl.webp" style="background:#1e9fff"><div><b>康复训练</b><span>三位数加减法游戏</span></div>
+					</div>
+					<div class="workBox" onclick="window.open('/math/')">
+						<img src="//asset.simsoft.top/products/navsite/projects/math.webp" style="background:#1e9fff"><div><b>数学小游戏</b><span>数学计算能力小游戏</span></div>
+					</div>
+					<div class="workBox" onclick="window.open('//jdc.nlrdev.top')">
+						<img src="//asset.simsoft.top/products/navsite/projects/jdc.webp"><div><b>NLR-JDC</b><span>黑历史云储计划</span></div>
+					</div>
+					<div class="workBox" onclick="window.open('/dosth/')">
+						<img src="//asset.simsoft.top/products/navsite/projects/dstw.webp"><div><b>DoSth</b><span>在线生草句子生成器</span></div>
+					</div>
+					<div class="workBox" onclick="window.open('//disk.nlrdev.top/s/NosQ')">
+						<img src="//asset.simsoft.top/products/navsite/projects/disk.webp"><div><b>Software Disk</b><span>自用软件下载站点</span></div>
+					</div>
+
+					<div class="workGroupTitle">参与开发</div>
+					<div class="workBox" onclick="window.open('//grass.nlrdev.top')">
+						<img src="//asset.simsoft.top/products/navsite/projects/grass.webp"><div><b>草图大全</b><span>官网 & 服务接口 & 审核页</span></div>
+					</div>
+					<div class="workBox" onclick="window.open('//starxn.com/aff/LLBHWTEJ')">
+						<img src="//asset.simsoft.top/products/navsite/friends/xinchenyun.webp"><div><b>星辰云</b><span>前台 & 控制台 & 小程序</span></div>
+					</div>
+					
+					<div class="workGroupTitle">魔改游戏</div>
+					<div class="workBox" onclick="window.open('/lemon')">
+						<img src="//asset.simsoft.top/products/navsite/projects/lemon.webp"><div><b>吃掉大柠檬</b><span>看谁会被酸死？</span></div>
+					</div>
+					<div class="workBox" onclick="window.open('/block')">
+						<img src="//asset.simsoft.top/products/navsite/projects/block.webp"><div><b>合成大方块</b><span>不要让方块叠上去哦</span></div>
+					</div>
+
+					<div class="workGroupTitle">早期项目</div>
+					<div class="workBox" onclick="window.open('//github.com/YanJi314/WxWeb-UI-Modified/')">
+						<img src="//asset.simsoft.top/products/navsite/projects/wxwebui.ico"><div><b>WxWeb UI Modified</b><span>优化微信网页版的过时UI</span></div>
+					</div>
+					<div class="workBox" onclick="window.open('//github.com/YanJi314/GithubMusicPlayer/')">
+						<img src="//asset.simsoft.top/products/navsite/projects/githubmp.webp"><div><b>GithubMusicPlayer</b><span>将Gh存储库作为播放器</span></div>
+					</div>
+				</div>
+			</div>
+
+			<!--社交平台-->
+			<div class="mainBtn contact fadeIn" id="contactBtn" onclick="openWindow(this,'联系方式 / Contact')">
+				<div class="button">
+					<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M44 18V39.8182C44 41.0232 43.1046 42 42 42H6C4.89543 42 4 41.0232 4 39.8182V18L24 34L44 18Z" stroke="#000000" stroke-width="2" stroke-linejoin="round"/><path d="M4 17.7839L24 4L44 17.7839" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M34 18H14V26L24 34L34 26V18Z" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round"/></svg>
+					<div class="buttonTxt">
+						<div>联系方式</div>
+						<span>到这些平台抓住新鲜的我</span>
+					</div>
+				</div>
+				<div class="contents">
+					<div class="contactList">
+						<img src="//asset.simsoft.top/products/navsite/contact/bilibili.webp">
+						<div class="contactPlatform">哔哩哔哩</div>
+						<div class="contactName">@不闲的盐鸡</div>
+						<div class="contactBtn" onclick="window.open('//space.bilibili.com/500827421')">个人空间</div>
+					</div><div class="contactList">
+						<img src="//asset.simsoft.top/products/navsite/contact/qq.ico">
+						<div class="contactPlatform">QQ 群聊</div>
+						<div class="contactName">182850795</div>
+						<div class="contactBtn" onclick="navigator.clipboard.writeText('182850795');this.innerText='已复制'">复制群号</div>
+					</div><div class="contactList">
+						<img src="//asset.simsoft.top/products/navsite/contact/mail.webp">
+						<div class="contactPlatform">电子邮件</div>
+						<div class="contactName">ysh@simsoft.top</div>
+						<div class="contactBtn" onclick="location='mailto:ysh@simsoft.top'">发送邮件</div>
+					</div>
+				</div>
+			</div>
+
+			<!--友情链接-->
+			<div class="mainBtn links fadeIn" id="linksBtn" onclick="openWindow(this,'友情链接 / Links')">
+				<div class="button">
+					<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M0 0H48V48H0V0Z" fill="white" fill-opacity="0.01"/><g><g><rect width="48" height="48" fill="white" fill-opacity="0.01"/><path d="M12 9.92704V7C12 5.34315 13.3431 4 15 4H41C42.6569 4 44 5.34315 44 7V33C44 34.6569 42.6569 36 41 36H38.0174" stroke="#000000" stroke-width="2"/><rect x="4" y="10" width="34" height="34" rx="3" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round"/></g><g><g><path d="M18.4396 23.1098L23.7321 17.6003C25.1838 16.1486 27.5693 16.1806 29.0604 17.6717C30.5515 19.1628 30.5835 21.5483 29.1319 23L27.2218 25.0228" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.4661 28.7469C12.9558 29.2573 11.9006 30.2762 11.9006 30.2762C10.4489 31.7279 10.4095 34.3152 11.9006 35.8063C13.3917 37.2974 15.7772 37.3294 17.2289 35.8777L22.3931 31.1894" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.6631 28.3283C17.9705 27.6357 17.5927 26.7501 17.5321 25.8547C17.4624 24.8225 17.8143 23.7774 18.5916 23" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22.3218 25.8611C23.8129 27.3522 23.8449 29.7377 22.3932 31.1894" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g></g></g></g></svg>
+					<div class="buttonTxt">
+						<div>友情链接</div>
+						<span>也去看看朋友们的网站吧</span>
+					</div>
+				</div>
+				<div class="contents">
+					<div class="workBox" onclick="window.open('//starxn.com/aff/LLBHWTEJ')">
+						<img src="//asset.simsoft.top/products/navsite/friends/xinchenyun.webp"><div><b>星辰云</b><span>百万草根站长之家</span></div>
+					</div>
+					<div class="workBox" onclick="window.open('//xiaym.ml')">
+						<img src="//asset.simsoft.top/products/navsite/friends/xiezhan.webp"><div><b>XIAYM 的屑站</b><span>XIAYM 使用手机搭建的站点</span></div>
+					</div>
+					<div class="workBox" onclick="window.open('//whitrayhb.top')">
+						<img src="//asset.simsoft.top/products/navsite/friends/whitrayhb.webp"><div><b>不咕鸽的鸽子窝</b><span>WhitrayHB's Pigeon Home</span></div>
+					</div>
+					<div class="workBox" onclick="window.open('//ray917.top')">
+						<img src="//asset.simsoft.top/products/navsite/friends/ray.webp"><div><b>Ray917 的主页</b><span>一位好友的主页</span></div>
+					</div>
+					<div class="workBox" onclick="window.open('//www.raygroup.com.cn/zh-cn/')">
+						<img src="//asset.simsoft.top/products/navsite/friends/shexianjituan.webp"><div><b>射线集团</b><span>技术推进时代进步</span></div>
+					</div>
+					<div class="workBox" onclick="window.open('//arkpowered.cn/')">
+						<img src="//asset.simsoft.top/products/navsite/friends/fangkuaihezi.webp"><div><b>方块盒子 Studio</b><span>方块盒子 Studio 引导页</span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="donateMask"></div>
+	<div id="donate" onclick="this.classList.remove('active');gid('donateMask').style.display='none'">
+		<div style="font-size:2em">捐赠我</div>
+		<div>建站不易，感谢支持</div>
+		<img src="https://asset.simsoft.top/products/qrcode/alipay.png" style="width:300px;height:300px">
+		<div>您可以使用支付宝扫码捐赠</div>
+		<div>在Github点个星星也是对我很大的支持啦~</div>
+	</div>
+
+	<div id="footer">© 本站所有代码由盐鸡独立编写并保留所有权利</div>
+
+	<img src="https://asset.simsoft.top/products/navsite/background-220603.webp" id="backgroundImage">
+	<script src="script.js?v=1"></script>
+</body>
+</html>
