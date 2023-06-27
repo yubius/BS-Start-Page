@@ -350,8 +350,6 @@ footer a{
 /*
   弹窗和抽屉
 */
-
-
 window{
   top: 0;
   left: 0;
@@ -360,14 +358,24 @@ window{
   opacity: 0;
   z-index: 1;
   display: flex;
-  overflow: auto;
   position: fixed;
   padding: 2em 1em;
   pointer-events: none;
+  color: var(--font-color);
   background: rgba(0, 0, 0, .3);
   transition: opacity .3s;
 }
-window::-webkit-scrollbar{ width: 0 }
+
+body:not(.low-animate) window{
+  backdrop-filter: blur(5px);
+  --webkit-backdrop-filter: blur(5px);
+}
+
+@media screen and (prefers-color-scheme: dark){
+  window{
+    background: rgba(255, 255, 255, .1);
+  }
+}
 
 window.active{
   opacity: 1;
@@ -379,38 +387,69 @@ window.active{
   display: none;
   min-width: 15em;
   max-width: 40em;
-  background: rgb(255, 255, 255 , 0.7);
-  border-radius: 1em;
+  background: #fff;
+  background: var(--input-bg);
+  border-radius: var(--radius);
   box-shadow: var(--shadow-thick);
 }
 .the-window.active{
   display: block;
-  animation: fade-small-large .3s forwards;
-  
 }
+
+.the-window.started{
+  animation: fade-small-large .3s forwards;
+}
+
 .the-window.closed{
   animation: fade-large-small .3s forwards;
 }
 
-.the-window .window-head{
+/* 减淡动画 */
+body.low-animate .the-window.started{
+  animation-name: fade-in;
+}
+body.low-animate .the-window.closed{
+  animation-name: fade-out;
+}
+
+.the-window.updated{ width: 100% }
+
+.the-window.updated details{
+  margin-top: 3em;
+}
+.the-window.updated details:first-child{
+  margin-top: 0;
+}
+
+.the-window.updated summary{
+  font-size: 1.2em;
+  font-weight: lighter;
+}
+
+.the-window.updated details[open] summary{
+  margin-bottom: 1em;
+}
+
+.the-window .window-head, .the-drawer .drawer-head{
+  user-select: none;
   padding: 1em 1.5em;
   text-align: center;
   position: relative;
   box-shadow: var(--shadow);
 }
-.the-window .window-head button{
+.the-window .window-head button, .the-drawer .drawer-head button{
   top: 1rem;
   right: 1rem;
   position: absolute;
 
   border: none;
-  color: rgb(255, 0, 0);
+  color: #fff;
   padding: 0;
   width: 1.5em;
   cursor: pointer;
   font-size: 1.17em;
   border-radius: 1em;
-  background: rgb(255, 255, 255); 
+  background: rgb(255, 86, 86);
 }
 
 .the-window .window-body, .the-drawer .drawer-body{
