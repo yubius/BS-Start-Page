@@ -1,41 +1,166 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="zh-cmn-hans" class="font-auto">
 <head>
-    <meta charset="utf-8">
-    <title>Yubius Service</title>
-    <style>
-        .container {
-            width: 60%;
-            margin: 10% auto 0;
-            background-color: #ff6666;
-            padding: 2% 5%;
-            border-radius: 10px
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-
-            ul li {
-                line-height: 2.3
-            }
-
-        a {
-            color: #191970
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>布斯起始页</title>
+    <link rel="icon" href="static/icon.png" sizes="192x192" />
+    <link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/Dreamer-Paul/Kico-Style@master/kico.css" />
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1809713_7obvxtx02f.css" />
+    <link href="https://fastly.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="static/main.css" />
+    <script src="https://fastly.jsdelivr.net/gh/Dreamer-Paul/Kico-Style/kico.js" defer></script>
+    <script src="static/main.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <h1>404</h1>
-		<h1>The file you requested does not exist</h1>
-        <h3>您请求的文件不存在</h3>
-		<h1>How can I do it? Contact us by email for help: iyubius@outlook.com</h1>
-		<h3>我要如何做？电子邮件联系我们以获取帮助：iyubius@outlook.com</h3>
-
-
-                 
-        </ul>
+<header>
+    <div class="action-btn edit" ks-tag="bottom" ks-text="管理导航项">
+        <i class="fa fa-edit"></i>
     </div>
+    <div class="action-btn updated" ks-tag="bottom" ks-text="更新日志">
+        <i class="fa fa-bullhorn"></i>
+    </div>
+    <div class="action-btn about" ks-tag="bottom" ks-text="关于">
+        <i class="fa fa-info-circle"></i>
+    </div>
+    <div class="action-btn setting" ks-tag="bottom" ks-text="设置">
+        <i class="fa fa-cog"></i>
+    </div>
+</header>
+<main>
+    <section class="navi-search">
+        <form class="input-box">
+            <div class="search-select" title="切换搜索引擎">
+                <div class="iconfont icon-baidu"></div>
+            </div>
+            <div class="search-selector"></div>
+            <input type="text" placeholder="搜索..."/>
+            <button class="btn transparent" title="搜索"><i class="fa fa-search"></i></button>
+        </form>
+    </section>
+    <section class="navi-items"></section>
+    <section class="navi-background"></section>
+</main>
+<footer>
+    <p>© <script>document.write(new Date().getFullYear())</script> <a href="https://space.bilibili.com/18853927" target="_blank">是鱼布斯啊</a> | <a href="https://paul.ren/" target="_blank">奇趣保罗</a> | <a href="https://github.com/yubius/Bius-Start" target="_blank">参与维护</a></p>
+</footer>
+<window>
+    <section class="the-window updated">
+        <div class="window-head">
+            <button data-type="close">×</button>
+            <h3>更新日志</h3>
+        </div>
+        <div class="window-body">
+            <article>
+                <blockquote>布斯全新驭骏引擎为你而驱动</blockquote>
+                <h3>本次更新：</h3>
+                <ul>
+                    <li>摒弃2年以来的开发成果，敢为人先选择从头开始.</li>
+                    <li>从源头开始简洁，访问速度提高980%.</li>
+                    <li>开始0后台，布斯尊重和保障您的隐私.</li>                  
+                    <li>优化搜索框无响应等几乎一切bug.</li>
+                    <li>是迄今为止最稳定最强大最优秀的起始页选择.</li>
+
+                </ul>
+
+                <details>
+                    <summary>上次更新：</summary>
+                    <ul>
+                        <li>由于是全新架构，在此不多赘述</li>
+                        <li>页脚版权的时间自动更新</li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>更新预告：</summary>
+                    <ul>
+                        <li>支持夸克神马无追等搜索引擎</li>
+                        <li>更舒适的自定义站点列表体验</li>
+                        <li>可供设定你自己的壁纸（本地或外链）</li>
+                        <li>更易操作的设置面板（与奇趣2.0同步更新）</li>
+                    </ul>
+                </details>
+            </article>
+        </div>
+    </section>
+    <section class="the-window about">
+        <div class="window-head">
+            <button data-type="close">×</button>
+            <h3>关于本项目</h3>
+        </div>
+        <div class="window-body">
+            <article>
+                <a href="https://space.bilibili.com/18853927"><img src="https://imgcdn.simsoft.top/1673011080-自定义模板 (1).jpg" alt="布斯起始页"></a>
+
+                <h3>    </h3>
+                <h2>你好！欢迎访问布斯起始页</h2>
+                <h2>本项目由初中生开发并开源</h2>
+                <h3>贡献者：</h3>
+                <a href="https://space.bilibili.com/18853927" target="_blank">YuXuan(Yubius)</a> | <a href="https://simsoft.top/" target="_blank">YanJi(SimSoft)</a> | <a href="https://paul.ren/" target="_blank">奇趣保罗</a>
+                <h3>联系我们：</h3>
+                <a href="https://space.bilibili.com/18853927" target="_blank">哔哩哔哩:是鱼布斯啊</a>
+                 <h4> </h4>
+                <a href="https://jq.qq.com/?_wv=1027&k=76LGja0W" target="_blank">QQ交流群:Win11系统Office交流</a>
+                <h4> </h4>
+                <a href="mailto:wdm.yu@outlook.com" target="_blank">电子邮件:wdm.yu@outlook.com</a>
+                <h3> </h3>
+
+                <h3>类似项目：</h3>
+                <a href="https://s.paul.ren/" target="_blank">奇趣起始页</a> | <a href="https://limestart.cn/" target="_blank">青柠起始页</a> | <a href="https://h.simsoft.top/" target="_blank">氢起始页</a>
+                <h3> </h3>
+                <h3>意见反馈：</h3>
+                <a href="mailto:wdm.yu@outlook.com" target="_blank">邮件联系站长</a> | <a href="https://jq.qq.com/?_wv=1027&k=76LGja0W" target="_blank">QQ交流群</a> | <a href="https://github.com/yubius/yubius.github.com/discussions" target="_blank">GitHub社区</a>
+                <h3> </h3>
+                <!--<a href="https://github.com/yubius/yubius.github.com/discussions"> 
+                    <p style="text-align: center;">                    
+                    <img src="https://imgcdn.simsoft.top/upload/22-01-29-16-24-50-fk.png" width="380%" height="280%" />
+                    </p>
+                    </a>           !-->
+        </div>
+    </section>
+    <section class="the-window setting">
+        <div class="window-head">
+            <button data-type="close">×</button>
+            <h3>设定</h3>
+        </div>
+        <div class="window-body">
+            <fieldset>
+                <label>
+                    <span>默认搜索引擎：</span>
+                    <select name="search" data-key="search_method"></select>
+                </label>
+                <label>
+                    <span>自定义背景：</span>
+                    <select name="background" data-key="background_type"></select>
+                </label>
+                <label>
+                    <span>减淡动画和视觉效果：</span>
+                    <select name="low_animate" data-key="motion_reduced_enum"></select>
+                </label>
+                <label>
+                    <span>自动聚焦到搜索框：</span>
+                    <input name="auto_focus" type="checkbox" class="switch" />
+                </label>
+                
+                <p class="btn-group">
+                    <button class="btn small primary" id="set-reset" title="重置个人设置为默认值">重置为默认</button>
+                    <button class="btn small transparent" id="set-input" title="导入个人设置">导入</button>
+                    <button class="btn small transparent" id="set-output" title="导出个人设置">导出</button>
+                    <input type="file" id="set-file" hidden />
+                </p>
+            </fieldset>
+        </div>
+    </section>
+    <section class="the-drawer sites">
+        <div class="drawer-head">
+            <button data-type="close">×</button>
+            <h3>管理导航项</h3>
+        </div>
+        <div class="drawer-body">
+            <div class="sites"></div>
+            <p class="add-sites">若想扩展添加更多导航项，欢迎在本项目 Issues 区 <a href="https://github.com/yubius/Bius-Start/discussions" target="_blank">公共导航列表添加建议区</a> 留言讨论！</p>
+        </div>
+    </section>
+</window>
 </body>
 </html>
