@@ -350,32 +350,7 @@ footer a{
 /*
   弹窗和抽屉
 */
-window{
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0;
-  z-index: 1;
-  display: flex;
-  position: fixed;
-  padding: 2em 1em;
-  pointer-events: none;
-  color: var(--font-color);
-  background: rgba(0, 0, 0, .3);
-  transition: opacity .3s;
-}
 
-body:not(.low-animate) window{
-  backdrop-filter: blur(5px);
-  --webkit-backdrop-filter: blur(5px);
-}
-
-@media screen and (prefers-color-scheme: dark){
-  window{
-    background: rgba(255, 255, 255, .1);
-  }
-}
 
 window{
   top: 0;
