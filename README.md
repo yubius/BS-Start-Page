@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://yubius.com/static/iconmini.png"/>
+<img src="https://yubs.top/static/iconmini.png"/>
 </p>
 
 <div align="center">
