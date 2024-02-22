@@ -125,7 +125,7 @@ function KStart() {
     ],
     user_set: {
       search: 0,
-      background: 0,
+      background: 1,
       auto_focus: false,
       low_animate: 0,
       sites: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 16, 28, 31, 35],
