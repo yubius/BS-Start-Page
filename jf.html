@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>布斯语言工具箱 - 简繁体转换</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .logo {
+            max-width: 120px;
+            height: auto;
+        }
+        #input-box {
+            width: 50%;
+            margin: 20px auto;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #convert-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        #result {
+            font-size: 18px;
+            word-wrap: break-word;
+            margin-bottom: 20px;
+        }
+        #copy-button {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo -->
+    <img class="logo" src="https://imgcdn.simsoft.top/1708603853-icon.png" alt="布斯语言工具箱Logo">
+
+    <h1>布斯语言工具箱</h1>
+
+    <!-- 输入框与转换按钮 -->
+    <textarea id="input-box" placeholder="请输入要转换的文字"></textarea>
+    <button id="convert-button">一键转换</button>
+
+    <!-- 转换结果显示区域 -->
+    <div id="result"></div>
+
+    <!-- 结果复制按钮 -->
+    <button id="copy-button" disabled>一键复制结果</button>
+
+    <!-- JavaScript部分 -->
+
+    <script>
+        const conversionApiUrl = 'https://www.mxnzp.com/api/convert/zh';
+        const appId = 'niwguxhxmtjnqkwr'; // 请替换为您的实际App ID
+        const appSecret = 'SE9YWERRTEI0amtGT0RPVWlYaVUrZz09'; // 请替换为您的实际App Secret
+
+        document.getElementById('convert-button').addEventListener('click', async function() {
+            var inputText = document.getElementById('input-box').value;
+
+            try {
+                // 构建请求参数
+                const params = new URLSearchParams();
+                params.append('content', inputText);
+                params.append('type', '1');
+                params.append('app_id', appId);
+                params.append('app_secret', appSecret);
+
+                // 调用API并获取响应数据
+                const response = await fetch(conversionApiUrl, { method: 'GET', body: params });
+                const resultJson = await response.json();
+
+                if (response.ok && resultJson.status === 'success') {
+                    // 如果API调用成功并且返回状态为success，则显示转换结果
+                    document.getElementById('result').innerText = resultJson.data.result;
+                    document.getElementById('copy-button').disabled = false;
+                } else {
+                    alert('转换失败：' + (resultJson.message || '服务器错误'));
+                }
+            } catch (error) {
+                console.error('API调用时出错：', error);
+                alert('网络请求失败，请稍后再试');
+            }
+
+            // 复制功能保持不变
+            document.getElementById('copy-button').addEventListener('click', function() {
+                navigator.clipboard.writeText(document.getElementById('result').innerText).then(function() {
+                    alert('已成功复制到剪贴板');
+                }, function(err) {
+                    console.error('复制失败：', err);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
