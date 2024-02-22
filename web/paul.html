@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面加载</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* 避免滚动条出现 */
+        }
+        .loader-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .logo {
+            max-width: 120px;
+            height: auto;
+            position: absolute;
+            top: calc(40% - 60px);
+            left: calc(50% - 60px); /* 根据logo大小调整居中位置 */
+        }
+
+            .loader {
+                position: absolute;
+                top: calc(65% - 15px); /* 让加载图标垂直居中 */
+                left: calc(50% - 15px); /* 让加载图标水平居中 */
+                border: 4px solid rgba(0, 0, 0, 0.1);
+                border-top-color: #3498db;
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+                animation: spin 1s linear infinite;
+            }
+            @keyframes spin {
+                to { transform: rotate(360deg); }
+            }
+        </style>
+</head>
+<body>
+    <div class="loader-container">
+        <img class="logo" src="https://imgcdn.simsoft.top/1708603853-icon.png" alt="Logo">
+        <div class="loader"></div>
+    </div>
+
+    <!-- 加载完成事件处理 -->
+    <script>
+        window.addEventListener('load', function() {
+            // 确保加载动画仍然可见（这里无需隐藏）
+            
+            // 延迟一定时间后进行页面跳转
+            setTimeout(function () {
+                window.location.href = "https://s.paul.ren/";
+            }, 1000); // 这里延时一秒作为示例
+        });
+    </script>
+</body>
+</html>
