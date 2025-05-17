@@ -164,17 +164,20 @@ main{
   position: relative;
   padding: .5em 1em;
   border-radius: 3em;
-  background: rgba(255,255,255,0.55);
-  box-shadow: var(--shadow);
-  transition: box-shadow .3s, background .3s, backdrop-filter .3s;
+  background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.08);
+  transition: background .3s, backdrop-filter .3s, box-shadow .3s;
   margin: 0 auto;
   max-width: 32em;
-  backdrop-filter: blur(12px) saturate(1.2);
   z-index: 1001; /* 保证搜索相关弹窗在主内容之上 */
 }
 .input-box:focus-within {
-  background: #fff;
-  backdrop-filter: none;
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(22px) saturate(1.3);
+  -webkit-backdrop-filter: blur(22px) saturate(1.3);
+  box-shadow: 0 6px 32px 0 rgba(0,0,0,0.12);
 }
 
 body.blur-bg-active .navi-background {
@@ -197,12 +200,10 @@ body.blur-bg-active .navi-background {
 
 @media (max-width: 600px) {
   .input-box {
-    width: 96vw;
+    width: auto !important;
     min-width: 0;
-    max-width: 99vw;
-    left: 0;
-    right: 0;
-    margin: 0.5em auto 0.5em auto;
+    max-width: 98vw;
+    margin: 0.5em 1vw 0.5em 1vw;
     padding-right: 0.5em;
     padding-left: 0.5em;
     box-sizing: border-box;
@@ -281,12 +282,10 @@ body.blur-bg-active .navi-background {
 
 @media (max-width: 600px) {
   .input-box {
-    width: 96vw;
+    width: auto !important;
     min-width: 0;
-    max-width: 99vw;
-    left: 0;
-    right: 0;
-    margin: 0.5em auto 0.5em auto;
+    max-width: 98vw;
+    margin: 0.5em 1vw 0.5em 1vw;
     padding-right: 0.5em;
     padding-left: 0.5em;
     box-sizing: border-box;
@@ -461,36 +460,50 @@ body.blur-bg-active .navi-background {
   background-color: var(--primary);
 }
 
-.navi-icon{
+.navi-icon {
   color: #fff;
   background-color: #666;
-
-  width: 5rem;
-  height: 5rem;
-  font-size: 1.75em;
-  line-height: 5rem;
-
-  margin: auto;
-  overflow: hidden;
-  border-radius: 2em;
-  transition: box-shadow .3s;
+  width: 4.2rem;
+  height: 4.2rem;
+  font-size: 1.65em;
+  line-height: 4.2rem;
+  border-radius: 1.1rem; /* 圆角正方形 */
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: box-shadow .2s, background .2s;
 }
-
-.navi-icon i{
-  display: inline-block;
-  transition: transform .3s;
+.theme-dark .navi-icon, body.dark .navi-icon {
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.22);
 }
-.navi-icon:hover i{
-  transform: scale(1.3);
+.navi-icon img, .navi-icon i {
+  border-radius: 0.7rem;
+  width: 2.6em;
+  height: 2.6em;
+  object-fit: contain;
 }
-
-.navi-icon img{ vertical-align: top }
 
 .navi-title{
-  text-shadow: var(--font-shadow);
+  text-shadow: none;
   padding: 0 .5em;
-  font-size: .875em;
+  font-size: .95em;
   margin-top: .75em;
+  border-radius: 999px;
+  background: #fff;
+  color: #222;
+  display: inline-block;
+  min-width: 3em;
+  box-shadow: 0 1px 6px 0 rgba(0,0,0,0.04);
+  line-height: 2em;
+  font-weight: 500;
+}
+
+.theme-dark .navi-title, body.dark .navi-title {
+  background: #222;
+  color: #fff;
+  box-shadow: 0 1px 6px 0 rgba(0,0,0,0.18);
 }
 
 @media screen and (max-width: 768px){
@@ -880,4 +893,46 @@ window {
     left: 0;
     right: 0;
   }
+}
+
+/* 快捷方式下方文字样式优化 */
+.navi-title {
+  text-shadow: none;
+  padding: 0 .5em;
+  font-size: .95em;
+  margin-top: .75em;
+  border-radius: 999px;
+  background: #fff;
+  color: #222;
+  display: inline-block;
+  min-width: 3em;
+  box-shadow: 0 1px 6px 0 rgba(0,0,0,0.04);
+  line-height: 2em;
+  font-weight: 500;
+}
+.theme-dark .navi-title, body.dark .navi-title {
+  background: #222;
+  color: #fff;
+  box-shadow: 0 1px 6px 0 rgba(0,0,0,0.18);
+}
+
+/* 右上角 action-btn 胶囊样式优化 */
+header .action-btn {
+  background: #fff;
+  color: #222;
+  border-radius: 999px;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  padding: 0.2em 1.1em;
+  box-shadow: 0 1px 6px 0 rgba(0,0,0,0.04);
+  font-weight: 500;
+  transition: background .2s, color .2s;
+}
+.theme-dark header .action-btn, body.dark header .action-btn {
+  background: #222;
+  color: #fff;
+  box-shadow: 0 1px 6px 0 rgba(0,0,0,0.18);
+}
+header .action-btn .fa {
+  color: inherit;
 }
