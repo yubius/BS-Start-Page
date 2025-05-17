@@ -753,6 +753,7 @@ function KStart() {
 
     // 初始化抽屉里面的导航项目
     initDrawerItems: () => {
+      obj.drawer.sites.innerHTML = ""; // 修复：渲染前先清空内容，防止无内容或重复
       data.sites.forEach((site, key) => {
         const item = ks.create("span", {
           text: site.name,
