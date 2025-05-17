@@ -416,11 +416,50 @@ function KStart() {
         obj.main.select.innerHTML = `<i class="iconfont icon-${data.search_method[key].icon}"></i>`
       }
     },
+    // 主题切换
+    applyThemeMode: () => {
+      // 优先从本地存储读取 theme_mode
+      let mode = data.user_set.theme_mode;
+      if (!mode) {
+        const storage = localStorage.getItem("paul-userset");
+        if (storage) {
+          try {
+            const userSet = JSON.parse(storage);
+            mode = userSet.theme_mode || "auto";
+          } catch {}
+        }
+      }
+      if (!mode) mode = "auto";
+      data.user_set.theme_mode = mode;
+      const html = document.documentElement;
+      html.classList.remove("theme-light", "theme-dark", "theme-auto");
+      switch (mode) {
+        case "light":
+          html.classList.add("theme-light");
+          document.body.classList.remove("dark");
+          break;
+        case "dark":
+          html.classList.add("theme-dark");
+          document.body.classList.add("dark");
+          break;
+        default:
+          html.classList.add("theme-auto");
+          if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            document.body.classList.add("dark");
+          } else {
+            document.body.classList.remove("dark");
+          }
+          break;
+      }
+      // 主题切换后立即保存
+      methods.setStorage();
+    },
+
     // 初始化背景和深色背景模式检测
     initBackground: () => {
       if (data.user_set.background == 0) {
         obj.main.bg.style = "";
-
+        obj.main.bg.classList.remove('active');
         return;
       }
       let imgUrl, imgSet;
@@ -443,20 +482,7 @@ function KStart() {
         obj.main.bg.className = 'navi-background type-' + data.user_set.background;
         obj.main.bg.style.background = `url(${img.src}) ${imgSet}`;
         obj.main.bg.classList.add('active');
-
-        const canvas = document.createElement("canvas");
-
-        const context = canvas.getContext("2d");
-        context.drawImage(img, 0, 0, img.width, img.height, 0, 0, 1, 1);
-
-        const imgData = context.getImageData(0, 0, 1, 1).data;
-
-        if (imgData[0] <= 180 || (imgData[1] <= 180) | (imgData[2] <= 180)) {
-          document.body.classList.add("dark");
-        }
-        else {
-          document.body.classList.remove("dark");
-        }
+        // 不再根据深色模式自动加body.dark，背景始终正常
       };
       img.onerror = () => {
         obj.main.bg.style = '';
@@ -509,32 +535,6 @@ function KStart() {
           window.matchMedia("(prefers-reduced-motion: reduce)").matches
             ? document.body.classList.add("low-animate")
             : document.body.classList.remove("low-animate");
-          break;
-      }
-    },
-
-    // 主题切换
-    applyThemeMode: () => {
-      const mode = data.user_set.theme_mode || "auto";
-      const html = document.documentElement;
-      html.classList.remove("theme-light", "theme-dark", "theme-auto");
-      switch (mode) {
-        case "light":
-          html.classList.add("theme-light");
-          document.body.classList.remove("dark");
-          break;
-        case "dark":
-          html.classList.add("theme-dark");
-          document.body.classList.add("dark");
-          break;
-        default:
-          html.classList.add("theme-auto");
-          // 跟随系统
-          if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-            document.body.classList.add("dark");
-          } else {
-            document.body.classList.remove("dark");
-          }
           break;
       }
     },
@@ -788,6 +788,8 @@ function KStart() {
   // 初始化，先获取预设站点数据
   fetch("site.json").then((res) => res.json()).then((res) => {
     data.sites = res;
+    // 站点数据加载后再初始化抽屉内容，防止为空
+    modifys.initDrawerItems();
   }).then(() => {
     const user = methods.getUser();
 
@@ -826,7 +828,6 @@ function KStart() {
 
     modifys.changeSearch(data.user_set.search);
     modifys.initSettingForm();
-    modifys.initDrawerItems();
   });
 
   // 顶部时间/问候语与切换逻辑（还原：不插入额外div，不控制navi-items和input-box显示）

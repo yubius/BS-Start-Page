@@ -170,6 +170,7 @@ main{
   margin: 0 auto;
   max-width: 32em;
   backdrop-filter: blur(12px) saturate(1.2);
+  z-index: 1001; /* 保证搜索相关弹窗在主内容之上 */
 }
 .input-box:focus-within {
   background: #fff;
@@ -201,6 +202,10 @@ body.blur-bg-active .navi-background {
     max-width: 99vw;
     left: 0;
     right: 0;
+    margin: 0.5em auto 0.5em auto;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    box-sizing: border-box;
   }
 }
 
@@ -268,7 +273,7 @@ body.blur-bg-active .navi-background {
   background: var(--input-bg);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  z-index: 10;
+  z-index: 1002 !important; /* 强制高于所有主内容和快捷方式 */
 }
 .input-box input:focus {
   font-size: 1em;
@@ -281,6 +286,10 @@ body.blur-bg-active .navi-background {
     max-width: 99vw;
     left: 0;
     right: 0;
+    margin: 0.5em auto 0.5em auto;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    box-sizing: border-box;
   }
   .navi-search{
     margin-top: 4em;
