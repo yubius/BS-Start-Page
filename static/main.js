@@ -131,6 +131,7 @@ function KStart() {
       theme_mode: "auto", // 新增：主题模式，默认跟随系统
       sites: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 16, 28, 31, 35],
       custom: [],
+      custom_bg_url: '',
     },
   };
 
@@ -270,7 +271,12 @@ function KStart() {
     },
     submitSearchButton: (e) => {
       e.preventDefault();
-      window.open(data.search_method[data.user_set.search].url.replace("%s", obj.main.input.value));
+      const keyword = obj.main.input.value.trim();
+      if (!keyword) {
+        ks.notice("请输入搜索内容！", { color: "red", time: 2500 });
+        return;
+      }
+      window.open(data.search_method[data.user_set.search].url.replace("%s", keyword));
     },
 
     // 右上方的按钮
@@ -409,16 +415,26 @@ function KStart() {
 
         return;
       }
-
-      const img = new Image();
+      let imgUrl, imgSet;
+      if (data.user_set.background == data.background_type.length - 1) {
+        imgUrl = data.user_set.custom_bg_url;
+        imgSet = 'center/cover no-repeat';
+        if (!imgUrl) {
+          obj.main.bg.style = '';
+          obj.main.bg.classList.remove('active');
+          return;
+        }
+      } else {
+        imgUrl = data.background_type[data.user_set.background].url;
+        imgSet = data.background_type[data.user_set.background].set;
+      }
+      const img = new window.Image();
       img.crossOrigin = "Anonymous";
-      img.src = data.background_type[data.user_set.background].url;
-
-      // 深色背景增加深色模式
+      img.src = imgUrl;
       img.onload = () => {
-        obj.main.bg.classList.add(`type-${data.user_set.background}`);
-        obj.main.bg.style.background = `url(${img.src}) ${data.background_type[data.user_set.background].set}`;
-        obj.main.bg.classList.add("active");
+        obj.main.bg.className = 'navi-background type-' + data.user_set.background;
+        obj.main.bg.style.background = `url(${img.src}) ${imgSet}`;
+        obj.main.bg.classList.add('active');
 
         const canvas = document.createElement("canvas");
 
@@ -433,6 +449,11 @@ function KStart() {
         else {
           document.body.classList.remove("dark");
         }
+      };
+      img.onerror = () => {
+        obj.main.bg.style = '';
+        obj.main.bg.classList.remove('active');
+        ks.notice('壁纸加载失败，请检查图片链接', {color:'red', time:4000});
       };
     },
     // 自动聚焦到搜索框
@@ -698,6 +719,25 @@ function KStart() {
           };
         }
       }
+
+      // 自定义壁纸输入框逻辑
+      const bgSelect = obj.settings.background;
+      const customBgLabel = document.getElementById('custom-bg-url-label');
+      const customBgInput = customBgLabel ? customBgLabel.querySelector('input') : null;
+      function updateCustomBgInputDisplay() {
+        if(bgSelect && bgSelect.value == data.background_type.length - 1) {
+          customBgLabel && (customBgLabel.style.display = 'flex');
+          customBgInput && (customBgInput.value = data.user_set.custom_bg_url || '');
+        } else {
+          customBgLabel && (customBgLabel.style.display = 'none');
+        }
+      }
+      bgSelect && bgSelect.addEventListener('change', updateCustomBgInputDisplay);
+      customBgInput && customBgInput.addEventListener('input', function() {
+        data.user_set.custom_bg_url = this.value;
+        methods.setStorage();
+      });
+      updateCustomBgInputDisplay();
     },
 
     // 初始化公共导航列表的拖拽功能
@@ -779,35 +819,4 @@ function KStart() {
 
 KStart();
 
-// 天气API小部件
-(function(){
-    const widget = document.getElementById('weather-widget');
-    if (!widget) return;
-    widget.innerHTML = '<span style="color:#888;font-size:14px;">天气加载中...</span>';
-    // 获取地理位置
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(pos) {
-            const lat = pos.coords.latitude;
-            const lon = pos.coords.longitude;
-            // 使用和风天气免费API（需替换为你自己的key）
-            const key = '9e8e7b6e0e4e4e8c8e4e7b6e0e4e4e8c'; // demo key, 请替换为你自己的
-            fetch(`https://devapi.qweather.com/v7/weather/now?location=${lon},${lat}&key=${key}`)
-                .then(r=>r.json())
-                .then(data=>{
-                    if(data.code==="200" && data.now){
-                        const w = data.now;
-                        widget.innerHTML = `<span style='font-size:1.1em;'>${w.text}</span> <span style='font-weight:bold;'>${w.temp}°C</span> <span style='font-size:0.9em;color:#888;'>${w.windDir}</span>`;
-                    }else{
-                        widget.innerHTML = '<span style="color:#888;">天气获取失败</span>';
-                    }
-                })
-                .catch(()=>{
-                    widget.innerHTML = '<span style="color:#888;">天气获取失败</span>';
-                });
-        }, function(){
-            widget.innerHTML = '<span style="color:#888;">无法获取定位</span>';
-        });
-    } else {
-        widget.innerHTML = '<span style="color:#888;">不支持定位</span>';
-    }
-})();
+// 删除天气API小部件相关JS代码（已用iframe替代）

@@ -641,3 +641,24 @@ body.low-animate .the-drawer.active{
   transform: perspective(700px) rotateX(-7deg) scale(0.99);
   box-shadow: 0 2px 10px 0 rgba(0,0,0,0.10);
 }
+
+#custom-bg-url-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: 0.5em;
+}
+#custom-bg-url-label input[type="text"] {
+  flex: 1;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: var(--radius, 6px);
+  background: var(--input-bg);
+  color: var(--font-color);
+  font-size: 1em;
+}
+body.dark #custom-bg-url-label input[type="text"] {
+  background: #222;
+  color: #eee;
+  border-color: #444;
+}
