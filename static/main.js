@@ -816,6 +816,96 @@ function KStart() {
     modifys.initSettingForm();
     modifys.initDrawerItems();
   });
+
+  // 顶部时间/问候语与切换逻辑
+  let showNavi = false;
+  let greetTimeout = null;
+  const timeGreet = document.createElement('div');
+  timeGreet.className = 'time-greet';
+  timeGreet.textContent = '你好';
+  document.body.insertBefore(timeGreet, document.body.firstChild);
+
+  function updateTimeGreet() {
+    if (showNavi) return;
+    const now = new Date();
+    const h = now.getHours();
+    const m = now.getMinutes().toString().padStart(2, '0');
+    const s = now.getSeconds().toString().padStart(2, '0');
+    timeGreet.textContent = `${h}:${m}:${s}`;
+  }
+  // 初次显示“你好”，2秒后切换为时间
+  greetTimeout = setTimeout(() => {
+    updateTimeGreet();
+    setInterval(updateTimeGreet, 1000);
+  }, 2000);
+
+  // 切换显示逻辑
+  const naviItems = obj.main.sites;
+  const inputBox = document.querySelector('.input-box');
+  function toggleNaviShow() {
+    showNavi = !showNavi;
+    if (showNavi) {
+      naviItems.classList.add('show');
+      inputBox.style.display = 'none';
+      timeGreet.textContent = '快捷方式';
+    } else {
+      naviItems.classList.remove('show');
+      inputBox.style.display = '';
+      updateTimeGreet();
+    }
+  }
+  timeGreet.onclick = toggleNaviShow;
+
+  // 搜索框悬停动画（优化：点击input或悬停input-box都可展开，失焦收起）
+  function setInputBoxActive(active) {
+    if (active) inputBox.classList.add('active');
+    else inputBox.classList.remove('active');
+  }
+  inputBox.addEventListener('mouseenter', () => setInputBoxActive(true));
+  inputBox.addEventListener('mouseleave', () => {
+    if (document.activeElement !== obj.main.input) setInputBoxActive(false);
+  });
+  obj.main.input.addEventListener('focus', () => setInputBoxActive(true));
+  obj.main.input.addEventListener('blur', () => setInputBoxActive(false));
+  // 保证input文字居中，展开后仍居中
+  obj.main.input.style.textAlign = 'center';
+  // 保证左侧搜索引擎选择和右侧按钮始终可见
+  obj.main.select.style.display = 'flex';
+  obj.main.submit.style.display = 'flex';
+
+  // 合并右上角按钮为左下角菜单
+  const cornerMenu = document.createElement('div');
+  cornerMenu.className = 'corner-menu';
+  cornerMenu.innerHTML = `
+    <div class="corner-menu-btn" title="菜单"><i class="iconfont icon-menu"></i></div>
+    <div class="corner-menu-list">
+      <button type="button" data-action="setting">设定</button>
+      <button type="button" data-action="edit">管理</button>
+      <button type="button" data-action="about">关于</button>
+      <button type="button" data-action="updated">更新</button>
+    </div>
+  `;
+  document.body.appendChild(cornerMenu);
+  const menuBtn = cornerMenu.querySelector('.corner-menu-btn');
+  const menuList = cornerMenu.querySelector('.corner-menu-list');
+  let menuOpenTimer = null;
+  menuBtn.addEventListener('mouseenter', () => {
+    clearTimeout(menuOpenTimer);
+    cornerMenu.classList.add('open');
+  });
+  cornerMenu.addEventListener('mouseleave', () => {
+    menuOpenTimer = setTimeout(() => cornerMenu.classList.remove('open'), 180);
+  });
+  menuList.querySelector('[data-action=setting]').onclick = obj.header.setting.onclick;
+  menuList.querySelector('[data-action=edit]').onclick = obj.header.edit.onclick;
+  menuList.querySelector('[data-action=about]').onclick = obj.header.about.onclick;
+  menuList.querySelector('[data-action=updated]').onclick = obj.header.updated.onclick;
+
+  // 隐藏原右上角按钮
+  obj.header.edit.style.display = 'none';
+  obj.header.updated.style.display = 'none';
+  obj.header.about.style.display = 'none';
+  obj.header.setting.style.display = 'none';
 }
 
 KStart();

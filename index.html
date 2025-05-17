@@ -13,140 +13,122 @@
     <script src="static/main.js" defer></script>
 </head>
 <body>
-<header>
-    <div class="action-btn edit" ks-tag="bottom" ks-text="管理导航项">
-        <i class="fa fa-edit"></i>
+    <!-- 顶部时间/问候语由JS动态插入 -->
+    <div class="main-content">
+      <form class="input-box">
+        <div class="search-selector search-select"></div>
+        <input type="text" placeholder="搜索或输入网址..." />
+        <button class="btn" type="submit"><i class="iconfont icon-search"></i></button>
+      </form>
+      <div class="navi-items"></div>
     </div>
-    <div class="action-btn updated" ks-tag="bottom" ks-text="更新日志">
-        <i class="fa fa-bullhorn"></i>
-    </div>
-    <div class="action-btn about" ks-tag="bottom" ks-text="关于">
-        <i class="fa fa-info-circle"></i>
-    </div>
-    <div class="action-btn setting" ks-tag="bottom" ks-text="设置">
-        <i class="fa fa-cog"></i>
-    </div>
-</header>
-<main>
-    <section class="navi-search">
-        <form class="input-box">
-            <div class="search-select" title="切换搜索引擎">
-                <div class="iconfont icon-baidu"></div>
+    <!-- corner-menu 由JS插入 -->
+    <footer>
+        <p>© <script>document.write(new Date().getFullYear())</script> <a href="./web/i.html" target="_blank">是鱼布斯啊</a> | <a href="./web/paulhome.html" target="_blank">奇趣保罗</a> | <a href="./web/github.html" target="_blank">参与维护</a></p>
+    </footer>
+    <window>
+        <section class="the-window updated">
+            <div class="window-head">
+                <img src="static/icon.png" class="window-logo">
+                <button data-type="close" class="window-close">-</button>
+                <h3>支持</h3>
             </div>
-            <div class="search-selector"></div>
-            <input type="text" placeholder="搜索..."/>
-            <button class="btn transparent" title="搜索"><i class="fa fa-search"></i></button>
-        </form>
-    </section>
-    <section class="navi-items"></section>
-    <section class="navi-background"></section>
-</main>
-<footer>
-    <p>© <script>document.write(new Date().getFullYear())</script> <a href="./web/i.html" target="_blank">是鱼布斯啊</a> | <a href="./web/paulhome.html" target="_blank">奇趣保罗</a> | <a href="./web/github.html" target="_blank">参与维护</a></p>
-</footer>
-<window>
-    <section class="the-window updated">
-        <div class="window-head">
-            <img src="static/icon.png" class="window-logo">
-            <button data-type="close" class="window-close">-</button>
-            <h3>支持</h3>
-        </div>
-        <div class="window-body" style="padding:0;min-height:400px;">
-            <iframe src="static/update.html" style="width:100%;height:420px;border:none;background:transparent;" title="更新日志"></iframe>
-        </div>
-    </section>
-    <section class="the-window about">
-        <div class="window-head">
-            <img src="static/icon.png" class="window-logo">
-            <button data-type="close" class="window-close">-</button>
-            <h3>关于</h3>
-        </div>
-        <div class="window-body">
-            <article>
-                <a href="./web/bilibili.html"><img src="https://imgcdn.simsoft.top/1708608465-24.jpg" alt="布斯起始页"></a>
+            <div class="window-body" style="padding:0;min-height:400px;">
+                <iframe src="static/update.html" style="width:100%;height:420px;border:none;background:transparent;" title="更新日志"></iframe>
+            </div>
+        </section>
+        <section class="the-window about">
+            <div class="window-head">
+                <img src="static/icon.png" class="window-logo">
+                <button data-type="close" class="window-close">-</button>
+                <h3>关于</h3>
+            </div>
+            <div class="window-body">
+                <article>
+                    <a href="./web/bilibili.html"><img src="https://imgcdn.simsoft.top/1708608465-24.jpg" alt="布斯起始页"></a>
 
-                <h3>    </h3>
-                <h2>你好！欢迎访问布斯起始页</h2>
-                <h2>本项目由高中生开发并开源</h2>
-                <h3>贡献者：</h3>
-                <a href="./web/bilibili.html" target="_blank">Yubius的B站</a> | <a href="./web/i.html" target="_blank">Yubius的主页</a> | <a href="./web/paulhome.html" target="_blank">奇趣保罗</a>
-                <h3>联系我们：</h3>
-                <a href="./web/bilibili.html" target="_blank">哔哩哔哩:是鱼布斯啊</a>
-                 <h4> </h4>
-                <a href="./web/QQqun.html" target="_blank">QQ交流群:Win11系统Office交流</a>
-                <h4> </h4>
-                <a href="./web/mail.html" target="_blank">电子邮件:wdm.yu@outlook.com</a>
-                <h3> </h3>
+                    <h3>    </h3>
+                    <h2>你好！欢迎访问布斯起始页</h2>
+                    <h2>本项目由高中生开发并开源</h2>
+                    <h3>贡献者：</h3>
+                    <a href="./web/bilibili.html" target="_blank">Yubius的B站</a> | <a href="./web/i.html" target="_blank">Yubius的主页</a> | <a href="./web/paulhome.html" target="_blank">奇趣保罗</a>
+                    <h3>联系我们：</h3>
+                    <a href="./web/bilibili.html" target="_blank">哔哩哔哩:是鱼布斯啊</a>
+                     <h4> </h4>
+                    <a href="./web/QQqun.html" target="_blank">QQ交流群:Win11系统Office交流</a>
+                    <h4> </h4>
+                    <a href="./web/mail.html" target="_blank">电子邮件:wdm.yu@outlook.com</a>
+                    <h3> </h3>
 
-                <h3>类似项目：</h3>
-                <a href="./web/paul.html" target="_blank">奇趣起始页</a> | <a href="./web/limestart.html" target="_blank">青柠起始页</a> | <a href="./web/simsoft.html" target="_blank">氢起始页</a>
-                <h3> </h3>
-                <h3>意见反馈：</h3>
-                <a href="./web/mail.html" target="_blank">邮件联系站长</a> | <a href="./web/QQqun.html" target="_blank">QQ交流群</a> | <a href="./web/QQpd.html" target="_blank">QQ频道[3.5k]</a> | <a href="./web/github.html" target="_blank">GitHub社区</a>
-                <h3> </h3>
-                <!--<a href="https://github.com/yubius/yubius.github.com/discussions"> 
-                    <p style="text-align: center;">                    
-                    <img src="https://imgcdn.simsoft.top/upload/22-01-29-16-24-50-fk.png" width="380%" height="280%" />
+                    <h3>类似项目：</h3>
+                    <a href="./web/paul.html" target="_blank">奇趣起始页</a> | <a href="./web/limestart.html" target="_blank">青柠起始页</a> | <a href="./web/simsoft.html" target="_blank">氢起始页</a>
+                    <h3> </h3>
+                    <h3>意见反馈：</h3>
+                    <a href="./web/mail.html" target="_blank">邮件联系站长</a> | <a href="./web/QQqun.html" target="_blank">QQ交流群</a> | <a href="./web/QQpd.html" target="_blank">QQ频道[3.5k]</a> | <a href="./web/github.html" target="_blank">GitHub社区</a>
+                    <h3> </h3>
+                    <!--<a href="https://github.com/yubius/yubius.github.com/discussions"> 
+                        <p style="text-align: center;">                    
+                        <img src="https://imgcdn.simsoft.top/upload/22-01-29-16-24-50-fk.png" width="380%" height="280%" />
+                        </p>
+                        </a>           !-->
+            </div>
+        </section>
+        <section class="the-window setting">
+            <div class="window-head">
+                <img src="static/icon.png" class="window-logo">
+                <button data-type="close" class="window-close">-</button>
+                <h3>设定</h3>
+            </div>
+            <div class="window-body">
+                <fieldset>
+                    <label>
+                        <span>默认搜索引擎：</span>
+                        <select name="search" data-key="search_method"></select>
+                    </label>
+                    <label>
+                        <span>自定义背景：</span>
+                        <select name="background" data-key="background_type"></select>
+                    </label>
+                    <label id="custom-bg-url-label" style="display:none;">
+                        <span>自定义壁纸链接：</span>
+                        <input type="text" name="custom_bg_url" placeholder="请输入图片链接，如 https://..." />
+                    </label>
+                    <label>
+                        <span>减淡动画和视觉效果：</span>
+                        <select name="low_animate" data-key="motion_reduced_enum"></select>
+                    </label>
+                    <label>
+                        <span>自动聚焦到搜索框：</span>
+                        <input name="auto_focus" type="checkbox" class="switch" />
+                    </label>
+                    <label>
+                        <span>主题模式：</span>
+                        <select name="theme_mode" data-key="theme_mode">
+                            <option value="auto">跟随系统</option>
+                            <option value="light">浅色</option>
+                            <option value="dark">深色</option>
+                        </select>
+                    </label>
+                    
+                    <p class="btn-group">
+                        <button class="btn small primary" id="set-reset" title="重置个人设置为默认值">重置为默认</button>
+                        <button class="btn small transparent" id="set-input" title="导入个人设置">导入</button>
+                        <button class="btn small transparent" id="set-output" title="导出个人设置">导出</button>
+                        <input type="file" id="set-file" hidden />
                     </p>
-                    </a>           !-->
-        </div>
-    </section>
-    <section class="the-window setting">
-        <div class="window-head">
-            <img src="static/icon.png" class="window-logo">
-            <button data-type="close" class="window-close">-</button>
-            <h3>设定</h3>
-        </div>
-        <div class="window-body">
-            <fieldset>
-                <label>
-                    <span>默认搜索引擎：</span>
-                    <select name="search" data-key="search_method"></select>
-                </label>
-                <label>
-                    <span>自定义背景：</span>
-                    <select name="background" data-key="background_type"></select>
-                </label>
-                <label id="custom-bg-url-label" style="display:none;">
-                    <span>自定义壁纸链接：</span>
-                    <input type="text" name="custom_bg_url" placeholder="请输入图片链接，如 https://..." />
-                </label>
-                <label>
-                    <span>减淡动画和视觉效果：</span>
-                    <select name="low_animate" data-key="motion_reduced_enum"></select>
-                </label>
-                <label>
-                    <span>自动聚焦到搜索框：</span>
-                    <input name="auto_focus" type="checkbox" class="switch" />
-                </label>
-                <label>
-                    <span>主题模式：</span>
-                    <select name="theme_mode" data-key="theme_mode">
-                        <option value="auto">跟随系统</option>
-                        <option value="light">浅色</option>
-                        <option value="dark">深色</option>
-                    </select>
-                </label>
-                
-                <p class="btn-group">
-                    <button class="btn small primary" id="set-reset" title="重置个人设置为默认值">重置为默认</button>
-                    <button class="btn small transparent" id="set-input" title="导入个人设置">导入</button>
-                    <button class="btn small transparent" id="set-output" title="导出个人设置">导出</button>
-                    <input type="file" id="set-file" hidden />
-                </p>
-            </fieldset>
-        </div>
-    </section>
-    <section class="the-drawer sites">
-        <div class="drawer-head">
-            <button data-type="close">-</button>
-            <h3>管理导航项</h3>
-        </div>
-        <div class="drawer-body">
-            <div class="sites"></div>
-            <p class="add-sites">若想扩展添加更多导航项，欢迎在本项目 Issues 区 <a href="./web/github.html" target="_blank">公共导航列表添加建议区</a> 留言讨论！</p>
-        </div>
-    </section>
-</window>
+                </fieldset>
+            </div>
+        </section>
+        <section class="the-drawer sites">
+            <div class="drawer-head">
+                <button data-type="close">-</button>
+                <h3>管理导航项</h3>
+            </div>
+            <div class="drawer-body">
+                <div class="sites"></div>
+                <p class="add-sites">若想扩展添加更多导航项，欢迎在本项目 Issues 区 <a href="./web/github.html" target="_blank">公共导航列表添加建议区</a> 留言讨论！</p>
+            </div>
+        </section>
+    </window>
 </body>
 </html>
