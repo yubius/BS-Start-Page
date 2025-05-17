@@ -123,6 +123,7 @@ header{
   padding: 1em 0;
   position: fixed;
   justify-content: flex-end;
+  background: transparent;
 }
 
 header .action-btn{
@@ -163,14 +164,174 @@ main{
   position: relative;
   padding: .5em 1em;
   border-radius: 3em;
-  background-color: #fff;
-  background-color: var(--search-bg);
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
+  background: rgba(255,255,255,0.55);
   box-shadow: var(--shadow);
-  transition: box-shadow .3s;
+  transition: box-shadow .3s, background .3s, backdrop-filter .3s;
+  margin: 0 auto;
+  max-width: 32em;
+  backdrop-filter: blur(12px) saturate(1.2);
 }
-.input-box:hover{
-  box-shadow: var(--shadow-thick);
+.input-box:focus-within {
+  background: #fff;
+  backdrop-filter: none;
+}
+
+body.blur-bg-active .navi-background {
+  opacity: 1 !important;
+  backdrop-filter: blur(16px) saturate(1.2);
+  transition: backdrop-filter .3s, opacity .3s;
+}
+
+.navi-background {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: -1;
+  position: fixed;
+  transition: opacity .5s, backdrop-filter .3s;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .input-box {
+    width: 96vw;
+    min-width: 0;
+    max-width: 99vw;
+    left: 0;
+    right: 0;
+  }
+}
+
+/* 搜索框圆角、居中、展开动画、内容布局 */
+.input-box {
+  position: relative;
+  margin: 0 auto;
+  top: 0;
+  width: 100%;
+  min-width: 0;
+  max-width: 99vw;
+  border-radius: var(--radius);
+  background: var(--input-bg);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: none;
+  backdrop-filter: none;
+  z-index: 2;
+  border: none;
+  overflow: visible;
+}
+.input-box:hover, .input-box.active {
+  width: 100%;
+  background: var(--input-bg);
+  box-shadow: var(--shadow);
+}
+.input-box input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: inherit;
+  font-size: 1em;
+  width: 100%;
+  text-align: left;
+  padding: 1em 0 1em 0;
+  transition: none;
+}
+.input-box .btn {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.1em;
+  cursor: pointer;
+  padding: 0 1em 0 0.5em;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.input-box .search-select {
+  min-width: 2.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  cursor: pointer;
+}
+.input-box .search-selector {
+  position: absolute;
+  left: 0;
+  top: 2.5em;
+  min-width: 8em;
+  background: var(--input-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  z-index: 10;
+}
+.input-box input:focus {
+  font-size: 1em;
+}
+
+@media (max-width: 600px) {
+  .input-box {
+    width: 96vw;
+    min-width: 0;
+    max-width: 99vw;
+    left: 0;
+    right: 0;
+  }
+  .navi-search{
+    margin-top: 4em;
+    margin-bottom: 2em;
+  }
+}
+
+/* 搜索框高斯模糊和动画 */
+.input-box {
+  position: relative;
+  margin: 0 auto;
+  top: 0;
+  width: 100%;
+  min-width: 0;
+  max-width: 99vw;
+  border-radius: var(--radius);
+  background: var(--input-bg);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: none;
+  backdrop-filter: none;
+  z-index: 2;
+}
+.input-box:hover, .input-box.active {
+  width: 100%;
+  background: var(--input-bg);
+  box-shadow: var(--shadow);
+}
+.input-box input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: inherit;
+  font-size: 1em;
+  width: 100%;
+  text-align: left;
+  padding: 1em 0 1em 0;
+  transition: none;
+}
+.input-box .btn {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.1em;
+  cursor: pointer;
+  padding: 0 1em 0 0.5em;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 @media screen and (prefers-color-scheme: dark){
@@ -200,7 +361,24 @@ main{
   background-color: transparent;
 }
 
-.navi-items{
+.time-greet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.1rem;
+  font-weight: 600;
+  margin-top: 60px;
+  margin-bottom: 18px;
+  color: var(--main-text, #222);
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s;
+}
+.time-greet:hover {
+  color: #409eff;
+}
+
+.navi-items {
   display: grid;
   grid-gap: 2em;
   text-align: center;
@@ -221,7 +399,8 @@ main{
 }
 
 .navi-search{
-  margin-bottom: 5em;
+  margin-top: 4.5em;
+  margin-bottom: 3em;
 }
 
 .search-select{
@@ -598,4 +777,98 @@ body.low-animate .the-drawer.active{
   opacity: .6;
   font-size: .875em;
   text-align: center;
+}
+
+/* 3D翻转动画样式 */
+.the-window.flip {
+  transform: perspective(600px) rotateX(7deg) rotateY(-4deg) scale(0.985);
+  box-shadow: 0 8px 28px 0 rgba(0,0,0,0.16);
+}
+
+.the-window {
+  transition: transform 0.16s cubic-bezier(.22,1.12,.62,.99), box-shadow 0.16s cubic-bezier(.22,1.12,.62,.99);
+}
+.the-window.flip-ru { /* 右上角 */
+  transform: perspective(700px) rotateX(5deg) rotateY(6deg) scale(0.99);
+  box-shadow: 0 6px 18px 0 rgba(0,0,0,0.13);
+}
+.the-window.flip-lu { /* 左上角 */
+  transform: perspective(700px) rotateX(5deg) rotateY(-6deg) scale(0.99);
+  box-shadow: 0 6px 18px 0 rgba(0,0,0,0.13);
+}
+.the-window.flip-rd { /* 右下角 */
+  transform: perspective(700px) rotateX(-5deg) rotateY(6deg) scale(0.99);
+  box-shadow: 0 6px 18px 0 rgba(0,0,0,0.13);
+}
+.the-window.flip-ld { /* 左下角 */
+  transform: perspective(700px) rotateX(-5deg) rotateY(-6deg) scale(0.99);
+  box-shadow: 0 6px 18px 0 rgba(0,0,0,0.13);
+}
+.the-window.flip-l {
+  transform: perspective(700px) rotateY(-7deg) scale(0.99);
+  box-shadow: 0 4px 14px 0 rgba(0,0,0,0.11);
+}
+.the-window.flip-r {
+  transform: perspective(700px) rotateY(7deg) scale(0.99);
+  box-shadow: 0 4px 14px 0 rgba(0,0,0,0.11);
+}
+.the-window.flip-u {
+  transform: perspective(700px) rotateX(7deg) scale(0.99);
+  box-shadow: 0 6px 16px 0 rgba(0,0,0,0.12);
+}
+.the-window.flip-d {
+  transform: perspective(700px) rotateX(-7deg) scale(0.99);
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.10);
+}
+
+#custom-bg-url-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: 0.5em;
+}
+#custom-bg-url-label input[type="text"] {
+  flex: 1;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: var(--radius, 6px);
+  background: var(--input-bg);
+  color: var(--font-color);
+  font-size: 1em;
+}
+body.dark #custom-bg-url-label input[type="text"] {
+  background: #222;
+  color: #eee;
+  border-color: #444;
+}
+
+.corner-menu {
+  display: none !important;
+}
+
+.navi-search {
+  position: relative;
+  z-index: 0;
+}
+
+window {
+  z-index: 10;
+}
+
+.the-window, .the-drawer {
+  z-index: 11;
+}
+
+.navi-background {
+  z-index: -1;
+}
+
+@media (max-width: 600px) {
+  .input-box, .input-box:hover, .input-box.active {
+    width: 96vw;
+    min-width: 0;
+    max-width: 99vw;
+    left: 0;
+    right: 0;
+  }
 }

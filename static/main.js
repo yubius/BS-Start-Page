@@ -131,7 +131,7 @@ function KStart() {
       theme_mode: "auto", // 新增：主题模式，默认跟随系统
       sites: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 16, 28, 31, 35],
       custom: [],
-      show_weather: true,
+      custom_bg_url: '',
     },
   };
 
@@ -163,7 +163,15 @@ function KStart() {
     },
 
     createNaviItem: (item, key) => {
-      const icon = item.icon ? `<i class="${item.icon}"></i>` : item.name.substr(0, 1);
+      let iconHtml = '';
+      if (item.favicon) {
+        // 使用 Google 提供的 favicon 服务，兼容大部分网站
+        iconHtml = `<img src="https://www.google.com/s2/favicons?sz=64&domain_url=${encodeURIComponent(item.url)}" alt="favicon" style="width:2.6em;height:2.6em;vertical-align:middle;">`;
+      } else if (item.icon) {
+        iconHtml = `<i class="${item.icon}"></i>`;
+      } else {
+        iconHtml = item.name.substr(0, 1);
+      }
       const color = item.color || Math.random().toString(16).substring(-6);
 
       const el = ks.create("a", {
@@ -181,7 +189,7 @@ function KStart() {
         ],
         html: (
           `<figure class="navi-icon" style="background: #${color}">
-              ${icon}
+              ${iconHtml}
           </figure>
           <p class="navi-title">${item.name}</p>`
         )
@@ -271,7 +279,12 @@ function KStart() {
     },
     submitSearchButton: (e) => {
       e.preventDefault();
-      window.open(data.search_method[data.user_set.search].url.replace("%s", obj.main.input.value));
+      const keyword = obj.main.input.value.trim();
+      if (!keyword) {
+        ks.notice("请输入搜索内容！", { color: "red", time: 2500 });
+        return;
+      }
+      window.open(data.search_method[data.user_set.search].url.replace("%s", keyword));
     },
 
     // 右上方的按钮
@@ -410,16 +423,26 @@ function KStart() {
 
         return;
       }
-
-      const img = new Image();
+      let imgUrl, imgSet;
+      if (data.user_set.background == data.background_type.length - 1) {
+        imgUrl = data.user_set.custom_bg_url;
+        imgSet = 'center/cover no-repeat';
+        if (!imgUrl) {
+          obj.main.bg.style = '';
+          obj.main.bg.classList.remove('active');
+          return;
+        }
+      } else {
+        imgUrl = data.background_type[data.user_set.background].url;
+        imgSet = data.background_type[data.user_set.background].set;
+      }
+      const img = new window.Image();
       img.crossOrigin = "Anonymous";
-      img.src = data.background_type[data.user_set.background].url;
-
-      // 深色背景增加深色模式
+      img.src = imgUrl;
       img.onload = () => {
-        obj.main.bg.classList.add(`type-${data.user_set.background}`);
-        obj.main.bg.style.background = `url(${img.src}) ${data.background_type[data.user_set.background].set}`;
-        obj.main.bg.classList.add("active");
+        obj.main.bg.className = 'navi-background type-' + data.user_set.background;
+        obj.main.bg.style.background = `url(${img.src}) ${imgSet}`;
+        obj.main.bg.classList.add('active');
 
         const canvas = document.createElement("canvas");
 
@@ -434,6 +457,11 @@ function KStart() {
         else {
           document.body.classList.remove("dark");
         }
+      };
+      img.onerror = () => {
+        obj.main.bg.style = '';
+        obj.main.bg.classList.remove('active');
+        ks.notice('壁纸加载失败，请检查图片链接', {color:'red', time:4000});
       };
     },
     // 自动聚焦到搜索框
@@ -523,7 +551,8 @@ function KStart() {
         modifys.initLowAnimate();
       }
       else if (name === "theme_mode") {
-        modifys.applyThemeMode();
+        methods.setStorage(); // 立即保存主题设置
+        modifys.applyThemeMode(); // 立即应用主题
       }
     },
 
@@ -559,6 +588,56 @@ function KStart() {
 
         (isWindow || isCloseBtn) && methods.closeWindow();
       };
+
+      // 关闭按钮悬停 3D 压下效果（持续，移开恢复）
+      document.querySelectorAll('.window-close').forEach(btn => {
+        btn.addEventListener('mouseenter', function(e) {
+          if(document.body.classList.contains('low-animate')) return; // 低动画模式下不加3D效果
+          const win = btn.closest('.the-window');
+          if (win) win.classList.add('flip');
+        });
+        btn.addEventListener('mouseleave', function(e) {
+          const win = btn.closest('.the-window');
+          if (win) win.classList.remove('flip');
+        });
+      });
+
+      // 四角和四边区域悬停 3D 压下效果
+      const windowHeadHoverArea = 80; // px，角落区域宽度
+      const windowHeadEdgeArea = 40; // px，边缘区域宽度
+      document.querySelectorAll('.the-window').forEach(win => {
+        const head = win.querySelector('.window-head');
+        if (!head) return;
+        head.addEventListener('mousemove', function(e) {
+          const rect = head.getBoundingClientRect();
+          let flipClass = '';
+          // 四角
+          if (e.clientX > rect.right - windowHeadHoverArea && e.clientY < rect.top + windowHeadHoverArea) {
+            flipClass = 'flip-ru'; // 右上
+          } else if (e.clientX < rect.left + windowHeadHoverArea && e.clientY < rect.top + windowHeadHoverArea) {
+            flipClass = 'flip-lu'; // 左上
+          } else if (e.clientX > rect.right - windowHeadHoverArea && e.clientY > rect.bottom - windowHeadHoverArea) {
+            flipClass = 'flip-rd'; // 右下
+          } else if (e.clientX < rect.left + windowHeadHoverArea && e.clientY > rect.bottom - windowHeadHoverArea) {
+            flipClass = 'flip-ld'; // 左下
+          }
+          // 四边（不在角落时）
+          else if (e.clientX < rect.left + windowHeadEdgeArea) {
+            flipClass = 'flip-l'; // 左边
+          } else if (e.clientX > rect.right - windowHeadEdgeArea) {
+            flipClass = 'flip-r'; // 右边
+          } else if (e.clientY < rect.top + windowHeadEdgeArea) {
+            flipClass = 'flip-u'; // 上边
+          } else if (e.clientY > rect.bottom - windowHeadEdgeArea) {
+            flipClass = 'flip-d'; // 下边
+          }
+          win.classList.remove('flip-ru', 'flip-lu', 'flip-rd', 'flip-ld', 'flip-l', 'flip-r', 'flip-u', 'flip-d');
+          if (flipClass) win.classList.add(flipClass);
+        });
+        head.addEventListener('mouseleave', function() {
+          win.classList.remove('flip-ru', 'flip-lu', 'flip-rd', 'flip-ld', 'flip-l', 'flip-r', 'flip-u', 'flip-d');
+        });
+      });
 
       // 重置按钮
       obj.settingBtn.reset.onclick = modifys.clearButton;
@@ -650,6 +729,25 @@ function KStart() {
           };
         }
       }
+
+      // 自定义壁纸输入框逻辑
+      const bgSelect = obj.settings.background;
+      const customBgLabel = document.getElementById('custom-bg-url-label');
+      const customBgInput = customBgLabel ? customBgLabel.querySelector('input') : null;
+      function updateCustomBgInputDisplay() {
+        if(bgSelect && bgSelect.value == data.background_type.length - 1) {
+          customBgLabel && (customBgLabel.style.display = 'flex');
+          customBgInput && (customBgInput.value = data.user_set.custom_bg_url || '');
+        } else {
+          customBgLabel && (customBgLabel.style.display = 'none');
+        }
+      }
+      bgSelect && bgSelect.addEventListener('change', updateCustomBgInputDisplay);
+      customBgInput && customBgInput.addEventListener('input', function() {
+        data.user_set.custom_bg_url = this.value;
+        methods.setStorage();
+      });
+      updateCustomBgInputDisplay();
     },
 
     // 初始化公共导航列表的拖拽功能
@@ -665,6 +763,7 @@ function KStart() {
 
     // 初始化抽屉里面的导航项目
     initDrawerItems: () => {
+      obj.drawer.sites.innerHTML = ""; // 修复：渲染前先清空内容，防止无内容或重复
       data.sites.forEach((site, key) => {
         const item = ks.create("span", {
           text: site.name,
@@ -711,13 +810,15 @@ function KStart() {
 
     return methods.getStorage();
   }).then((userData) => {
-    userData && methods.setUserSettings(userData);
-
+    if (userData) {
+      methods.setUserSettings(userData);
+    }
+    // 立即应用主题，防止刷新后丢失
+    modifys.applyThemeMode();
     modifys.initNavi();
     modifys.initBackground();
     modifys.initMediaQueryListener();
     modifys.initLowAnimate();
-    modifys.applyThemeMode(); // 初始化时应用主题
 
     data.env === "web" && modifys.hideModifiedButton();
 
@@ -727,48 +828,85 @@ function KStart() {
     modifys.initSettingForm();
     modifys.initDrawerItems();
   });
+
+  // 顶部时间/问候语与切换逻辑（还原：不插入额外div，不控制navi-items和input-box显示）
+  // 保留原有页面结构和显示逻辑
+
+  // 恢复右上角按钮显示
+  obj.header.edit.style.display = '';
+  obj.header.updated.style.display = '';
+  obj.header.about.style.display = '';
+  obj.header.setting.style.display = '';
+
+  // 移除左下角corner-menu相关JS（如有）
+  const oldCornerMenu = document.querySelector('.corner-menu');
+  if (oldCornerMenu) oldCornerMenu.remove();
+
+  // 恢复搜索框hover/active逻辑为原样（如有变动）
+  const inputBox = document.querySelector('.input-box');
+  if (inputBox) {
+    inputBox.classList.remove('active');
+    inputBox.onmouseenter = null;
+    inputBox.onmouseleave = null;
+    if (obj.main.input) {
+      obj.main.input.onfocus = null;
+      obj.main.input.onblur = null;
+      obj.main.input.style.textAlign = '';
+    }
+    obj.main.select.style.display = '';
+    obj.main.submit.style.display = '';
+  }
+
+  // 搜索框聚焦时背景高斯模糊
+  if (obj.main.input) {
+    obj.main.input.addEventListener('focus', () => {
+      document.body.classList.add('blur-bg-active');
+    });
+    obj.main.input.addEventListener('blur', () => {
+      document.body.classList.remove('blur-bg-active');
+    });
+  }
 }
 
 KStart();
 
-// 天气API小部件
+// 删除天气API小部件相关JS代码（已用iframe替代）
+// 全局网页跳转加载动画
 (function(){
-    const widget = document.getElementById('weather-widget');
-    if (!widget) return;
-    // 判断用户设置
-    try {
-        var show = JSON.parse(localStorage.getItem('paul-userset'));
-        if(show && show.show_weather === false) {
-            widget.style.display = 'none';
-            return;
-        }
-    } catch(e) {}
-    widget.style.display = '';
-    widget.innerHTML = '<span style="color:#888;font-size:14px;">天气加载中...</span>';
-    // 获取地理位置
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(pos) {
-            const lat = pos.coords.latitude;
-            const lon = pos.coords.longitude;
-            // 使用和风天气免费API（需替换为你自己的key）
-            const key = '9e8e7b6e0e4e4e8c8e4e7b6e0e4e4e8c'; // demo key, 请替换为你自己的
-            fetch(`https://devapi.qweather.com/v7/weather/now?location=${lon},${lat}&key=${key}`)
-                .then(r=>r.json())
-                .then(data=>{
-                    if(data.code==="200" && data.now){
-                        const w = data.now;
-                        widget.innerHTML = `<span style='font-size:1.1em;'>${w.text}</span> <span style='font-weight:bold;'>${w.temp}°C</span> <span style='font-size:0.9em;color:#888;'>${w.windDir}</span>`;
-                    }else{
-                        widget.innerHTML = '<span style="color:#888;">天气获取失败</span>';
-                    }
-                })
-                .catch(()=>{
-                    widget.innerHTML = '<span style="color:#888;">天气获取失败</span>';
-                });
-        }, function(){
-            widget.innerHTML = '<span style="color:#888;">无法获取定位</span>';
-        });
-    } else {
-        widget.innerHTML = '<span style="color:#888;">不支持定位</span>';
-    }
+  // 创建加载动画元素
+  const loader = document.createElement('div');
+  loader.id = 'global-page-loader';
+  loader.style.cssText = `
+    position: fixed;left:0;top:0;width:100vw;height:100vh;z-index:99999;
+    background: rgba(255,255,255,0.85);display:none;align-items:center;justify-content:center;
+    transition: opacity .3s;pointer-events:none;
+  `;
+  loader.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;gap:1em;">'
+    + '<img src="static/icon.png" alt="loading" style="width:64px;height:64px;border-radius:16px;box-shadow:0 2px 12px #158e23;">'
+    + '<div style="font-size:1.3em;color:#158e23;"><i class="fa fa-spinner fa-spin"></i> 正在加载...</div>'
+    + '</div>';
+  document.body.appendChild(loader);
+
+  // 监听页面所有a标签点击
+  document.addEventListener('click', function(e){
+    let a = e.target;
+    // 向上查找a标签
+    while(a && a.tagName !== 'A') a = a.parentElement;
+    if(!a) return;
+    // 排除锚点、js、下载、mailto、tel、target=_blank等
+    const href = a.getAttribute('href');
+    if(!href || href.startsWith('#') || href.startsWith('javascript:') || href.startsWith('mailto:') || href.startsWith('tel:') || a.target === '_blank') return;
+    // 显示加载动画
+    loader.style.display = 'flex';
+    loader.style.opacity = '1';
+    // 延迟跳转，保证动画可见
+    setTimeout(()=>{ window.location.href = href; }, 120);
+    e.preventDefault();
+  }, true);
+
+  // 页面加载完毕后隐藏动画
+  window.addEventListener('pageshow', ()=>{
+    loader.style.opacity = '0';
+    setTimeout(()=>{ loader.style.display = 'none'; }, 300);
+  });
 })();
