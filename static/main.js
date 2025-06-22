@@ -418,44 +418,17 @@ function KStart() {
     },
     // 主题切换
     applyThemeMode: () => {
-      // 优先从本地存储读取 theme_mode
-      let mode = data.user_set.theme_mode;
-      if (!mode) {
-        const storage = localStorage.getItem("paul-userset");
-        if (storage) {
-          try {
-            const userSet = JSON.parse(storage);
-            mode = userSet.theme_mode || "auto";
-          } catch {}
-        }
-      }
-      if (!mode) mode = "auto";
-      data.user_set.theme_mode = mode;
-      // 同步 select 选中项
-      if (obj.settings.theme_mode) {
-        obj.settings.theme_mode.value = mode;
-      }
+      // 彻底移除深色模式，始终使用浅色
       const html = document.documentElement;
       html.classList.remove("theme-light", "theme-dark", "theme-auto");
-      switch (mode) {
-        case "light":
-          html.classList.add("theme-light");
-          document.body.classList.remove("dark");
-          break;
-        case "dark":
-          html.classList.add("theme-dark");
-          document.body.classList.add("dark");
-          break;
-        default:
-          html.classList.add("theme-auto");
-          if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-            document.body.classList.add("dark");
-          } else {
-            document.body.classList.remove("dark");
-          }
-          break;
+      html.classList.add("theme-light");
+      document.body.classList.remove("dark");
+      // 保证 select 选项始终为 auto
+      if (obj.settings.theme_mode) {
+        obj.settings.theme_mode.value = "auto";
+        obj.settings.theme_mode.disabled = true;
       }
-      // 主题切换后立即保存
+      data.user_set.theme_mode = "auto";
       methods.setStorage();
     },
 
@@ -555,8 +528,7 @@ function KStart() {
         modifys.initLowAnimate();
       }
       else if (name === "theme_mode") {
-        // 立即保存并应用主题
-        methods.setStorage();
+        // 彻底移除深色模式，始终使用浅色
         modifys.applyThemeMode();
       }
     },
@@ -681,10 +653,8 @@ function KStart() {
     // 初始化设置表单项
     initSettingForm: () => {
       const set = data.user_set;
-
       for (item in set) {
-        if (!obj.settings[item]) continue; // 修正：跳过未定义的设置项
-
+        if (!obj.settings[item]) continue;
         let type, i = item;
         switch (obj.settings[item].type) {
           case "text": type = "value"; break;
@@ -692,10 +662,8 @@ function KStart() {
           case "select-one": type = "value"; break;
           case "select-multiple": type = "options"; break;
         }
-
-        // 是下拉框，遍历生成（只有 Select 才会有 key 这个东西）
         if (obj.settings[item].type.indexOf("select") === 0 && obj.settings[item].dataset.key) {
-          if (!obj.settings[item].options.length) { // 防止重复生成
+          if (!obj.settings[item].options.length) {
             data[obj.settings[item].dataset.key].forEach((sitem, key) => {
               ks.create("option", {
                 text: sitem.name,
@@ -708,28 +676,23 @@ function KStart() {
             });
           }
         }
-
-        // Input / Checkbox / Select
         if (type !== "options") {
-          // 修正：主题模式 select 需用字符串
           if (item === "theme_mode") {
-            obj.settings[item][type] = set[item] || "auto";
+            obj.settings[item][type] = "auto";
+            obj.settings[item].disabled = true;
+            data.user_set.theme_mode = "auto";
           } else {
             obj.settings[item][type] = set[item];
           }
-
           obj.settings[item].onchange = (ev) => {
-            // 主题模式 select 需用字符串
-            data.user_set[i] = (i === "theme_mode") ? ev.target.value : methods.parseValue(type, ev.target[type]);
+            if (i === "theme_mode") return;
+            data.user_set[i] = methods.parseValue(type, ev.target[type]);
             methods.setStorage();
             modifys.onSettingChange(i);
           };
         } else {
-          // 设置表单
           methods.setMulSelectValue(obj.settings[item], set[item]);
-
           obj.settings[item].onchange = () => {
-            // 读取表单
             data.user_set[i] = methods.parseValue(type, methods.getMulSelectValue(obj.settings[i]));
             methods.setStorage();
             modifys.onSettingChange(i);

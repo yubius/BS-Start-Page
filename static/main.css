@@ -30,22 +30,11 @@
 html.theme-light {
   color-scheme: light;
 }
-html.theme-dark {
-  color-scheme: dark;
-}
 
-body.dark {
-  color: #fff;
-  background-color: #222;
-  --font-shadow: 0 0 5px #000, 0 2px 5px #000;
-}
-
-@media (prefers-color-scheme: dark) {
-  html.theme-auto body {
-    color: #fff;
-    background-color: #222;
-    --font-shadow: 0 0 5px #000, 0 2px 5px #000;
-  }
+body {
+  color: #222;
+  background-color: #fff;
+  --font-shadow: 0 0 5px #fff, 0 2px 5px #fff;
 }
 
 @media screen and (prefers-color-scheme: dark){
