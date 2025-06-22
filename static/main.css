@@ -27,139 +27,24 @@
   --font-shadow: 0 0 5px #fff, 0 2px 5px #fff;
 }
 
-html.theme-light {
-  color-scheme: light;
+html, body {
+  color: #222;
+  background: #fff;
+  --font-color: #222;
+  --input-bg: #fff;
+  --search-bg: #fff;
+  --secondly-input-bg: rgba(0, 0, 0, .05);
+  --font-shadow: 0 0 5px #fff, 0 2px 5px #fff;
+}
+
+.navi-background {
+  background: none !important;
 }
 
 body {
   color: #222;
   background-color: #fff;
   --font-shadow: 0 0 5px #fff, 0 2px 5px #fff;
-}
-
-@media screen and (prefers-color-scheme: dark){
-  :root{
-    color: #ccc;
-    background-color: #222;
-
-    --gray: #555;
-    --shadow: 0 0 5em rgba(255, 255, 255, .1);
-    --shadow-thin: 0 0 1em rgba(255, 255, 255, .3);
-    --shadow-thick: 0 0 5em rgba(255, 255, 255, .2);
-
-    --input-bg: #222;
-    --search-bg: rgba(255, 255, 255, .2);
-    --secondly-input-bg: rgba(255, 255, 255, .2);
-
-    --font-color: #eee;
-    --font-shadow: 0 0 5px #000, 0 2px 5px #000;
-  }
-
-  blockquote{
-    background-color: var(--secondly-input-bg);
-  }
-
-  /* 保持深色模式下背景壁纸正常显示，不加黑色蒙版 */
-  .navi-background {
-    background: none !important;
-  }
-  /* 恢复搜索框hover/active/聚焦时的正常深色样式 */
-  .input-box,
-  .input-box:hover,
-  .input-box.active,
-  .input-box:focus-within {
-    background: rgba(34,34,34,0.82);
-    backdrop-filter: blur(22px) saturate(1.3);
-    -webkit-backdrop-filter: blur(22px) saturate(1.3);
-    box-shadow: 0 6px 32px 0 rgba(0,0,0,0.12);
-  }
-}
-
-html, body{
-  height: 100%;
-}
-
-body{
-  display: flex;
-  flex-direction: column;
-}
-
-.iconfont{
-  font: inherit;
-}
-
-h3{
-  font-weight: lighter;
-}
-
-article h3{ margin-top: 2em }
-article h3:first-child{ margin-top: 0 }
-
-article img{ border-radius: 1em }
-
-.btn{
-  transition: opacity .3s, box-shadow .3s;
-}
-.btn:active{
-  opacity: .9;
-}
-
-.btn.primary{
-  color: #fff;
-  background-color: var(--primary);
-}
-
-.btn-group{
-  gap: .5em;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-/*
-  页眉
-*/
-header{
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  display: flex;
-  padding: 1em 0;
-  position: fixed;
-  justify-content: flex-end;
-  background: transparent;
-}
-
-header .action-btn{
-  padding: 0 1em;
-  cursor: pointer;
-}
-header .action-btn .fa{
-  font-size: 1.5em;
-  transition: transform .3s;
-  text-shadow: var(--font-shadow);
-}
-header .action-btn:hover .fa{
-  transform: scale(1.2);
-}
-
-header .action-btn.updated.active .fa{
-  animation: shiny .5s alternate infinite;
-}
-
-@keyframes shiny {
-  from { opacity: 0 }
-  to { opacity: 1 }
-}
-
-/*
-  内容
-*/
-main{
-  width: 100%;
-  margin: auto;
-  padding: 5em 1.75em;
-  max-width: 60em;
 }
 
 .input-box{
@@ -344,24 +229,6 @@ body.blur-bg-active .navi-background {
   display: flex;
   align-items: center;
   height: 100%;
-}
-
-@media screen and (prefers-color-scheme: dark){
-  .input-box input::-webkit-input-placeholder{
-    color: inherit;
-  }
-
-  .input-box input:-ms-input-placeholder{
-    color: inherit;
-  }
-
-  .input-box input::placeholder{
-    color: inherit;
-  }
-
-  .navi-icon{
-    filter: brightness(.7);
-  }
 }
 
 .input-box input{
