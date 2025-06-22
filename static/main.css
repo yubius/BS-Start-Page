@@ -538,6 +538,10 @@ body.blur-bg-active .navi-background {
   .navi-background.type-2.active{
     opacity: .2;
   }
+  /* 移除深色模式下的黑色蒙版，保证背景壁纸正常显示 */
+  .navi-background {
+    background: none !important;
+  }
 }
 
 /*

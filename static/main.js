@@ -431,6 +431,10 @@ function KStart() {
       }
       if (!mode) mode = "auto";
       data.user_set.theme_mode = mode;
+      // 同步 select 选中项
+      if (obj.settings.theme_mode) {
+        obj.settings.theme_mode.value = mode;
+      }
       const html = document.documentElement;
       html.classList.remove("theme-light", "theme-dark", "theme-auto");
       switch (mode) {
@@ -551,8 +555,9 @@ function KStart() {
         modifys.initLowAnimate();
       }
       else if (name === "theme_mode") {
-        methods.setStorage(); // 立即保存主题设置
-        modifys.applyThemeMode(); // 立即应用主题
+        // 立即保存并应用主题
+        methods.setStorage();
+        modifys.applyThemeMode();
       }
     },
 
@@ -678,52 +683,54 @@ function KStart() {
       const set = data.user_set;
 
       for (item in set) {
-        if (!obj.settings[item]) return;
+        if (!obj.settings[item]) continue; // 修正：跳过未定义的设置项
 
         let type, i = item;
-
         switch (obj.settings[item].type) {
           case "text": type = "value"; break;
           case "checkbox": type = "checked"; break;
           case "select-one": type = "value"; break;
-          // ! 暂时没有使用
           case "select-multiple": type = "options"; break;
         }
 
         // 是下拉框，遍历生成（只有 Select 才会有 key 这个东西）
         if (obj.settings[item].type.indexOf("select") === 0 && obj.settings[item].dataset.key) {
-          data[obj.settings[item].dataset.key].forEach((sitem, key) => {
-            ks.create("option", {
-              text: sitem.name,
-              attr: {
-                name: "value",
-                value: key,
-              },
-              parent: obj.settings[item],
+          if (!obj.settings[item].options.length) { // 防止重复生成
+            data[obj.settings[item].dataset.key].forEach((sitem, key) => {
+              ks.create("option", {
+                text: sitem.name,
+                attr: {
+                  name: "value",
+                  value: key,
+                },
+                parent: obj.settings[item],
+              });
             });
-          });
+          }
         }
 
         // Input / Checkbox / Select
         if (type !== "options") {
-          obj.settings[item][type] = set[item];
+          // 修正：主题模式 select 需用字符串
+          if (item === "theme_mode") {
+            obj.settings[item][type] = set[item] || "auto";
+          } else {
+            obj.settings[item][type] = set[item];
+          }
 
           obj.settings[item].onchange = (ev) => {
-            data.user_set[i] = methods.parseValue(type, ev.target[type]);
-
+            // 主题模式 select 需用字符串
+            data.user_set[i] = (i === "theme_mode") ? ev.target.value : methods.parseValue(type, ev.target[type]);
             methods.setStorage();
             modifys.onSettingChange(i);
           };
-        }
-        // Multiple Select
-        else {
+        } else {
           // 设置表单
           methods.setMulSelectValue(obj.settings[item], set[item]);
 
           obj.settings[item].onchange = () => {
             // 读取表单
             data.user_set[i] = methods.parseValue(type, methods.getMulSelectValue(obj.settings[i]));
-
             methods.setStorage();
             modifys.onSettingChange(i);
           };
