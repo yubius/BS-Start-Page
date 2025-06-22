@@ -1,11 +1,12 @@
 /* ----
 
-# BS Start Page
-# By: Yubius
-# Last Update: 2024-2-22
+# KStart
+# By: Dreamer-Paul
+# Last Update: 2022.5.28
 
 一个简洁轻巧的起始页
 
+本代码为奇趣保罗原创，并遵守 MIT 开源协议。欢迎访问我的博客：https://paugram.com
 
 ---- */
 
@@ -34,8 +35,7 @@ function KStart() {
       background: ks.select("[name=background]"),
       sites: ks.select("[name=sites]"),
       auto_focus: ks.select("[name=auto_focus]"),
-      low_animate: ks.select("[name=low_animate]"),
-      theme_mode: ks.select('[name=theme_mode]'),
+      low_animate: ks.select("[name=low_animate]")
     },
     settingBtn: {
       reset: ks.select("#set-reset"),
@@ -125,13 +125,11 @@ function KStart() {
     ],
     user_set: {
       search: 0,
-      background: 1,
+      background: 0,
       auto_focus: false,
       low_animate: 0,
-      theme_mode: "auto", // 新增：主题模式，默认跟随系统
       sites: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 16, 28, 31, 35],
       custom: [],
-      show_weather: true,
     },
   };
 
@@ -485,32 +483,6 @@ function KStart() {
       }
     },
 
-    // 主题切换
-    applyThemeMode: () => {
-      const mode = data.user_set.theme_mode || "auto";
-      const html = document.documentElement;
-      html.classList.remove("theme-light", "theme-dark", "theme-auto");
-      switch (mode) {
-        case "light":
-          html.classList.add("theme-light");
-          document.body.classList.remove("dark");
-          break;
-        case "dark":
-          html.classList.add("theme-dark");
-          document.body.classList.add("dark");
-          break;
-        default:
-          html.classList.add("theme-auto");
-          // 跟随系统
-          if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-            document.body.classList.add("dark");
-          } else {
-            document.body.classList.remove("dark");
-          }
-          break;
-      }
-    },
-
     // 设置项被修改
     onSettingChange: (name) => {
       if (name === "background") {
@@ -521,9 +493,6 @@ function KStart() {
       }
       else if (name === "low_animate") {
         modifys.initLowAnimate();
-      }
-      else if (name === "theme_mode") {
-        modifys.applyThemeMode();
       }
     },
 
@@ -717,7 +686,6 @@ function KStart() {
     modifys.initBackground();
     modifys.initMediaQueryListener();
     modifys.initLowAnimate();
-    modifys.applyThemeMode(); // 初始化时应用主题
 
     data.env === "web" && modifys.hideModifiedButton();
 
@@ -730,45 +698,3 @@ function KStart() {
 }
 
 KStart();
-
-// 天气API小部件
-(function(){
-    const widget = document.getElementById('weather-widget');
-    if (!widget) return;
-    // 判断用户设置
-    try {
-        var show = JSON.parse(localStorage.getItem('paul-userset'));
-        if(show && show.show_weather === false) {
-            widget.style.display = 'none';
-            return;
-        }
-    } catch(e) {}
-    widget.style.display = '';
-    widget.innerHTML = '<span style="color:#888;font-size:14px;">天气加载中...</span>';
-    // 获取地理位置
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(pos) {
-            const lat = pos.coords.latitude;
-            const lon = pos.coords.longitude;
-            // 使用和风天气免费API（需替换为你自己的key）
-            const key = '9e8e7b6e0e4e4e8c8e4e7b6e0e4e4e8c'; // demo key, 请替换为你自己的
-            fetch(`https://devapi.qweather.com/v7/weather/now?location=${lon},${lat}&key=${key}`)
-                .then(r=>r.json())
-                .then(data=>{
-                    if(data.code==="200" && data.now){
-                        const w = data.now;
-                        widget.innerHTML = `<span style='font-size:1.1em;'>${w.text}</span> <span style='font-weight:bold;'>${w.temp}°C</span> <span style='font-size:0.9em;color:#888;'>${w.windDir}</span>`;
-                    }else{
-                        widget.innerHTML = '<span style="color:#888;">天气获取失败</span>';
-                    }
-                })
-                .catch(()=>{
-                    widget.innerHTML = '<span style="color:#888;">天气获取失败</span>';
-                });
-        }, function(){
-            widget.innerHTML = '<span style="color:#888;">无法获取定位</span>';
-        });
-    } else {
-        widget.innerHTML = '<span style="color:#888;">不支持定位</span>';
-    }
-})();

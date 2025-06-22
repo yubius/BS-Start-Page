@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-hans" class="font-auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="布斯起始页,是鱼布斯啊,SimSoft,个人网站,起始页,新标签页,起始页,浏览器,美化,上网主页,网址导航,纯净,无广告">
+    <meta name="description" content="简洁·便捷·时尚！这里是布斯起始页~">
+    <title>布斯起始页</title>
+    <link rel="icon" href="static/icon.png" sizes="192x192"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Kico-Style/kico.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1809713_rg58vy6eb7.css">
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+	<style>.navi-loading-mask{display:none!important;transition:all .5s!important;z-index:10;background:rgba(255,255,255,0.9);position:fixed;top:0;bottom:0;left:0;right:0;opacity:1}</style>
+    <link rel="stylesheet" href="static/css/main.css">
+
+</head>
+<body style="top:0;transition:all .5s" class="dark" onload="loadstyle()">
+<main>
+    <h1 id="time" onclick="scroll2page()" style="font-family:'Microsoft Yahei Light','Microsoft Yahei',PingFangSC-Regular,Helvetica,sans-serif,'等线';color:white;font-size:2.5em;font-weight:normal;text-shadow:0 0 5px grey;text-align:center;margin:0;margin-bottom:20px;margin-top:80px">你好</h1>
+    <section class="navi-search" style="height:100vh;text-align:center">
+        <span class="input-box search-backg">
+            <div class="search-select" title="切换搜索引擎" style="display:none">
+                <div class="iconfont icon-baidu"></div>
+            </div>
+            <div class="search-selector"></div>
+            <input type="text" placeholder="Search" onfocus="searchstart()" onblur="searchstop()" onkeydown="entersearch(event)"/>
+        </span>
+		<div align="center">
+			<h1 onclick="copyyiyan()" id="yiyan" style="border-radius:10px;backdrop-filter:blur(5px);display:inline-block;font-family:微软雅黑;color:white;font-size:0.9em;font-weight:lighter;text-shadow:0 0 5px grey;text-align:center;margin:0;margin-top:20vh">正在加载一言......</h1>
+		</div>
+    </section>
+	<div style="height:calc(100vh - 300px);overflow-y:scroll;padding-bottom:30px;margin-top:30px" id="navisites-section">
+		<h1 id="time2" onclick="scroll1page()" style="font-family:'Microsoft Yahei Light','Microsoft Yahei',PingFangSC-Regular,Helvetica,sans-serif,'等线';color:white;font-size:2.5em;font-weight:normal;text-shadow:0 0 5px grey;text-align:center;margin:0;margin-bottom:20px"></h1>
+    	<section class="navi-items"></section>
+	</div>
+    <section class="navi-background" style="transition:all .2s;"></section>
+    <section class="navi-background-mask" style="transition:all .2s;"></section>
+    <section class="navi-loading-mask" style="transition:all .2s;" align="center">
+		<img src="static/picture/icon.png" height="200px" width="200px" style="margin-top:calc(50vh - 100px)">
+	</section>
+</main>
+<div id="he-plugin-simple"></div>
+<style>#weather-view-he{border-radius:10px!important;background-color:black}.wv-lt-refresh{display:none!important}.s-sticker-cond.module img{margin-top: 2px;max-width:30px!important;width:30px!important;height:30px!important}.s-sticker-cond.module{padding:0!important}.s-sticker-city.module,.s-sticker-tmp.module,.s-sticker-qlty.module{display:none!important}</style>
+<div class="weather">
+  <script>WIDGET = {"CONFIG":{"modules": "01234","background": "5","tmpColor":"FFFFFF","tmpSize":"16","cityColor":"FFFFFF","citySize":"16","aqiColor":"FFFFFF","aqiSize": "16","weatherIconSize":"24",    "alertIconSize": "18",    "padding": "10px 10px 10px 10px",    "shadow": "0","language": "auto",    "fixed": "false",    "vertical": "top",    "horizontal": "left",    "key": "079764eefd5740d9b9efd86ffefabd78"  }}</script>
+  <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script>
+</div>
+<footer id="footer" style="text-align:center">
+    <p style="font-family:'Microsoft Yahei Light','Microsoft Yahei',PingFangSC-Regular,Helvetica,sans-serif,'等线';display:inline-block;border-radius:10px;backdrop-filter:blur(5px)">© 2021 <a href="https://www.baidu.com" target="_blank">东方星雨</a></p>
+</footer>
+<window>
+    <section class="the-window updated">
+        <div class="window-head">
+            <img src="static/picture/icon.png" style="height:30px;float:left">
+            <button>×</button>
+            <h3>技巧</h3>
+        </div>
+        <div class="window-body">
+            <article>
+                <h2>别致技巧</h2>
+                <h3>账号云同步</h3> 
+                <p>是否希望自动同步不同设备的起始页数据？</p>
+                <ul>
+                    <li>在“选项”中，登录“账户”</li>
+                    <li>前往设置开启“自动同步”（默认开启）</li>
+                    <li>下次打开会自动同步数据</li>
+                </ul>
+                <h2>基础技巧</h2> 
+                <h3>设定致美壁纸</h3>
+                <p>是否希望设置壁纸？了解设置精致，美妙的动态壁纸</p>
+                <ul>
+                    <li>打开“设定”</li>
+                    <li>在“致美壁纸”中选择“必应每日壁纸”</li>
+                    <li>然后刷新网站</li>
+                </ul>
+                <p><img src="static/picture/wallpaper.jpg" alt="设定致美壁纸"></p>
+                <h3>访问捷径</h3>
+                <ul>
+                    <li>单击“time”组件以访问/退出捷径</li>
+                    <li>您可以前往“设定”中编辑捷径</li>
+                </ul>
+                <p><img src="static/picture/jiejing.jpg" alt="访问捷径"></p>
+            </article>
+        </div>
+    </section>
+    <section class="the-window about">
+        <div class="window-head">
+            <img src="static/picture/icon.png" style="height:30px;float:left">
+            <button>×</button>
+            <h3>关于</h3>
+        </div>
+        <div class="window-body">
+            <article>
+                <p><iframe src="" id="intro-vid" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width:100%;height:50vh">您的设备不支持显示该视频。</iframe></p>
+                <blockquote id="update-date">正在获取...</blockquote>
+                <p>欢迎使用布斯起始页！本项目建设于 2020/2/21，是一个不亦简洁的起始页。</p>
+                <p>开发者：Yuxuan(Yubius) & YanJi(SimSoft)</p>
+                <p>您可以请求我们添加您的个人首页，或公共站点，请在<a href="https://www.baidu.com" target="_blank">本项目的QQ群</a>上提交联系群主提交</p>
+                <h3>类似项目：</h3>
+                <ul>
+                    <li><a href="https://dhxa.com" target="_blank" rel="nofollow">青柠起始页</a></li>
+                    <li><a href="http://d.dhxa.com/" target="_blank" rel="nofollow">SimTab</a></li>
+                </ul>
+                <h3>使用了：</h3>
+                <ul>
+                    <li><a href="https://www.iconfont.cn" target="_blank" rel="nofollow">IconFont</a></li>
+                    <li><a href="https://github.com/Dreamer-Paul/Kico-Style" target="_blank" rel="nofollow">Kico Style</a></li>
+                    <li><a href="https://fontawesome.com" target="_blank" rel="nofollow">FontAwesome</a></li>
+                </ul>
+            </article>
+        </div>
+    </section>
+    <section class="the-window setting">
+        <div class="window-head">
+            <img src="static/picture/icon.png" style="height:30px;float:left">
+            <button>×</button>
+            <h3>设定</h3>
+        </div>
+        <div class="window-body">
+            <fieldset>
+                <label>
+                    <span>搜索引擎偏好</span>
+                    <select name="search" data-key="search_method"></select>
+                </label>
+                <label>
+                    <span>搜索框样式偏好</span>
+                    <select id="search-style" onchange="savestyle()">
+						<option value="black">深色</option>
+						<option value="white">浅色</option>
+						<option value="auto-time">根据时间切换</option>
+						<option value="auto-sys">跟随系统切换</option>
+                    </select>
+                </label>
+                <label>
+                    <span>亚克力特效</span>
+                    <img src="static/picture/help.svg" style="float:right;margin-top: 5px;" onclick="ks.notice('使用亚克力特效会带来更好看的界面，但在大屏设备上会带来严重掉帧卡顿。如果您在使用过程中发现不流畅，建议关闭此选项。',{color:'green',time:5000})" height="15px">
+                    <select id="blur-set" onchange="saveblur()">
+						<option value="on">允许使用亚克力特效</option>
+						<option value="off">关闭亚克力特效</option>
+                    </select>
+                </label>
+                <label>
+                    <span>致美壁纸</span>
+                    <img src="static/picture/help.svg" style="float:right;margin-top: 5px;" onclick="ks.notice('选择“必应壁纸”可以每日自动更新壁纸。',{color:'green',time:2000})" height="15px">
+                    <select name="background" data-key="back_method" id="backselect"></select>
+                </label>
+				<label id="setdiy-area">
+                    <textarea style='width:100%;border-radius:2px;background:transparent;border:1px solid #cccccc;resize:none;height:1em' onchange='savebackground()' id='backurl-input' placeholder="在此处输入自定义壁纸的网址"></textarea>
+                </label>
+				<label>
+                    <span>编辑捷径</span>
+                    <img src="static/picture/help.svg" style="float:right;margin-top: 5px;" onclick="ks.notice('Windows用户请按住Ctrl键多选<br>Mac用户请按住Command键多选',{color:'green',time:2000})" height="15px">
+                    <select multiple name="sites" data-key="sites" style="height: 15em" id="set-site"></select>
+                </label>
+                <label class="sync-option">
+                    <span>云端同步</span>
+                    <select id="sync-set" onchange="savesync()">
+						<option value="on">使用自动同步</option>
+						<option value="off">关闭自动同步</option>
+                    </select>
+                </label>
+                <label>
+                    <span>版本切换</span>
+                    <img src="static/picture/help.svg" style="float:right;margin-top: 5px;" onclick="ks.notice('开发版几乎每天都在更新，有时甚至每分钟都在更新，拥有最新的功能，但有时可能不稳定。',{color:'green',time:2000})" height="15px">
+                    <br>
+                  	您正在使用正式版。<a href="http://d.dhxa.com/dd/" target="_blank" rel="nofollow">尝鲜开发板</a></blockquote>
+                </label>
+
+          
+                <p align="center" style="display:none">
+                    <button class="btn small blue" name="reset">恢复默认</button>
+                    <button class="btn small blue" name="output">导出</button>
+                    <button class="btn small blue" name="input" onclick="loadnewsetting()">导入</button>
+                </p>
+            </fieldset>
+        </div>
+    </section>
+</window>
+<div class="menu-btm" onmouseover="$(this).attr('class','menu-btm-active')" onmouseout="$(this).attr('class','menu-btm')">
+    <img src="static/picture/caidan.png" width="25px" height="25px"><span style="vertical-align:middle;font-size:1.2em;font-weight:bold;padding-left:20px;white-space:nowrap">选项</span>
+    <br><br>
+    <div class="user" onclick="window.open('//my.bius.top')"><img src="static/picture/zhanghu.png" width="20px" height="20px"><span style="vertical-align:middle;font-size:1.1em;padding-left:10px;white-space:nowrap;display:inline-block;line-height: 1em;"><span>账户</span><br><span id="uid" style="color:#2f88ff;font-size:0.8em;overflow: hidden;width: 110px;display: inline-block;">获取中...</span></span></div>
+    <div class="action-btn updated"><img src="static/picture/jiqiao.png" width="20px" height="20px"><span style="vertical-align:middle;font-size:1.1em;padding-left:10px;white-space:nowrap">技巧</span></div>
+    <div class="action-btn about"><img src="static/picture/guanyu.png" width="20px" height="20px"><span style="vertical-align:middle;font-size:1.1em;padding-left:10px;white-space:nowrap">关于</span></div>
+    <div class="action-btn setting"><img src="static/picture/sheding.png" width="20px" height="20px"><span style="vertical-align:middle;font-size:1.1em;padding-left:10px;white-space:nowrap">设定</span></div>
+</div>
+<textarea id="yiyaninput" style="position:fixed;top:0;width:0;height:0;opacity:0"></textarea>
+
+<script src="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Kico-Style/kico.js"></script>
+<!--script src="https://my.bius.top/static/"></script--><!--访问统计by盐鸡-->
+<script src="static/js/jq.js"></script>
+<script src="static/js/main.js"></script>
+	<script>
+    function getclouddata(){
+      if(localStorage.getItem("sync")!="off"){
+        var xhr =new XMLHttpRequest();
+        xhr.open('get','https://my.bius.top/bius_api/get.php');
+        xhr.withCredentials=true;
+        xhr.onload=function(){
+          if(xhr.responseText!=1000&&xhr.responseText!=1001){
+            if(xhr.responseText!==localStorage.getItem("paul-navi")){
+              localStorage.setItem("paul-navi",xhr.responseText)
+              ks.notice('<div class="sync" onclick=window.open("//simsoft.top")>云端数据已同步，刷新生效<br><svg t="1618497132104" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2037" width="15" height="15"><path d="M796.2 466.4c0-2.4 0.4-4.8 0.4-7.2 0-130-103.6-235.2-231.4-235.2-92.2 0-171.4 54.8-208.6 134-16.2-8.2-34.4-13-53.6-13-59 0-108.2 43.8-117.6 101C114.6 470.4 64 538.2 64 618c0 100.4 80.2 181.8 179 182l553.4 0 0 0c90.4-0.4 163.4-75 163.4-166.8C960 541.2 886.6 466.6 796.2 466.4z" p-id="2038"></path></svg><span>数据同步由SimSoft提供技术支持</span></div>',{color:"green",time:5000})
+            }
+          }
+        };
+        xhr.onerror=function(){
+          ks.notice('<div class="sync" onclick=window.open("//simsoft.top")>云同步失败，请检查网络重试<br><svg t="1618497132104" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2037" width="15" height="15"><path d="M796.2 466.4c0-2.4 0.4-4.8 0.4-7.2 0-130-103.6-235.2-231.4-235.2-92.2 0-171.4 54.8-208.6 134-16.2-8.2-34.4-13-53.6-13-59 0-108.2 43.8-117.6 101C114.6 470.4 64 538.2 64 618c0 100.4 80.2 181.8 179 182l553.4 0 0 0c90.4-0.4 163.4-75 163.4-166.8C960 541.2 886.6 466.6 796.2 466.4z" p-id="2038"></path></svg><span>数据同步暂不支持</span></div>',{color:"red",time:5000})
+        };
+        xhr.send();
+      }
+    }
+    function getaccount(){
+      if(localStorage.getItem("sync")=="off"){$("#sync-set").val("off")}else{$("#sync-set").val("on")}
+      var xhr =new XMLHttpRequest();
+      xhr.open('get','https://my.bius.top/bius_api/info.php');
+      xhr.withCredentials=true;
+      xhr.onload=function(){
+        if(xhr.responseText!=1000){
+          $("#uid").html(xhr.responseText)
+        }else{
+          $("#uid").text("登录以同步设置")
+          $(".sync-option").hide()
+        }
+      };
+      xhr.onerror=function(){
+        ks.notice('<div class="sync" onclick=window.open("//simsoft.top")>云同步失败，请检查网络重试<br><svg t="1618497132104" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2037" width="15" height="15"><path d="M796.2 466.4c0-2.4 0.4-4.8 0.4-7.2 0-130-103.6-235.2-231.4-235.2-92.2 0-171.4 54.8-208.6 134-16.2-8.2-34.4-13-53.6-13-59 0-108.2 43.8-117.6 101C114.6 470.4 64 538.2 64 618c0 100.4 80.2 181.8 179 182l553.4 0 0 0c90.4-0.4 163.4-75 163.4-166.8C960 541.2 886.6 466.6 796.2 466.4z" p-id="2038"></path></svg><span>数据同步暂不支持</span></div>',{color:"red",time:5000})
+      };
+      xhr.send();
+    }
+    function uploaddata(){
+      if(localStorage.getItem("sync")!="off"){
+        $.ajax({
+          type:"post",
+          url:"https://my.bius.top/bius_api/upload.php",
+          xhrFields: {
+            withCredentials: true
+          },
+          crossDomain: true,
+          data:{data:localStorage.getItem("paul-navi")},
+        })
+      }
+    }
+    if(localStorage.getItem("paul-navi")==null){localStorage.setItem("paul-navi",'{"search":"0","background":"0","sites":[0,1,2,3,4,5,6,7,8,9,11,12,16,28,31,35],"custom":[],"blur":"on","s-style":"black"}')}
+    if(window.location.host=="d.dhxa.com/ee"){window.location.replace("//d.dhxa.com/ee")}
+	;(function () {
+		var src = '//cdn.jsdelivr.net/npm/eruda';
+		if (!/console/.test(window.location) && localStorage.getItem('active-eruda') != 'true') return;
+		document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+		document.write('<scr' + 'ipt>eruda.init();</scr' + 'ipt>');
+	})();
+	function showtime() { 
+		var today = new Date() 
+		var h = today.getHours() 
+		var m = today.getMinutes() 
+		h=checkTime(h) 
+		m=checkTime(m) 
+		document.getElementById('time').innerHTML=h+":"+m 
+		document.getElementById('time2').innerHTML=h+":"+m 
+		t=setTimeout('showtime()',1000) }  
+	function checkTime(i) { if (i<10) { i="0" + i } return i }
+	function getyiyan(){$.get("https://v1.hitokoto.cn/",function(data,status){$('#yiyan').text(data.hitokoto);});}
+	function scroll2page(){$("body").attr("style","top:calc(-100vh - 100px);transition:all .5s");$(".navi-background-mask").css("opacity","1");$("#backgroundstyle").html(".navi-background{transform:scale(1.1)}");}
+	function scroll1page(){$("body").attr("style","top:0;transition:all .5s");$(".navi-background-mask").css("opacity","0");$("#backgroundstyle").html(".navi-background{}");}
+	function sayhello(){
+		now = new Date(),hour = now.getHours()
+		if(hour < 6){var word="凌晨好"}
+		else if (hour < 9){var word="早上好"}
+		else if (hour < 12){var word="上午好"}
+		else if (hour < 14){var word="中午好"}
+		else if (hour < 17){var word="下午好"}
+		else if (hour < 19){var word="傍晚好"}
+		else if (hour < 22){var word="晚上好"}
+		else {var word="夜里好"}
+		ks.notice(word+"！",{time:2000,color:"black"})
+	}
+	function savebackground(){
+		$.get("/wallpaper/diy.php?act=edit&url="+$("#backurl-input").val(),function(data){
+			ks.notice(data); 
+			document.getElementById("backurl-input").value=""
+		});
+	}
+	function searchstart(){$("#backgroundstyle").html(".navi-background{transform:scale(1.1)}");
+        if(data.user["s-style"]=="white"){
+        	$(".input-box").attr("style","backdrop-filter: blur(5px);background: rgba(255,255,255,1);transition:all .2s;");
+        }else if(data.user["s-style"]=="auto-time"){
+            var date = new Date();var h=date.getHours();
+            if(h>20||h<8){
+        	  $(".input-box").attr("style","backdrop-filter: blur(5px);background: rgba(0,0,0,1);transition:all .2s;");
+            }else{
+              $(".input-box").attr("style","backdrop-filter: blur(5px);background: rgba(255,255,255,1);transition:all .2s;");
+            }
+        }else if(data.user["s-style"]=="auto-sys"){
+            var date = new Date();var h=date.getHours();
+            if(window.matchMedia('(prefers-color-scheme: dark)').matches==true){
+        	  $(".input-box").attr("style","backdrop-filter: blur(5px);background: rgba(0,0,0,1);transition:all .2s;");
+            }else{
+        	  $(".input-box").attr("style","backdrop-filter: blur(5px);background: rgba(255,255,255,1);transition:all .2s;");
+            }
+        }else{
+        	$(".input-box").attr("style","backdrop-filter: blur(5px);background: rgba(0,0,0,1);transition:all .2s;");
+        }
+    $(".navi-background-mask").css("opacity","1")}
+	function searchstop(){$("#backgroundstyle").html(".navi-background{}");$(".input-box").attr("style","");$(".navi-background-mask").css("opacity","0")}
+	window.onload=showtime();getyiyan();sayhello();loadupdate();setTimeout(function(){loadfinish()},500);
+	function changewall(){
+		if(data.back_method[data.user.background].name=="自定义"){$("#setdiy-area").slideToggle();}else{$("#setdiy-area").slideUp();}
+        obj.main.bg.style.background = "url(" + data.back_method[data.user.background].url + ") " + data.back_method[data.user.background].set;
+        $(".navi-background").attr("class","navi-background active")
+	}
+	function loadnewsetting(){
+		ks.notice("<CENTER>请粘贴复制的内容，然后单击窗口外的任意位置：</CENTER><textarea style='width:300px;background:transparent;border:0;resize:none' onchange='savesettings()' id='import-input'></textarea>", {color: "green"});
+		$("#import-input").focus()
+	}
+	function savesettings(){
+		set=$("#import-input").val()
+		localStorage.setItem("paul-navi",set)
+		ks.notice("导入成功，页面即将重载...")
+		location.reload();
+	}
+	function entersearch(event){
+		if (event.keyCode == 13) {
+          if(JSON.parse(localStorage.getItem("paul-navi")) ==null){
+        	window.open("https://cn.bing.com/search?q="+$(".input-box input").val())
+			document.querySelector("body > main > section.navi-search > span > input[type=text]").value=""
+          }else{
+        	window.open(data.search_method[Number(JSON.parse(localStorage.getItem("paul-navi")).search)].url+$(".input-box input").val())
+			document.querySelector("body > main > section.navi-search > span > input[type=text]").value=""
+    	  }
+        }
+	}
+	function loadupdate(){
+		var date = new Date();
+		var y = date.getFullYear();
+		var m = date.getMonth()+1;
+		var d = date.getDate();
+		var date=y+"/"+m+"/"+d
+		document.querySelector("#update-date").innerHTML="当前版本："+date+""
+	}
+	function loadfinish(){
+		$(".navi-loading-mask").attr("class","navi-loading-mask-finished")
+		setTimeout(function(){$(".navi-loading-mask-finished").hide()},500);
+	}
+	function copyyiyan(){
+		$("#yiyaninput").html(document.getElementById("yiyan").innerHTML)
+		$("#yiyaninput").select()
+        document.execCommand('copy')
+        $("#yiyaninput").blur()
+        ks.notice("已复制一言",{color:"green",time:1000})
+	}
+    function savestyle(){
+    	data.user["s-style"]=$("#search-style").val();
+        localStorage.setItem("paul-navi",JSON.stringify(data.user))
+        loadstyle()
+        uploaddata()
+    }
+    function loadstyle(){
+    	if(data.user["s-style"]=="white"){
+        	$(".input-box").attr("class","input-box search-border")
+            $("#search-style").val("white")
+        }else if(data.user["s-style"]=="auto-time"){
+            var date = new Date();var h=date.getHours();
+            if(h>20||h<8){
+              $(".input-box").attr("class","input-box search-backg")
+            }else{
+              $(".input-box").attr("class","input-box search-border")
+            }
+            $("#search-style").val("auto-time")
+        }else if(data.user["s-style"]=="auto-sys"){
+            var date = new Date();var h=date.getHours();
+            if(window.matchMedia('(prefers-color-scheme: dark)').matches==true){
+              $(".input-box").attr("class","input-box search-backg")
+            }else{
+              $(".input-box").attr("class","input-box search-border")
+            }
+            $("#search-style").val("auto-sys")
+        }else{
+        	$(".input-box").attr("class","input-box search-backg")
+            $("#search-style").val("black")
+        }
+    }
+    function savesync(){
+    	localStorage.setItem("sync",$("#sync-set").val());
+        getaccount()
+    }
+    function saveblur(){
+    	data.user["blur"]=$("#blur-set").val();
+        localStorage.setItem("paul-navi",JSON.stringify(data.user))
+        loadblur()
+        uploaddata()
+    }
+    function loadblur(){
+    	if(data.user["blur"]=="off"){
+        	$("#blurstyle").html(".navi-background-mask,window,#yiyan,footer p{backdrop-filter:blur(0.00005px)!important}")
+            $("#blur-set").val("off")
+        }else{
+        	$("#blurstyle").html("")
+            $("#blur-set").val("on")
+        }
+    }
+    msg = function (...args){queueMicrotask(console.log.bind(console, ...args))}
+    console.clear()
+    msg("%cSim%cSoft%c丨%c布斯起始页","color:#ff7f27;font-weight:bold;font-size:2em;font-family:微软雅黑","color:#34a8ff;font-size:2em;font-family:微软雅黑","font-size:2em;font-family:微软雅黑","color:#2f88ff;font-size:2em;font-family:微软雅黑");
+    msg("%chttps://simsoft.top/","font-weight:bold;font-size:1.5em;font-family:微软雅黑");
+    msg("%c---===[ ©YanJi&Yubius，请勿抄袭源码 ]===---","font-size:1em;font-family:微软雅黑");
+
+	</script>
+	<style id="backgroundstyle"></style><style id="blurstyle"></style>
+</body>
+</html>
+<!-- 代码优化：By SimSoft
+    https://simsoft.top/ -->

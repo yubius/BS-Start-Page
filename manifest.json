@@ -1,0 +1,11 @@
+{
+	"name": "布斯起始页",
+	"icons": [{
+		"src": "static/picture/icon.png",
+		"type": "image/png",
+		"sizes": "200x200"
+	}],
+	"start_url": "/",
+	"display": "standalone",
+	"theme_color": "#ffffff"
+}

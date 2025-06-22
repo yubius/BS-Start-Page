@@ -27,27 +27,6 @@
   --font-shadow: 0 0 5px #fff, 0 2px 5px #fff;
 }
 
-html.theme-light {
-  color-scheme: light;
-}
-html.theme-dark {
-  color-scheme: dark;
-}
-
-body.dark {
-  color: #fff;
-  background-color: #222;
-  --font-shadow: 0 0 5px #000, 0 2px 5px #000;
-}
-
-@media (prefers-color-scheme: dark) {
-  html.theme-auto body {
-    color: #fff;
-    background-color: #222;
-    --font-shadow: 0 0 5px #000, 0 2px 5px #000;
-  }
-}
-
 @media screen and (prefers-color-scheme: dark){
   :root{
     color: #ccc;
@@ -78,6 +57,11 @@ html, body{
 body{
   display: flex;
   flex-direction: column;
+}
+body.dark{
+  color: #fff;
+
+  --font-shadow: 0 0 5px #000, 0 2px 5px #000;
 }
 
 .iconfont{
@@ -466,58 +450,6 @@ body.low-animate .the-window.closed{
   font-size: 1.17em;
   border-radius: 1em;
   background: rgb(255, 86, 86);
-}
-
-/* 精简窗口头部样式 */
-.window-head {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  min-height: 48px;
-}
-.window-head .window-logo {
-  height: 30px;
-  position: absolute;
-  left: 1.5em;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.window-head .window-close {
-  background: none !important;
-  border: none !important;
-  color: #e74c3c !important;
-  font-size: 2em;
-  line-height: 1;
-  margin-left: 1em;
-  margin-right: 0;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  padding: 0;
-  width: 1.2em;
-  height: 1.2em;
-  vertical-align: middle;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: static;
-  right: auto;
-  top: auto;
-  transform: none;
-  z-index: 2;
-  font-family: inherit;
-  font-weight: bold;
-  opacity: 1;
-}
-.window-head h3 {
-  margin: 0 auto;
-  font-weight: normal;
-  display: flex;
-  align-items: center;
-}
-.window-head {
-  gap: 0.5em;
 }
 
 .the-window .window-body, .the-drawer .drawer-body{

@@ -1,10 +1,10 @@
 <p align="center">
-<img src="https://yubs.top/static/iconmini.png"/>
+<img src="https://yubius.com/static/iconmini.png"/>
 </p>
 
 <div align="center">
 
-# 布斯起始页`2024`
+# 布斯起始页`2023`
 
 
 `布斯起始页`是一款精美的浏览器新建标签页
